@@ -1,0 +1,53 @@
+# Ren'Py compiled files
+*.rpyc
+*.rpyb
+*.rpymc
+*.pyc
+*.pyo
+
+# Ren'Py temporary files
+**/tmp/*
+**/cache/*
+
+# Ren'Py build files
+game/saves/*
+*.save
+*.new
+*.old
+*.bak
+
+# Ren'Py log files
+log.txt
+errors.txt
+traceback.txt
+lint.txt
+
+# Ren'Py warp service file
+game/renpy_warp_*.rpe.py
+
+# macOS system files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# IDE specific files
+#.vscode/
+.idea/
+*.swp
+*.swo
+
+# Build directory
+/dist/
+/build/
+
+# Generated files
+*.rpymc
+*.txt
+*.json
+
+*.psd
+
+game/libs
+*rpe.py
+
+!external_resources.txt
