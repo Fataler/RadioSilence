@@ -158,6 +158,7 @@ layeredimage n:
         #attribute surprised default:
         #    "images/Sprites/Nektar/Nektar_hand_hide_surprised.png"
 
+image n_side = LayeredImageProxy("n", Transform(xalign=0.5, yalign=0.0, crop=(0.2, 0.0, 0.8, 0.8), crop_relative=True, yoffset=60))
 #endregion
 
 

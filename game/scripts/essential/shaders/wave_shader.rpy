@@ -155,7 +155,7 @@ transform wave_shader(amp=12.0, period=20.0, speed=1.0, direction="both", damp=1
 # Пример проверки
 label test_wave_shader:
     scene black
-    $ img = "images/test.jpg"  # замените на существующую картинку
-    show expression img at wave_shader(amp=10, period=18, speed=1.2)
+    $ img = "images/test.png"
+    show expression img at wave_shader(amp=1.2, period=20.219, speed=0.1, direction="vertical")
     "Шейдер работает. Нажмите, чтобы продолжить."
     return
