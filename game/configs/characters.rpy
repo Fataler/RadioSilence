@@ -117,6 +117,7 @@ layeredimage r:
 
 #region Нектар
 layeredimage n:
+    zoom 0.8
     at auto_flip("n", "left")
 
     group direction:
@@ -137,9 +138,9 @@ layeredimage n:
         attribute idle default:
             "images/Sprites/Nektar/Nektar_base_idle.png"
         attribute smile:
-            "images/Sprites/Nektar/Nektar_base_mile.png"
+            "images/Sprites/Nektar/Nektar_base_smile.png"
         attribute serious:
-            "images/Sprites/Nektar/Nektar_base__serious.png"            
+            "images/Sprites/Nektar/Nektar_base_serious.png"            
 
     group emotion if_any "hands":
         xoffset -70
