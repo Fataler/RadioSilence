@@ -153,16 +153,16 @@ transform enter_scene(time=2.0, from_left=False, xalign=0.95, y=1.0):
             ease 0.2 yoffset 0
             repeat (int(time * 2.5))
 
-transform move_on_scene(time=2.0, xalign=0.95):
+transform move_on_scene(time=1.5, xalign=0.95):
 #    xpos (x)
 #    ypos (y)
     parallel:
         ease time xalign xalign
     parallel:
         block:
-            ease 0.2 yoffset 20
-            ease 0.2 yoffset 0
-            repeat (int(time * 2.5))
+            ease 0.3 yoffset 20
+            ease 0.3 yoffset 0
+            repeat (int(time * 1.5))
 
 transform move_on_scene_slow(time=6.0, xalign=2.0):
     parallel:
