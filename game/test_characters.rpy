@@ -32,6 +32,9 @@ label test_characters:
     show n hand_hide shy
     N "n hand_hide shy"
 
+    show n hand_hide surprised
+    N "n hand_hide surprised"
+
     hide n
 
     show r stretching dissatisfied left
@@ -66,3 +69,25 @@ label test_characters:
 
     hide r
 
+    show l thinking idle left 
+    L "l thinking idle left"
+
+    show l thinking sad right
+    L "l thinking smile right"
+    
+    show l thinking embarrassed
+    L "l thinking embarrassed"
+
+    show l closed shy
+    L "l closed embarrassed"
+
+    show l closed serious
+    L "l closed serious"
+
+    show l closed smile
+    L "l closed smile"
+
+    show l half_closed surprised
+    L "l half_closed surprised"
+
+    hide l

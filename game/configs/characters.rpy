@@ -60,11 +60,11 @@ layeredimage e_f:
         attribute sad:
             "images/Sprites/Exo/Exo_base_sad.png"
     
-    #group emotion if_any "ear":
-    #    attribute think:
-    #        "images/Sprites/Exo/Exo_ear_think.png"
-    #    attribute asharashen:
-    #        "images/Sprites/Exo/Exo_ear_asharashen.png"
+    group emotion if_any "ear":
+        attribute think:
+            "images/Sprites/Exo/Exo_ear_think.png"
+        attribute asharashen:
+            "images/Sprites/Exo/Exo_ear_asharashen.png"
 
 #endregion
 
@@ -155,10 +155,49 @@ layeredimage n:
         xoffset -30
         attribute shy:
             "images/Sprites/Nektar/Nektar_hand_hide_shy.png"
-        #attribute surprised default:
-        #    "images/Sprites/Nektar/Nektar_hand_hide_surprised.png"
+        attribute surprised default:
+            "images/Sprites/Nektar/Nektar_hand_hide_surprised.png"
 
 image n_side = LayeredImageProxy("n", Transform(xalign=0.5, yalign=0.0, crop=(0.2, 0.0, 0.8, 0.8), crop_relative=True, yoffset=60))
 #endregion
 
+#region Леон-2
+layeredimage l:
+    at auto_flip("l", "left")
 
+    group direction:
+        attribute right:
+            Null()
+        attribute left default:
+            Null()
+
+    group pose:
+        attribute thinking default:
+            Null()
+        attribute closed:
+            Null()
+        attribute half_closed:
+            Null()
+
+    group emotion if_any "thinking":
+        attribute idle default:
+            "images/Sprites/Nektar/Nektar_base_idle.png"
+        attribute sad:
+            "images/Sprites/Nektar/Nektar_base_smile.png"
+        attribute embarrassed:
+            "images/Sprites/Nektar/Nektar_base_serious.png"            
+
+    group emotion if_any "closed":
+        attribute shy:
+            "images/Sprites/Nektar/Nektar_hands_sad.png"
+        attribute serious default:
+            "images/Sprites/Nektar/Nektar_hands_relief.png"
+        attribute smile:
+            "images/Sprites/Nektar/Nektar_hands_fear.png"
+
+    group emotion if_any "half_closed":
+        attribute surprised:
+            "images/Sprites/Nektar/Nektar_hand_hide_shy.png"
+
+image l_side = LayeredImageProxy("l", Transform(xalign=0.5, yalign=0.0, crop=(0.2, 0.0, 0.8, 0.8), crop_relative=True, yoffset=60))
+#endregion
