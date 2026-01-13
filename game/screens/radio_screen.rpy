@@ -1,22 +1,21 @@
 image bg_radio = "images/Radio/Racia.png"
 image noise = "images/Radio/Noise.png"
 
-screen radio_screen(char_img):
+screen radio_screen(char_img, xposNoise=1234, xoffsetRadio=0):
     tag radio_ui
     
     fixed:
         at screen_fade_effect(0.3)
         
         fixed:
-            xpos 1234 ypos 339 
+            xpos xposNoise ypos 339
             xsize 360 ysize 190
-            
+
             python:
                 tint_color = (0.5, 1.0, 0.5)
                 
                 noise_lvl = 1.0
-                jitter_lvl = 0.01
-            
+                jitter_lvl = 0.01            
             
             add "noise":
                 yoffset -11
@@ -39,7 +38,9 @@ screen radio_screen(char_img):
                     curvature=0.08
                 )
 
-        add "bg_radio" alpha 1.0
+        add "bg_radio" alpha 1.0:
+            xoffset xoffsetRadio
+
 
 label test_radio:
     scene bg_ulitsa

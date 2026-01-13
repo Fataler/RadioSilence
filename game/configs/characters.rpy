@@ -14,6 +14,9 @@ init python:
     def speak_as(name, text, color="#232324"):
         Character(name, color=color)(text)
 
+#картинка для рации штаба
+image b_side = LayeredImageProxy("b", Transform(xalign=0.5, yalign=0.0, crop=(0.2, 0.0, 0.8, 0.8), crop_relative=True, yoffset=60))
+
 #endregion
 
 #region Эхо
@@ -117,6 +120,7 @@ layeredimage r:
         attribute asharashen:
             "images/Sprites/Razer/Razer_base_asharashen.png"
 
+image r_side = LayeredImageProxy("r", Transform(xalign=0.5, yalign=0.0, crop=(0.2, 0.0, 0.8, 0.8), crop_relative=True, yoffset=100))
 #endregion
 
 #region Нектар
@@ -206,4 +210,34 @@ layeredimage l:
             "images/Sprites/Leon2/Leon2_half_closed_surprised.png"
 
 image l_side = LayeredImageProxy("l", Transform(xalign=0.5, yalign=0.0, crop=(0.2, 0.0, 0.8, 0.8), crop_relative=True, yoffset=60))
+#endregion
+
+#region Штаб
+
+image side b_side = LayeredImageProxy("b", Transform(crop=(0, 0, 800, 550), yoffset=85, zoom=1.0))
+
+layeredimage b:
+
+    at auto_flip("b", "right")
+
+    group direction:
+        attribute right default:
+            Null()
+        attribute left:
+            Null()
+
+    group pose:
+        attribute base default:
+            Null()
+        attribute man:
+            Null()
+
+    group emotion if_any "base":
+        attribute idle default:
+            "images/Sprites/Base/base_racia.png"
+
+    group emotion if_any "man":
+        attribute idle default:
+            "images/Sprites/Base/man_racia.png"
+
 #endregion
