@@ -1,4 +1,6 @@
 label test_characters:
+    scene bg_1_1
+
     E tired idle "E tired idle"
 
     E surprised "E tired surprised"
@@ -11,13 +13,17 @@ label test_characters:
 
     E sad "E base sad"
 
+    E ear think "E ear think"
+
+    E ear asharashen "E ear asharashen"
+
     show n base idle left 
     N "n base idle left"
 
-    show n base smile right
+    showd n base smile right
     N "n base smile right"
     
-    show n base serious
+    show n base serious left with Dissolve(1.0)
     N "n base serious"
     
     show n hands sad

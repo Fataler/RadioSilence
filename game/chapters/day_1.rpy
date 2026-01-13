@@ -79,9 +79,6 @@ label day_1:
     show n at move_on_scene(xalign=0.7)
     show l at move_on_scene(time=2.0, xalign=1.0)
     pause 2.0
-    showd r right
-    showd s right
-    showd n right
 
     N "Но Вы правы. Леон-2, можешь посмотреть, что ждёт нас впереди?"
     "Нектар обратилась к спутнику, который уже долгое время ничего не говорил."
