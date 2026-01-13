@@ -173,8 +173,20 @@ transform move_on_scene_hide(time=1.5, xalign=0.95):
             ease 0.3 yoffset 0
             repeat (int(time * 1.5))
     parallel:
-        pause (time * 0.7)
         ease (time * 0.3) alpha 0.0
+
+transform move_on_scene_show(time=1.5, xalign=0.95):
+    yalign 1.0
+    parallel:
+        ease time xalign xalign
+    parallel:
+        block:
+            ease 0.3 yoffset 20
+            ease 0.3 yoffset 0
+            repeat (int(time * 1.5))
+    parallel:
+        alpha 0.0
+        ease (time * 0.3) alpha 1.0
 
 transform move_on_scene_slow(time=6.0, xalign=2.0):
     parallel:

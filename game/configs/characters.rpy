@@ -77,6 +77,7 @@ layeredimage e_f:
 
 #region Рэйзор
 layeredimage r:
+    zoom 1.1
     at auto_flip("r", "left")
 
     group direction:
@@ -171,6 +172,7 @@ image n_side = LayeredImageProxy("n", Transform(xalign=0.5, yalign=0.0, crop=(0.
 
 #region Леон-2
 layeredimage l:
+    zoom 0.95
     at auto_flip("l", "left")
 
     group direction:
