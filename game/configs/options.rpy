@@ -140,7 +140,7 @@ define config.window_hide_transition = Dissolve(.2)
 
 init python:
     # Set "A" for auto-forward mode
-    for k in ['a', 'A']:
+    for k in ['a', 'A', "ф", "Ф"]:
         if k not in config.keymap['toggle_afm']:
             config.keymap['toggle_afm'].append(k)
 

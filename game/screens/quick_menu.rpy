@@ -7,12 +7,26 @@ image pause_button :
     "gui/Pause_baget.png"
     alpha 0.8
 
+image auto_button_on :
+    "gui/auto_on_baget.png"
+    alpha 0.8
+
+image auto_button_off :
+    "gui/auto_off_baget.png"
+    alpha 0.8
+
 screen quick_menu():
 
     ## Гарантирует, что оно появляется поверх других экранов.
     zorder 100
 
     if quick_menu :
+        imagebutton:
+            idle If(_preferences.afm_enable, "auto_button_on", "auto_button_off")
+            hover At(If(_preferences.afm_enable, "auto_button_on", "auto_button_off"), set_bright_hovered(0.1))
+            action Preference("auto-forward", "toggle")
+            anchor (1.0, 1.0)
+            pos (0.975, 1.0)
         imagebutton:
             idle "pause_button"
             hover At("pause_button", set_bright_hovered(0.1))
