@@ -44,17 +44,21 @@ screen radio_screen(char_img, xposNoise=1234, xoffsetRadio=0):
 
 label test_radio:
     scene bg_ulitsa
-    show screen radio_screen("e_f tired idle")
-    "Зеленый"
     
-    show screen radio_screen("n_side")
-    "Синий"
+    show screen radio_screen("e_radio")
+    "Эхо"
     
-    show screen radio_screen("n_side base serious")
-    "Янтарный"
+    show screen radio_screen("r_radio")
+    "Рэйзор"
     
-    show screen radio_screen("n_side base smile")
-    "Вариант с сильными помехами"
+    show screen radio_screen("n_radio")
+    "Нектар"
+    
+    show screen radio_screen("l_radio")
+    "Леон-2"
+    
+    show screen radio_screen("b_radio man")
+    "Штаб"
     
     hide screen radio_screen
     "Рация скрыта."

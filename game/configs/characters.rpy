@@ -3,10 +3,14 @@ define E = Character("Эхо", image="e")
 define E_t = Character(None, image="r")
 define E_f = Character("Эхо", image="e_f")
 define R = Character("Рэйзор", image="r")
+define R_side = Character("Рэйзор", image="r_side")
 define N = Character("Нектар", image="n")
+define N_side = Character("Нектар", image="n_side")
 define S = Character("Стальной", image="s")
+define S_side = Character("Стальной", image="s_side")
 define L = Character("Леон-2", image="l")
-define B = Character("Штаб")
+define L_side = Character("Леон-2", image="l_side")
+define B = Character("Штаб", image="b")
 define story_teller = Character(None, kind=nvl, color="#1a1a1f")
 
 #универсальный перс
@@ -22,6 +26,7 @@ image b_side = LayeredImageProxy("b", Transform(xalign=0.5, yalign=0.0, crop=(0.
 #region Эхо
 
 image side e = LayeredImageProxy("e_f", Transform(crop=(0, 0, 800, 550), yoffset=85, zoom=1.0))
+image e_radio = LayeredImageProxy("e_f", Transform(crop=(0, 0, 800, 550), yoffset=85, zoom=1.0))
 
 layeredimage e_f:
 
@@ -121,7 +126,8 @@ layeredimage r:
         attribute asharashen:
             "images/Sprites/Razer/Razer_base_asharashen.png"
 
-image r_side = LayeredImageProxy("r", Transform(xalign=0.5, yalign=0.0, crop=(0.2, 0.0, 0.8, 0.8), crop_relative=True, yoffset=100))
+image side r_side = LayeredImageProxy("r", Transform(xalign=0.5, yalign=0.0, crop=(0.2, 0.0, 0.8, 0.8), crop_relative=True, yoffset=100))
+image r_radio = LayeredImageProxy("r", Transform(xalign=0.5, yalign=0.0, crop=(0.2, 0.0, 0.8, 0.8), crop_relative=True, yoffset=100))
 #endregion
 
 #region Нектар
@@ -167,7 +173,11 @@ layeredimage n:
         attribute surprised default:
             "images/Sprites/Nektar/Nektar_hand_hide_surprised.png"
 
-image n_side = LayeredImageProxy("n", Transform(xalign=0.5, yalign=0.0, crop=(0.2, 0.0, 0.8, 0.8), crop_relative=True, yoffset=60))
+image side n_side = LayeredImageProxy("n", Transform(xalign=0.5, yalign=0.0, crop=(0.2, 0.0, 0.8, 0.8), crop_relative=True, yoffset=60))
+image n_radio = LayeredImageProxy("n", Transform(xalign=0.5, yalign=0.0, crop=(0.2, 0.0, 0.8, 0.8), crop_relative=True, yoffset=60))
+
+# image s_radio = LayeredImageProxy("s", Transform(xalign=0.5, yalign=0.0, crop=(0.2, 0.0, 0.8, 0.8), crop_relative=True, yoffset=60))
+
 #endregion
 
 #region Леон-2
@@ -211,12 +221,14 @@ layeredimage l:
         attribute surprised default:
             "images/Sprites/Leon2/Leon2_half_closed_surprised.png"
 
-image l_side = LayeredImageProxy("l", Transform(xalign=0.5, yalign=0.0, crop=(0.2, 0.0, 0.8, 0.8), crop_relative=True, yoffset=60))
+image side l_side = LayeredImageProxy("l", Transform(xalign=0.5, yalign=0.0, crop=(0.2, 0.0, 0.8, 0.8), crop_relative=True, yoffset=60))
+image l_radio = LayeredImageProxy("l", Transform(xalign=0.5, yalign=0.0, crop=(0.2, 0.0, 0.8, 0.8), crop_relative=True, yoffset=60))
 #endregion
 
 #region Штаб
 
 image side b_side = LayeredImageProxy("b", Transform(crop=(0, 0, 800, 550), yoffset=85, zoom=1.0))
+image b_radio = LayeredImageProxy("b", Transform(crop=(0, 0, 800, 550), yoffset=85, zoom=1.0))
 
 layeredimage b:
 

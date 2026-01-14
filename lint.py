@@ -26,7 +26,7 @@ from typing import Optional
 
 # Fallback if RENPY env var not set
 # RENPY_PATH = "/path/to/renpy.sh"
-RENPY_PATH: Optional[str] = "C:/Users/r.kucherenko/Downloads/renpy-8.3.4-sdk/renpy.exe"
+RENPY_PATH: Optional[str] = r"D:\F\Portatable\renpy-8.4.1-sdk\renpy.exe"
 
 
 def main() -> int:
@@ -45,8 +45,12 @@ def main() -> int:
         [renpy_executable, project_dir, "lint"],
         stdout=subprocess.PIPE,
         stderr=subprocess.PIPE,
-        text=True,
+        encoding="utf-8",
     )
+
+    if sys.platform == "win32":
+        sys.stdout.reconfigure(encoding='utf-8')
+        sys.stderr.reconfigure(encoding='utf-8')
 
     print(process.stdout)
     if process.stderr:
