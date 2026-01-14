@@ -10,7 +10,6 @@ default PAUSE_MENU_SCREEN = "pause_menu"
 define splash_enabled = False
 
 default textbox_style = "gui/textbox.png"
-default came_from_pause_menu = False
 
 init python:    
     def set_character(mouse, current_character, textbox_style_image):

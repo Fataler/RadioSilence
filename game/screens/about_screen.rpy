@@ -5,9 +5,14 @@
 ## В этом экране нет ничего особенного, и он служит только примером того, каким
 ## можно сделать свой экран.
 
+image about_history = "gui/menu/about_history.jpg"
+
 screen about():
 
     tag menu
+
+    
+    add "about_history"
 
     ## Этот оператор включает игровое меню внутрь этого экрана. Дочерний vbox
     ## включён в порт просмотра внутри экрана игрового меню.
@@ -29,7 +34,7 @@ screen about():
 style about_label is gui_label
 style about_label_text is gui_label_text
 style about_text is text:
-    color gui.interface_text_color
+    color gui.monitor_text_color
     font gui.interface_text_font
 
 style about_label_text:

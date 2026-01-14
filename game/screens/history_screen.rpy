@@ -9,6 +9,8 @@ screen history():
     tag menu
     predict False
 
+    add "about_history"
+
     use game_menu(_("История"), scroll=("viewport"), yinitial=1.0, spacing=gui.history_spacing):
         style_prefix "history"
 
@@ -64,6 +66,7 @@ style history_text:
     xpos 70
     xsize 850
     size 40
+    color gui.monitor_text_color
 
 style history_name_text:
     min_width gui.history_name_width

@@ -19,10 +19,13 @@ init -2 python:
             uniform float u_radio_brightness;
             uniform float u_radio_contrast;
             uniform vec3  u_radio_tint;
+            uniform float u_radio_desat;
         """,
         fragment_functions=r"""
             float radio_hash(vec2 p) {
-                return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453123);
+                p = fract(p * vec2(123.34, 456.21));
+                p += dot(p, p + 45.32);
+                return fract(p.x * p.y);
             }
 
             float radio_noise(vec2 p) {
@@ -50,36 +53,29 @@ init -2 python:
             float inw = radio_mask(uv, u_radio_window, u_radio_corner, u_radio_edge_soft);
 
             vec2 w0 = u_radio_window.xy;
-            vec2 w1 = u_radio_window.zw;
-            vec2 wh = w1 - w0;
-            vec2 cuv = (uv - w0) / wh;
-            vec2 p = cuv * 2.0 - 1.0;
+            vec2 wh = u_radio_window.zw - w0;
+            vec2 p = ((uv - w0) / wh) * 2.0 - 1.0;
 
             float r2 = dot(p, p);
             p *= (1.0 + u_radio_curvature * r2);
 
             float j = (radio_noise(vec2(u_time * 20.0, gl_FragCoord.y * 0.1)) - 0.5) * u_radio_jitter;
-            p.x += j;
-            p.x += sin(gl_FragCoord.y * 0.02 + u_time * 5.0) * u_radio_warp;
+            p.x += j + sin(gl_FragCoord.y * 0.02 + u_time * 5.0) * u_radio_warp;
 
-            cuv = p * 0.5 + 0.5;
-            vec2 suv = w0 + cuv * wh;
-            suv = clamp(suv, w0, w1);
-
+            vec2 suv = clamp(w0 + (p * 0.5 + 0.5) * wh, w0, u_radio_window.zw);
             vec2 co = vec2(u_radio_chroma, 0.0);
-            float rr = texture2D(tex0, suv + co, u_lod_bias).r;
-            float gg = texture2D(tex0, suv,      u_lod_bias).g;
-            float bb = texture2D(tex0, suv - co, u_lod_bias).b;
-            float aa = texture2D(tex0, suv,      u_lod_bias).a;
 
-            vec3 rgb = vec3(rr, gg, bb);
+            float rr = texture2D(tex0, suv + co, u_lod_bias).r;
+            vec4 col = texture2D(tex0, suv, u_lod_bias);
+            float bb = texture2D(tex0, suv - co, u_lod_bias).b;
+
+            vec3 rgb = vec3(rr, col.g, bb);
 
             float gray = dot(rgb, vec3(0.299, 0.587, 0.114));
-            rgb = gray * u_radio_tint;
+            rgb = mix(rgb, vec3(gray), u_radio_desat) * u_radio_tint;
+            rgb = (rgb - 0.5) * u_radio_contrast + (0.5 + u_radio_brightness);
 
-            rgb = (rgb - 0.5) * u_radio_contrast + 0.5 + u_radio_brightness;
-
-            float sl = 0.5 + 0.5 * sin(gl_FragCoord.y * 1.5); 
+            float sl = 0.5 + 0.5 * sin(gl_FragCoord.y * 1.5);
             rgb *= 1.0 - u_radio_scan * (0.15 * sl);
 
             float n = radio_noise(gl_FragCoord.xy * 0.5 + vec2(u_time * 50.0, u_time * 17.0));
@@ -88,7 +84,7 @@ init -2 python:
             float vig = smoothstep(0.0, 1.0, 1.0 - r2 * 0.8);
             rgb *= mix(1.0 - u_radio_vignette, 1.0, vig);
 
-            gl_FragColor = vec4(rgb, aa) * inw;
+            gl_FragColor = vec4(rgb, col.a) * inw;
         """
     )
 
@@ -105,7 +101,8 @@ transform radio_crt_effect(
     vignette=0.8,
     brightness=0.05,
     contrast=1.2,
-    tint=(0.5, 1.0, 0.5)
+    tint=(0.5, 1.0, 0.5),
+    desat=1.0
 ):
     mesh True
     shader "fx.radio_crt"
@@ -122,5 +119,6 @@ transform radio_crt_effect(
     u_radio_brightness brightness
     u_radio_contrast contrast
     u_radio_tint tint
+    u_radio_desat desat
     pause 1.0/30
     repeat

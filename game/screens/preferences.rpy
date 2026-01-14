@@ -4,23 +4,247 @@
 ##
 ## https://www.renpy.org/doc/html/screen_special.html#preferences
 
-default mouse_xy = (0, 0)
+image nastroiki_bg = "gui/settings/nastroiki0.jpg"
+image muzyka_100 = "gui/settings/muzyka-100.png"
+image muzyka_80 = "gui/settings/muzyka-80.png"
+image muzyka_65 = "gui/settings/muzyka-65.png"
+image muzyka_50 = "gui/settings/muzyka-50.png"
+image muzyka_40 = "gui/settings/muzyka-40.png"
+image muzyka_25 = "gui/settings/muzyka-25.png"
+image muzyka_0 = "gui/settings/muzyka-0.png"
+image zvuki_100 = "gui/settings/zvuki-100.png"
+image zvuki_80 = "gui/settings/zvuki-80.png"
+image zvuki_65 = "gui/settings/zvuki-65.png"
+image zvuki_50 = "gui/settings/zvuki-50.png"
+image zvuki_40 = "gui/settings/zvuki-40.png"
+image zvuki_25 = "gui/settings/zvuki-25.png"
+image zvuki_0 = "gui/settings/zvuki-0.png"
+image skorost_teksta_100 = "gui/settings/skorost-teksta-100.png"
+image skorost_teksta_80 = "gui/settings/skorost-teksta-80.png"
+image skorost_teksta_65 = "gui/settings/skorost-teksta-65.png"
+image skorost_teksta_50 = "gui/settings/skorost-teksta-50.png"
+image skorost_teksta_40 = "gui/settings/skorost-teksta-40.png"
+image skorost_teksta_25 = "gui/settings/skorost-teksta-25.png"
+image skorost_teksta_0 = "gui/settings/skorost-teksta-0.png"
+image skorost_chteniya_100 = "gui/settings/skorost-achteniya-100.png"
+image skorost_chteniya_80 = "gui/settings/skorost-achteniya-80.png"
+image skorost_chteniya_65 = "gui/settings/skorost-achteniya-65.png"
+image skorost_chteniya_50 = "gui/settings/skorost-achteniya-50.png"
+image skorost_chteniya_40 = "gui/settings/skorost-achteniya-40.png"
+image skorost_chteniya_25 = "gui/settings/skorost-achteniya-25.png"
+image skorost_chteniya_0 = "gui/settings/skorost-achteniya-0.png"
+image kontrast_vykl = "gui/settings/kontrast-vykl.png"
+image kontrast_vkl = "gui/settings/kontrast-vkl.png"
+image shrift_kastomn = "gui/settings/shrift-kastomn.png"
+image shrift_orig = "gui/settings/shrift-orig.png"
+image bezzvuka_vykl = "gui/settings/bezzvuka-vykl.png"
+image bezzvuka_vkl = "gui/settings/bezzvuka-vkl.png"
+image propusk_teksta_ves_tekst = "gui/settings/propusk-teksta-ves-tekst.png"
+image propusk_teksta_prochit = "gui/settings/propusk-teksta-prochit.png"
+image rezhim_ekrana_polnyi = "gui/settings/rezhim-ekrana-polnyi.png"
+image rezhim_ekrana_okno = "gui/settings/rezhim-ekrana-okno.png"
+image knopka_nazad = "gui/settings/knopka-nazad.png"
 
-default persistent.current_font = "default"
+init -5 python:
+    music_values = [
+        {"value": 0.0, "image": "muzyka_0"},
+        {"value": 0.25, "image": "muzyka_25"},
+        {"value": 0.4, "image": "muzyka_40"},
+        {"value": 0.5, "image": "muzyka_50"},
+        {"value": 0.65, "image": "muzyka_65"},
+        {"value": 0.8, "image": "muzyka_80"},
+        {"value": 1.0, "image": "muzyka_100"},
+    ]
+
+    sound_values = [
+        {"value": 0.0, "image": "zvuki_0"},
+        {"value": 0.25, "image": "zvuki_25"},
+        {"value": 0.4, "image": "zvuki_40"},
+        {"value": 0.5, "image": "zvuki_50"},
+        {"value": 0.65, "image": "zvuki_65"},
+        {"value": 0.8, "image": "zvuki_80"},
+        {"value": 1.0, "image": "zvuki_100"},
+    ]
+
+    text_speed_values = [
+        {"value": 0.0, "image": "skorost_teksta_0"},
+        {"value": 0.25, "image": "skorost_teksta_25"},
+        {"value": 0.4, "image": "skorost_teksta_40"},
+        {"value": 0.5, "image": "skorost_teksta_50"},
+        {"value": 0.65, "image": "skorost_teksta_65"},
+        {"value": 0.8, "image": "skorost_teksta_80"},
+        {"value": 1.0, "image": "skorost_teksta_100"},
+    ]
+
+    auto_read_speed_values = [
+        {"value": 0.0, "image": "skorost_chteniya_0"},
+        {"value": 0.25, "image": "skorost_chteniya_25"},
+        {"value": 0.4, "image": "skorost_chteniya_40"},
+        {"value": 0.5, "image": "skorost_chteniya_50"},
+        {"value": 0.65, "image": "skorost_chteniya_65"},
+        {"value": 0.8, "image": "skorost_chteniya_80"},
+        {"value": 1.0, "image": "skorost_chteniya_100"},
+    ]
+
+    contrast_values = [
+        {"value": False, "image": "kontrast_vykl"},
+        {"value": True, "image": "kontrast_vkl"},
+    ]
+
+    font_values = [
+        {"value": "renpy_default", "image": "shrift_orig"},
+        {"value": "our_custom", "image": "shrift_kastomn"},
+    ]
+
+    mute_values = [
+        {"value": False, "image": "bezzvuka_vykl"},
+        {"value": True, "image": "bezzvuka_vkl"},
+    ]
+
+    skip_text_values = [
+        {"value": False, "image": "propusk_teksta_prochit"},
+        {"value": True, "image": "propusk_teksta_ves_tekst"},
+    ]
+
+    screen_mode_values = [
+        {"value": False, "image": "rezhim_ekrana_okno"},
+        {"value": True, "image": "rezhim_ekrana_polnyi"},
+    ]
+
+    def get_closest_pref_image(values_list, current_value):
+        if not values_list:
+            return None
+        min_diff = float('inf')
+        best_img = None
+        for d in values_list:
+            v = d["value"]
+            if isinstance(v, (int, float)) and isinstance(current_value, (int, float)):
+                diff = abs(v - current_value)
+            else:
+                diff = 0 if v == current_value else 1
+            if diff < min_diff:
+                min_diff = diff
+                best_img = d["image"]
+        return best_img
+
+    def get_pref_image(values_list, current_value):
+        if not values_list:
+            return None
+        for d in values_list:
+            if d["value"] == current_value:
+                return d["image"]
+        return None
+
+    def cycle_pref_value(values_list, getter, setter):
+        current_val = getter()
+        nearest_idx = 0
+        min_diff = float('inf')
+        for i, d in enumerate(values_list):
+            v = d["value"]
+            if isinstance(v, (int, float)) and isinstance(current_val, (int, float)):
+                diff = abs(v - current_val)
+            else:
+                diff = 0 if v == current_val else 1
+            if diff < min_diff:
+                min_diff = diff
+                nearest_idx = i
+        new_idx = (nearest_idx + 1) % len(values_list)
+        setter(values_list[new_idx]["value"])
+        renpy.restart_interaction()
+
+default persistent.current_font = "our_custom"
+default persistent.high_contrast = False
 
 init python:
-    if persistent.current_font is None:
-        persistent.current_font = "default"
+    def get_music_vol(): 
+        return _preferences.get_volume('music')
+
+    def get_sound_vol(): 
+        return _preferences.get_volume('sfx')
+
+    def get_auto_speed():
+        return 1.0 - (float(_preferences.afm_time) / 30.0)
+
+    def get_text_cps(): 
+        return _preferences.text_cps / 100.0
+
+    def get_mute(): 
+        return _preferences.get_mute('music')
+
+    def get_fullscreen(): 
+        return _preferences.fullscreen
+
+    def get_skip(): 
+        return _preferences.skip_unseen
+
+    def get_font(): 
+        return persistent.current_font
+    
+    def get_contrast(): 
+        return persistent.high_contrast
+
+    def set_music_vol(v): 
+        _preferences.set_volume('music', v)
+
+    def set_sound_vol(v):
+        _preferences.set_volume('sfx', v)
+
+    def set_auto_speed(v):
+        _preferences.afm_time = (1.0 - v) * 30.0
+        renpy.restart_interaction()
+
+    def set_text_cps(v): 
+        _preferences.text_cps = int(v * 100) if v > 0 else 0
+
+    def set_mute(v):
+        _preferences.set_mute('music', v)
+        _preferences.set_mute('sfx', v)
+        _preferences.set_mute('voice', v)
+
+    def set_fullscreen(v): 
+        _preferences.fullscreen = v
+
+    def set_skip(v): 
+        _preferences.skip_unseen = v
+
+    def set_font(v): 
+        persistent.current_font = v
+        if v == "our_custom":
+            _preferences.font_transform = None
+        elif v == "renpy_default":
+            _preferences.font_transform = "dejavusans"
+        
+        style.rebuild()
+        renpy.restart_interaction()
+
+        notification_text = ""
+        if v == "our_custom":
+            notification_text = "Установлен кастомный шрифт"
+        elif v == "renpy_default":
+            notification_text = "Установлен шрифт Ren'Py по умолчанию"
+
+        renpy.notify(notification_text)
+
+    def set_contrast(v): 
+        persistent.high_contrast = v
+        _preferences.high_contrast = v
+        style.rebuild()
+        renpy.restart_interaction()
+
+        notification_text = ""
+
+        if v:
+            notification_text = "Теперь текст будет отображаться с черной подложкой"
+        else:
+            notification_text = "Теперь текст будет отображаться без черной подложки"
+
+        renpy.notify(notification_text)
 
     def update_font_size():
-        # if (persistent.current_font == "default"):
-        #     gui.text_size = 10
-        #     style.navigation_button_text.size = 30
-        #     #style.navigation_vbox.area = (0, 300, 700, 100)
-        # else:
-        #     gui.text_size = 10
-        #     style.navigation_button_text.size = 10
-        #     #style.navigation_vbox.area = (0, 330, 700, 100)
+        if persistent.current_font == "our_custom" and _preferences.font_transform is None:
+            _preferences.font_transform = None
+        else:
+            _preferences.font_transform = "dejavusans"
         
         style.rebuild()
         renpy.restart_interaction()
@@ -28,311 +252,87 @@ init python:
     config.start_callbacks.append(update_font_size)
 
     def reset_preferences():
-        _preferences.set_volume('music', 0.1)
-        _preferences.set_volume('sfx', 0.1)
-        _preferences.set_volume('voice', config.default_voice_volume if hasattr(config, 'default_voice_volume') else 1.0)
-
-        _preferences.text_cps = config.default_text_cps if hasattr(config, 'default_text_cps') else 40
-        _preferences.afm_time = config.default_afm_time if hasattr(config, 'default_afm_time') else 15
-        _preferences.font_transform = None
-        persistent.current_font = "default"
-        _preferences.font_size = 1.0
-
-        if renpy.variant("pc"):
-            _preferences.fullscreen = config.default_fullscreen if hasattr(config, 'default_fullscreen') else False
-
+        set_music_vol(0.5)
+        set_sound_vol(0.5)
+        set_text_cps(0.4)
+        set_auto_speed(0.5)
+        set_mute(False)
+        set_fullscreen(False)
+        set_skip(False)
+        set_font("default")
+        set_contrast(False)
         renpy.style.rebuild()
         renpy.restart_interaction()
 
 screen preferences():
-
     tag menu
 
-    use game_menu(_("Настройки"), scroll="viewport"):
-        style_prefix "pref"
+    add "nastroiki_bg"
 
-        vbox:
-            xfill True
-            xalign 0.5
-            spacing 20
+    # Current states visuals
+    $ music_img = get_closest_pref_image(music_values, get_music_vol())
+    if music_img:
+        add music_img
+    
+    $ sound_img = get_closest_pref_image(sound_values, get_sound_vol())
+    if sound_img:
+        add sound_img
 
-            vbox:
-                xalign 0.5
-                spacing 10
-                xsize 900
-                label _("{u}Режим экрана{/u}"):
-                    xalign 0.5
+    $ auto_img = get_closest_pref_image(auto_read_speed_values, get_auto_speed())
+    if auto_img:
+        add auto_img
 
-                hbox:
-                    xalign 0.5
-                    spacing 30
-                    if renpy.variant("pc") or renpy.variant("web"):
-                        style_prefix "radio"
-                        textbutton _("Оконный") action Preference("display", "window")
-                        textbutton _("Полный") action Preference("display", "fullscreen")
+    $ text_img = get_closest_pref_image(text_speed_values, get_text_cps())
+    if text_img:
+        add text_img
 
-            vbox:
-                xalign 0.5
-                spacing 20
-                
-                label _("{u}Текст{/u}"):
-                    xalign 0.5
-                
-                vpgrid:
-                    cols 2
-                    rows 2
-                    xspacing 250
-                    xsize 900
-                        
-                    text _("Скорость\nтекста"):
-                        style "pref_text_label"
-                        
-                    bar value Preference("text speed"):
-                        style "pref_bar"
-                        
-                    text _("Скорость\nавточтения"):
-                        style "pref_text_label"
-                        
-                        
-                    bar value Preference("auto-forward time"):
-                        style "pref_bar"
+    $ mute_img = get_pref_image(mute_values, get_mute())
+    if mute_img:
+        add mute_img
 
-                vbox:
-                    xalign 0.5
-                    spacing 15
-                    
-                    label _("{u}Пропускать{/u}"):
-                        xalign 0.5
+    $ skip_img = get_pref_image(skip_text_values, get_skip())
+    if skip_img:
+        add skip_img
 
-                    hbox:
-                        xalign 0.5
-                        spacing 30
-                        style_prefix "check"
-                        
-                        textbutton _("Прочитанный текст"):
-                            action Preference("skip", "seen")
-                            
-                        textbutton _("Весь текст"):
-                            action Preference("skip", "all")
+    $ screen_img = get_pref_image(screen_mode_values, get_fullscreen())
+    if screen_img:
+        add screen_img
 
-            vbox:
-                xalign 0.5
-                spacing 20
-                
-                label _("{u}Звук{/u}"):
-                    xalign 0.5
-                
-                # Слайдеры громкости
-                vpgrid:
-                    cols 2
-                    rows 2
-                    xspacing 250
-                    yspacing 20
-                    xsize 900
-                    
-                    if config.has_music:
-                        text _("Громкость музыки"):
-                            style "pref_text_label"
-                            
-                        bar value Preference("music volume"):
-                            style "pref_bar"
-                            
-                        if config.sample_sound:
-                            textbutton _("Тест"):
-                                action Play("sound", config.sample_sound)
-                                xsize 100
-                                    
-                    if config.has_sound:
-                            text _("Громкость звуков"):
-                                style "pref_text_label"
-                                
-                            bar value Preference("sound volume"):
-                                style "pref_bar"
-                                
-                            if config.sample_sound:
-                                textbutton _("Тест"):
-                                    action Play("sound", config.sample_sound)
-                                    xsize 100
-                
-                # Кнопка "Без звука"
-                if config.has_music or config.has_sound or config.has_voice:
-                    vbox:
-                        xalign 0.5
-                        
-                        style_prefix "check"
-                        textbutton _("Без звука"):
-                            action Preference("all mute", "toggle")
-                            xalign 0.5
+    $ font_img = get_pref_image(font_values, get_font())
+    if font_img:
+        add font_img
 
-            vbox:
-                xalign 0.5
-                spacing 20
-                
-                label _("{u}Специальные возможности{/u}"):
-                    xalign 0.5
-                
-                # Настройки шрифта и контрастности в отдельных строках
-                vbox:
-                    xalign 0.5
-                    spacing 25
-                    style_prefix "radio"
-                    
-                    # Секция шрифта
-                    vbox:
-                        xalign 0.5
-                        spacing 15
-                        
-                        label _("{u}Шрифт{/u}"):
-                            xalign 0.5
+    $ contrast_img = get_pref_image(contrast_values, get_contrast())
+    if contrast_img:
+        add contrast_img
 
-                        hbox:
-                            xalign 0.5
-                            spacing 30
-                            
-                            textbutton _("Оригинальный"):
-                                action [
-                                    Preference("font transform", None), 
-                                    SetField(persistent, "current_font", "default"),
-                                    Function(update_font_size)
-                                ]
-                                style_suffix "radio_button"
+    style_prefix "pref_hotspot"
+    
+    # Display Mode
+    button area (112, 590, 268, 350) action Function(cycle_pref_value, screen_mode_values, get_fullscreen, set_fullscreen)
 
-                            textbutton _("DejaVu Sans"):
-                                action [
-                                    SetField(persistent, "current_font", "dejavusans"),
-                                    Function(update_font_size),
-                                    Preference("font transform", "dejavusans")
-                                ]
-                                style_suffix "radio_button"
-                                tooltip "Шрифт, используемый в \nRen'Py по умолчанию"
-                    
-                    # Секция контрастности
-                    vbox:
-                        xalign 0.5
-                        spacing 15
-                        
-                        label _("{u}Высококонтрастный текст{/u}"):
-                            xalign 0.5
+    # Skip Text
+    button area (403, 600, 333, 350) action Function(cycle_pref_value, skip_text_values, get_skip, set_skip)
 
-                        hbox:
-                            xalign 0.5
-                            spacing 30
-                            
-                            textbutton _("Enable"):
-                                action Preference("high contrast text", "enable")
-                                style_suffix "radio_button"
+    # Mute
+    button area (755, 600, 251, 350) action Function(cycle_pref_value, mute_values, get_mute, set_mute)
 
-                            textbutton _("Disable"):
-                                action Preference("high contrast text", "disable")
-                                style_suffix "radio_button"
+    # Font
+    button area (1035, 600, 289, 350) action Function(cycle_pref_value, font_values, get_font, set_font)
 
-    fixed:
-        textbutton _("Сброс"):
-            style "reset_button"
-            action Function(reset_preferences)
-            tooltip "Сбросить настройки\nна значения по умолчанию"
+    # Contrast
+    button area (1364, 600, 259, 350) action Function(cycle_pref_value, contrast_values, get_contrast, set_contrast)
 
-    $ tooltip = GetTooltip()
+    # Blocks for speeds and volumes
+    button area (104, 296, 314, 280) action Function(cycle_pref_value, auto_read_speed_values, get_auto_speed, set_auto_speed)
+    button area (426, 286, 349, 300) action Function(cycle_pref_value, text_speed_values, get_text_cps, set_text_cps)
+    button area (782, 271, 376, 326) action Function(cycle_pref_value, sound_values, get_sound_vol, set_sound_vol)
+    button area (1185, 237, 451, 350) action Function(cycle_pref_value, music_values, get_music_vol, set_music_vol)
 
-    if tooltip:
-        nearrect:
-            focus "tooltip"
-            prefer_top True
-            has frame padding 15,15,15,15
-            xalign 0.3
-            text tooltip style "tooltip"
-
-transform move_appear(from_x=0, from_y=0, to_x=1588,to_y=588):
-    xpos 1368
-    ypos 688
-    ease 0.5 alpha 1 xpos to_x ypos to_y
-
-init -2 python:
-    def get_mouse():
-        global mouse_xy
-        mouse_xy = renpy.get_mouse_pos()
-
-style pref_label is gui_label
-style pref_label_text is gui_label_text
-
-style radio_label is pref_label
-style radio_label_text is pref_label_text
-style label_bar_text is pref_label_text
-style radio_button is gui_button
-
-style radio_button_text is gui_button_text:
-    text_align 0.5
-    yalign 0.5
-style radio_vbox is pref_vbox
-
-style check_label is pref_label
-style check_label_text is pref_label_text
-style check_button is gui_button:
-    yalign 0.5
-style check_button_text is gui_button_text:
-    text_align 0.5
-    yalign 0.5
-style check_vbox is pref_vbox
-
-style slider_label is pref_label
-style slider_label_text is pref_label_text
-style slider_slider is gui_slider
-style slider_button is gui_button
-style slider_button_text is gui_button_text
-style slider_pref_vbox is pref_vbox
-
-style mute_all_button is check_button
-style mute_all_button_text is check_button_text
-
-style pref_label:
-    top_margin gui.pref_spacing
-    bottom_margin 10
-
-style pref_label_text:
-    yalign 1.0
-    font gui.interface_text_font
-    color gui.interface_text_color
-    text_align 0.5
-    size 42
-
-style label_bar_text:
-    color gui.interface_text_color
-    font gui.interface_text_font
-    text_align 0.5
-    yalign 0.5
-
-style settings_text is label_bar_text:
-    size 30
-    bold False
-
-style pref_vbox:
-    xsize 900
-
-style pref_section_vbox:
-    spacing 20
-    xalign 0.5
-
-style pref_control_hbox:
-    spacing 40
-    xalign 0.5
-    xsize 800
-
-style pref_bar is gui_bar:
-    xsize 380
-    yalign 0.5
-
-style pref_text_label is settings_text:
-    xsize 280
-    text_align 0.0
-    yalign 0.5
-
-style tooltip:
-    size 35
-    font gui.interface_text_font
-    color "#f4e5d0"
-
-style reset_button:
-    anchor (1.0, 0.5)
-    xpos gui.navigation_xpos
-    yalign 0.0
-    yoffset 45
+    # Back
+    imagebutton:
+        idle "knopka_nazad"
+        hover At("knopka_nazad", set_bright_hovered(0.1))
+        action Return()
+        align (0.95, 0.95)
+        focus_mask True

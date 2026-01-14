@@ -6,6 +6,7 @@ label day_1:
     $ renpy.force_autosave()
     pause 1.0
     scene bg_1_1
+    show screen fog_layer
     with Dissolve(1.5)
     pause 1.0
     #play music music_ fadein 1.0 loop

@@ -15,16 +15,35 @@ transform menu_move:
 screen game_menu(title, scroll=None, yinitial=0.0, spacing=0):
     
     style_prefix "game_menu"
-    add "bg_black"
 
-    frame at menu_items_appear:
+    frame:
         top_margin 15
         xsize 1390
         style "game_menu_outer_frame"
 
         hbox:
 
-            frame:
+            frame at vhs_crt_frame(
+                        window=(0.00, 0.00, 1.00, 1.0),
+                        corner=0.018,
+                        edge_soft=0.003,
+
+                        frame_color=(0.0, 0.0, 0.0, 1.0),
+                        frame_noise=0.01,
+
+                        curvature=0.025,
+                        chroma=0.0005,
+                        jitter=0.0008,
+                        warp=0.0002,
+                        scan=0.85,
+                        noise=0.50,
+                        vignette=0.45,
+                        roll=0.45,
+                        roll_speed=0.30,
+
+                        brightness=0.02,
+                        contrast=1.05
+                        ):
                 style "game_menu_content_frame"
 
                 if scroll == "viewport":
@@ -61,31 +80,25 @@ screen game_menu(title, scroll=None, yinitial=0.0, spacing=0):
                         transclude
 
                 else:
-
                     transclude
 
-    #use navigation
-
-    textbutton _("Назад"):
-        style "return_button"
-        action (
-            ShowMenu(MAIN_MENU_SCREEN, from_game_menu=True)
-            if main_menu
-            else [
-                Return() if not came_from_pause_menu else [SetVariable("came_from_pause_menu", False), ShowMenu(PAUSE_MENU_SCREEN, from_game_menu=True)]
-            ]
-        )
+    imagebutton:
+        idle "knopka_nazad"
+        hover At("knopka_nazad", set_bright_hovered(0.1))
+        action (ShowMenu(MAIN_MENU_SCREEN, from_game_menu=True) if main_menu else Return())
+        align (0.95, 0.95)
+        focus_mask True
 
     if main_menu:
         key "game_menu" action ShowMenu(MAIN_MENU_SCREEN, from_game_menu=True)
     else:
-        key "game_menu" action (Return() if not came_from_pause_menu else [SetVariable("came_from_pause_menu", False), ShowMenu(PAUSE_MENU_SCREEN, from_game_menu=True)])
+        key "game_menu" action Return()
 
 
 style game_menu_outer_frame is empty:
     #background "#90909085"
-    xpos 0.37
-    yoffset -10
+    #xpos 0.15
+    yoffset 0
     
 style game_menu_navigation_frame is empty
 style game_menu_content_frame is empty
@@ -101,11 +114,11 @@ style game_menu_label_text is gui_label_text
 
 style game_menu_content_frame:
     #background "#90909085"
-    left_margin 220
-    #right_margin 50
-    top_margin 120
-    bottom_margin 80
-    xsize 1200
+    margin (10, 10, 10, 0)
+    xoffset 418
+    yoffset 80
+    xsize 1100
+    ysize 830
 
 style game_menu_vscrollbar:
     unscrollable gui.unscrollable

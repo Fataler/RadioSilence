@@ -34,24 +34,27 @@ define config.default_fullscreen = False if config.developer else True
 
 define config.version = "1.0"
 
-define config.mouse = { 'default' : [ ("gui/Cursor.png", 0, 0)], 'inspect' : [ ("gui/CursorR.png", 0, 0)]}
+define config.mouse = { 'default' : [ ("gui/Cursor.png", 0, 0)], 'button' : [ ("gui/CursorR.png", 0, 0)]}
 
 
 ## Текст, помещённый в экран "Об игре". Поместите текст между тройными скобками.
 ## Для отделения абзацев оставляйте между ними пустую строку.
 
 define gui.about = _p("""
-Визуальная новелла разработана в рамках игрового джема {a=%(jam)s}Джем ста цветов 2025{/a} 
+Визуальная новелла разработана в рамках игрового джема {a=%(jam)s}Капелла Jam 3 2026{/a} 
 
-Дата релиза: 01.09.2025
+Дата релиза: 17.01.2026
 
 Использованные сторонние ресурсы лежат в файле {i}external_resources.txt{/i}.
-Музыка сделана с помощью нейросети {a=https://suno.com}https://suno.com.{/a}
 
 Авторы: \n
-{w=0}     - Featharine ({a=https://vk.com/sweet_sour_figures}ВК{/a}) - сценарий, концепт, персонажи, CG, UI, музыка\n
-{w=0}     - Fataler ({a=https://steamcommunity.com/id/fataler}Steam{/a}) - код, мини-игры, редактура, анимации\n
-{w=0}     - Kapushishin ({a=https://steamcommunity.com/id/Kapushishin}Steam{/a}) - фоны, сборка новеллы, сбор референсов, режиссура, звуки\n
+{w=0}     - ktotolab9 - \n
+{w=0}     - Featharine ({a=https://vk.com/sweet_sour_figures}ВК{/a}) - \n
+{w=0}     - Yele_nir - \n
+{w=0}     - Blackfox998 - \n
+{w=0}     - ArsenVinger2000 - \n
+{w=0}     - Fataler ({a=https://steamcommunity.com/id/fataler}Steam{/a}) - \n
+{w=0}     - Kapushishin ({a=https://steamcommunity.com/id/Kapushishin}Steam{/a}) - \n
 """% {"jam": URL_JAM})
 
 
@@ -134,6 +137,12 @@ define config.window = "auto"
 
 define config.window_show_transition = Dissolve(.2)
 define config.window_hide_transition = Dissolve(.2)
+
+init python:
+    # Set "A" for auto-forward mode
+    for k in ['a', 'A']:
+        if k not in config.keymap['toggle_afm']:
+            config.keymap['toggle_afm'].append(k)
 
 
 ## Стандартные настройки #######################################################

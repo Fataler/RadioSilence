@@ -28,6 +28,7 @@ screen file_slots(title):
 
     default page_name_value = FilePageNameInputValue(pattern=_("Сохранения"), auto=_("Автосохранения"), quick=_("Быстрые сохранения"), default=False)
 
+    add "about_history"
     use game_menu(title):
 
         fixed:
@@ -123,6 +124,7 @@ style slot_time_text is slot_button_text:
     size 30
     #color gui.text_color
     #hover_color "#FFF"
+    color gui.monitor_text_color
 
 style slot_name_text is slot_button_text
 

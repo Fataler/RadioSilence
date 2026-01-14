@@ -2,15 +2,7 @@
 # Безопасная регистрация + совместимость. Помещайте в `game/scripts/essential/` и
 # используйте:  show bg your_image at WaveShader(amp=12, period=20, speed=1.0)
 
-init -999 python:
-    # Константы wrap-режимов — аккуратно импортируем (не ломаемся, если модуля нет)
-    try:
-        from renpy.uguu import GL_CLAMP_TO_EDGE, GL_MIRRORED_REPEAT, GL_REPEAT
-    except Exception:
-        GL_CLAMP_TO_EDGE = None
-        GL_MIRRORED_REPEAT = None
-        GL_REPEAT = None
-
+init -2 python:
     def _register_wave_shader_guarded():
         if hasattr(renpy, "register_shader"):
             renpy.register_shader(
@@ -34,37 +26,37 @@ init -999 python:
                 v_coords = a_tex_coord;
                 """,
                 fragment_300="""
-                vec2 damp = vec2(1.0, 1.0);
+                vec2 damp = vec2(1.0);
 
-                if (u_damp.x != 1.0) {
-                    damp.x = pow(max(u_damp.x, 0.00001), v_coords.y * u_model_size.y);
+                if (u_damp.x < 0.999 || u_damp.x > 1.001) {
+                    damp.x = exp2(log2(max(u_damp.x, 0.0001)) * v_coords.y * u_model_size.y);
                 }
-                if (u_damp.y != 1.0) {
-                    damp.y = pow(max(u_damp.y, 0.00001), v_coords.x * u_model_size.x);
+                if (u_damp.y < 0.999 || u_damp.y > 1.001) {
+                    damp.y = exp2(log2(max(u_damp.y, 0.0001)) * v_coords.x * u_model_size.x);
                 }
 
                 vec2 wave_offset = vec2(0.0);
+                
+                float angle_x = u_wave_period.x * (v_coords.y + u_shader_time * u_wave_speed.x);
+                float angle_y = u_wave_period.y * (v_coords.x + u_shader_time * u_wave_speed.y);
+
                 if (u_direction < 2.0) {
-                    wave_offset.x = sin(u_wave_period.x * (v_coords.y + u_shader_time * u_wave_speed.x)) * u_wave_amp.x * 0.01 * damp.x;
+                    wave_offset.x = sin(angle_x) * u_wave_amp.x * 0.01 * damp.x;
                 }
                 if (u_direction < 1.0 || u_direction >= 2.0) {
-                    wave_offset.y = sin(u_wave_period.y * (v_coords.x + u_shader_time * u_wave_speed.y)) * u_wave_amp.y * 0.01 * damp.y;
+                    wave_offset.y = sin(angle_y) * u_wave_amp.y * 0.01 * damp.y;
                 }
 
                 vec2 pos0 = v_coords + wave_offset;
                 vec4 col0 = texture2D(tex0, pos0);
 
-                if (u_double_use <= 0.0) {
-                    gl_FragColor = col0;
-                } else {
-                    vec2 pos1 = v_coords - wave_offset; // opposite sample for subtle ghost
-                    vec4 col1 = texture2D(tex0, pos1);
-                    gl_FragColor = mix(col0, col1, clamp(u_double_mix, 0.0, 1.0));
-                }
+                vec2 pos1 = v_coords - wave_offset;
+                vec4 col1 = texture2D(tex0, pos1);
+                
+                gl_FragColor = mix(col0, mix(col0, col1, clamp(u_double_mix, 0.0, 1.0)), step(0.01, u_double_use));
                 """
             )
         else:
-            # Если затенение модуля renpy — не падаем, просто логируем
             try:
                 renpy.log("wave_shader_guarded: register_shader недоступен — шейдер не зарегистрирован")
             except Exception:
@@ -148,11 +140,9 @@ init -999 python:
                 self.first_time = False
             return _advance_shader_time(trans, st, at)
 
-# Удобная ATL-обёртка, чтобы можно было писать `at wave_shader(…)`
 transform wave_shader(amp=12.0, period=20.0, speed=1.0, direction="both", damp=1.0, double=None, double_mix=0.5, repeat=None):
     function WaveShader(amp=amp, period=period, speed=speed, direction=direction, damp=damp, double=double, double_mix=double_mix, repeat=repeat)
 
-# Пример проверки
 label test_wave_shader:
     scene black
     $ img = "images/test.png"

@@ -1,12 +1,14 @@
 ## Экран главного меню
-transform menu_move_back(from_game_menu=False):
-    xoffset (-390 if from_game_menu else 0)
-    alpha (0.0 if not from_game_menu else 1.0)
-    pause 0.3
-    parallel:
-        ease 0.5 xoffset 0
-    parallel:
-        ease 0.5 alpha 1.0
+image menu_ogurchik = "gui/menu/ogurchik.png"
+image menu_setka_image = At("gui/menu/setka.png", Transform(size=(1920, 1080), alpha=0.7))
+image menu_bg = "gui/menu/menu_bg.png"
+image menu_logo = "gui/menu/Logo.png"
+image menu_hover = "gui/menu/menu_hover.png"
+image menu_normal = "gui/menu/menu_normal.png"
+
+image menu_setka:
+    "menu_setka_image"
+    radio_scan_effect("menu_ogurchik", brightness=2.00, width=0.08, speed=0.3)
 
 screen main_menu(from_game_menu=False):
     tag menu
@@ -14,41 +16,22 @@ screen main_menu(from_game_menu=False):
     $ elements_apperar_time = 2.0 if not from_game_menu else 1.0
 
     add "bg_black"
+    add "menu_bg"
 
+    imagemap:
+        idle "menu_normal"
+        hover "menu_hover"
 
-    textbutton "Игра создана в рамках Капелла Jam 3 2026":
-        at jam_logo_transform, delay_appear(1, elements_apperar_time)
-        pos (0.5, 0.87)
-        text_size 40
-        text_align 0.5
-        action OpenURL(URL_JAM)
-        hover_mouse "inspect"
+        hotspot (473, 261, 232, 247) action Start()
+        hotspot (715, 386, 300, 365) action ShowMenu("about")
+        hotspot (1047, 463, 461, 327) action ShowMenu("preferences")
+        hotspot (285, 521, 288, 162) action ShowMenu("load")
+        hotspot (112, 707, 408, 373) action Quit(confirm=not main_menu)
 
     style_prefix "main_menu"
-
-    vbox at delay_appear(1, elements_apperar_time):
-        spacing 10
-        align (0.92, 0.75)
     
-        textbutton _("Начать") action Start():
-            text_size 90
-
-        textbutton _("Загрузить") action ShowMenu("load"):
-            text_size 55
-            
-        
-        textbutton _("Достижения") action ShowMenu("achievements_screen"):
-            text_size 55
-
-        textbutton _("Настройки") action ShowMenu("preferences"):
-            text_size 55
-
-        textbutton _("Об игре") action [ShowMenu("about")]:
-            text_size 55
-
-        if renpy.variant("pc"):
-            textbutton _("Выход") action Quit(confirm=not main_menu):
-                text_size 50
+    add "menu_setka"
+    add "menu_logo"
 
     if show_main_menu_fade:
         add "bg_black" at menu_alpha_out(1)

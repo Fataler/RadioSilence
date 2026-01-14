@@ -27,18 +27,18 @@ init -2 python:
         """,
         fragment_functions=r"""
             float vhs_hash(vec2 p) {
-                return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453123);
+                p = fract(p * vec2(123.34, 456.21));
+                p += dot(p, p + 45.32);
+                return fract(p.x * p.y);
             }
 
             float vhs_noise(vec2 p) {
                 vec2 i = floor(p);
                 vec2 f = fract(p);
-
                 float a = vhs_hash(i);
                 float b = vhs_hash(i + vec2(1.0, 0.0));
                 float c = vhs_hash(i + vec2(0.0, 1.0));
                 float d = vhs_hash(i + vec2(1.0, 1.0));
-
                 vec2 u = f * f * (3.0 - 2.0 * f);
                 return mix(a, b, u.x) + (c - a) * u.y * (1.0 - u.x) + (d - b) * u.x * u.y;
             }
@@ -46,27 +46,21 @@ init -2 python:
             float vhs_round_rect_mask(vec2 uv, vec4 rect, float radius, float soft) {
                 vec2 center = (rect.xy + rect.zw) * 0.5;
                 vec2 halfsz = (rect.zw - rect.xy) * 0.5;
-
                 vec2 p = uv - center;
-
                 vec2 q = abs(p) - (halfsz - vec2(radius));
                 float dist = length(max(q, 0.0)) + min(max(q.x, q.y), 0.0) - radius;
-
                 return 1.0 - smoothstep(0.0, soft, dist);
             }
         """,
         fragment_450=r"""
             vec2 uv = v_tex_coord.xy;
-
             float inw = vhs_round_rect_mask(uv, u_vhs_window, u_vhs_corner, u_vhs_edge_soft);
 
             float fn = vhs_noise(uv * 420.0 + vec2(u_time * 0.3, u_time * 0.17));
             vec3 frame = u_vhs_frame_color.rgb + (fn - 0.5) * u_vhs_frame_noise;
 
             vec2 w0 = u_vhs_window.xy;
-            vec2 w1 = u_vhs_window.zw;
-            vec2 wh = w1 - w0;
-
+            vec2 wh = u_vhs_window.zw - w0;
             vec2 cuv = (uv - w0) / wh;
             vec2 p = cuv * 2.0 - 1.0;
 
@@ -74,43 +68,32 @@ init -2 python:
             p *= (1.0 + u_vhs_curvature * r2);
 
             float j = (vhs_noise(vec2(u_time * 28.0, gl_FragCoord.y * 0.05)) - 0.5) * u_vhs_jitter;
-            p.x += j;
+            p.x += j + sin(gl_FragCoord.y * 0.015 + u_time * 6.0) * u_vhs_warp;
 
-            p.x += sin(gl_FragCoord.y * 0.015 + u_time * 6.0) * u_vhs_warp;
+            vec2 suv = clamp(w0 + (p * 0.5 + 0.5) * wh, w0, u_vhs_window.zw);
 
-            cuv = p * 0.5 + 0.5;
-            vec2 suv = w0 + cuv * wh;
+            float rr = texture2D(tex0, suv + vec2(u_vhs_chroma, 0.0), u_lod_bias).r;
+            vec4 col = texture2D(tex0, suv, u_lod_bias);
+            float bb = texture2D(tex0, suv - vec2(u_vhs_chroma, 0.0), u_lod_bias).b;
 
-            suv = clamp(suv, w0, w1);
+            vec3 rgb = vec3(rr, col.g, bb);
+            rgb = (rgb - 0.5) * u_vhs_contrast + (0.5 + u_vhs_brightness);
 
-            vec2 co = vec2(u_vhs_chroma, 0.0);
-
-            float rr = texture2D(tex0, suv + co, u_lod_bias).r;
-            float gg = texture2D(tex0, suv,      u_lod_bias).g;
-            float bb = texture2D(tex0, suv - co, u_lod_bias).b;
-            float aa = texture2D(tex0, suv,      u_lod_bias).a;
-
-            vec3 rgb = vec3(rr, gg, bb);
-
-            rgb = (rgb - 0.5) * u_vhs_contrast + 0.5 + u_vhs_brightness;
-
-            float sl = 0.5 + 0.5 * sin(gl_FragCoord.y * 3.1415927); // период ~2px
-            float gr = 0.5 + 0.5 * sin(gl_FragCoord.x * 3.1415927); // период ~2px
+            float sl = 0.5 + 0.5 * sin(gl_FragCoord.y * 3.1415927);
+            float gr = 0.5 + 0.5 * sin(gl_FragCoord.x * 3.1415927);
             rgb *= 1.0 - u_vhs_scan * (0.10 * sl + 0.03 * gr);
 
             float n = vhs_noise(gl_FragCoord.xy * 0.25 + vec2(u_time * 60.0, u_time * 13.0));
             rgb += (n - 0.5) * (u_vhs_noise * 0.08);
 
             float t = fract(u_time * u_vhs_roll_speed + cuv.y);
-            float band = (smoothstep(0.48, 0.50, t) - smoothstep(0.50, 0.52, t));
+            float band = smoothstep(0.48, 0.50, t) - smoothstep(0.50, 0.52, t);
             rgb += band * (u_vhs_roll * 0.15);
 
-            float vig = smoothstep(0.0, 1.0, 1.0 - r2); // 1 в центре, 0 к краям
+            float vig = smoothstep(0.0, 1.0, 1.0 - r2);
             rgb *= mix(1.0 - u_vhs_vignette, 1.0, vig);
 
-            vec3 out_rgb = mix(frame, rgb, inw);
-
-            gl_FragColor = vec4(out_rgb, 1.0);
+            gl_FragColor = vec4(mix(frame, rgb, inw), col.a);
         """
     )
 
