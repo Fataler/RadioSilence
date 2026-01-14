@@ -1,7 +1,7 @@
 image bg_radio = "images/Radio/Racia.png"
 image noise = "images/Radio/Noise.png"
 
-screen radio_screen(char_img, xposNoise=1234, xoffsetRadio=0):
+screen radio_screen(char_img, xposNoise=1234, xoffsetRadio=0, noise = 1.0, jitter = 0.01, z = 1.03):
     tag radio_ui
     
     fixed:
@@ -14,13 +14,14 @@ screen radio_screen(char_img, xposNoise=1234, xoffsetRadio=0):
             python:
                 tint_color = (0.5, 1.0, 0.5)
                 
-                noise_lvl = 1.0
-                jitter_lvl = 0.01            
+                noise_lvl = noise
+                jitter_lvl = jitter
             
             add "noise":
+                align (0.5, 0.5)
                 yoffset -11
                 xoffset -10
-                zoom 1.03
+                zoom z
                 at radio_crt_effect(
                     tint=tint_color, 
                     noise=noise_lvl, 

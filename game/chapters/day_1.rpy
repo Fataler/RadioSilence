@@ -747,7 +747,7 @@ label day_1:
     "Если человеческое ухо способно выделить голос человека среди шума, то это не может не отразить приёмник.{w} Будет разница в десятки дециБел."
     "Я ещё медленно покрутила ручку, перестраивая полосу, но ничего не услышала."
     "Оно и немудрено – даже наш отряд не переговаривается через рации каждую секунду."
-    "Тем более когда мы вместе...{w=0.1} А?"
+    "Тем более когда мы вместе...{w} А?"
     
     hide screen radio_screen
     scene bg_hrushevki at Transform(zoom=1.2), slide_y(dy=100)
@@ -776,7 +776,7 @@ label day_1:
     "Голоса не доходят до меня, потому что затухают в окружающей среде.{w} Но выполнить избирательность по направлению и усилить нужные частоты..."
     
     #помеховое
-    show screen radio_screen("l_radio thinking idle") with dissolve
+    show screen radio_screen("l_radio thinking idle", noise = 10.0, jitter = 0.5, z = 1.2) with dissolve
 
     L "...о...{w} ки...{w} т-т..."
 
@@ -785,7 +785,7 @@ label day_1:
     "Есть!{w=0.1} Я что-то поймала на западе."
     "Вожу антенной, пытаясь определить точный угол, где сигнал приходит сильнее всего, а затем иду туда."
 
-    show screen radio_screen("r_radio seriously idle") with dissolve
+    show screen radio_screen("r_radio seriously idle", noise = 10.0, jitter = 0.5, z = 1.2) with dissolve
 
     R "Ж...{w} нг...{w} пО!.."
 
@@ -793,7 +793,7 @@ label day_1:
 
     "Я всё громче слышу их!"
 
-    show screen radio_screen("n_radio base idle") with dissolve
+    show screen radio_screen("n_radio base idle", noise = 10.0, jitter = 0.5, z = 1.2) with dissolve
 
     N "ЭхО...{w} УшлА ОнА...{w} мОжЕт?.."
 
@@ -802,7 +802,7 @@ label day_1:
     "Да, становится всё чётче и чётче. Они точно где-то рядом!"
     #громкий шуршащий смех
 
-    show screen radio_screen("s_radio radio idle") with dissolve
+    show screen radio_screen("s_radio radio idle", noise = 10.0, jitter = 0.5, z = 1.2) with dissolve
 
     S "Ха...{w=0.1} ХА{w=0.1}ХА{w=0.1}ХА{w=0.1}ХА{w=0.1}ХА{w=0.1}ХА!!!"
 
@@ -812,7 +812,7 @@ label day_1:
     "Что-то не так."
     "Почему я их слышу...{w} только через наушники?"
 
-    show screen radio_screen("n_radio base idle") with dissolve
+    show screen radio_screen("n_radio base idle", noise = 10.0, jitter = 0.5, z = 1.2) with dissolve
 
     N "ЭХО...{w} ТЫ ЗДЕСЬ?{w} ...ИДИ К НАМ..."
     N "К НАМ..!{w} К НАМ..!{w} К НАМ..?"
@@ -825,11 +825,11 @@ label day_1:
     "Несмотря на очевидную близость к отряду, я не осмеливаюсь закричать, что я здесь."
     "Почему?{w=0.1} Что не так?"
 
-    show screen radio_screen("l_radio thinking idle") with dissolve
+    show screen radio_screen("l_radio thinking idle", noise = 10.0, jitter = 0.5, z = 1.2) with dissolve
 
     L "...мама...{w} я боюсь...{w} помогите мне..."
 
-    show screen radio_screen("l_radio thinking idle") with dissolve
+    show screen radio_screen("l_radio thinking idle", noise = 10.0, jitter = 0.5, z = 1.2) with dissolve
 
     L "ПоМоГи МнЕ...{w} эХо..."
 
@@ -854,7 +854,7 @@ label day_1:
     "Меня встречает совершенно мёртвая улица."
     "Я думала, голоса шли точно отсюда..."
 
-    show screen radio_screen("r_radio seriously idle") with dissolve
+    show screen radio_screen("r_radio seriously idle", noise = 10.0, jitter = 0.5, z = 1.2) with dissolve
 
     R "Эхо, где ты?.."
 
@@ -863,7 +863,7 @@ label day_1:
     "Ну вот, я точно их улавливаю!"
     "Сигнал стал настолько чётким, что я точно знаю – он прямо по курсу."
 
-    show screen radio_screen("s_radio radio idle") with dissolve
+    show screen radio_screen("s_radio radio idle", noise = 10.0, jitter = 0.5, z = 1.2) with dissolve
 
     S "Эхо?{w=0.1} Это ты?.."
 
@@ -871,7 +871,7 @@ label day_1:
 
     "Подождите.{w=0.1} Или не совсем?"
 
-    show screen radio_screen("l_radio thinking idle") with dissolve
+    show screen radio_screen("l_radio thinking idle", noise = 10.0, jitter = 0.5, z = 1.2) with dissolve
 
     L "Помоги мне...{w} Эхо..."
 
@@ -879,7 +879,7 @@ label day_1:
 
     "Он где-то правее?{w=0.1} Или левее?"
 
-    show screen radio_screen("n_radio base idle") with dissolve
+    show screen radio_screen("n_radio base idle", noise = 10.0, jitter = 0.5, z = 1.2) with dissolve
 
     N "Эхо, пожалуйста!.."
 
@@ -887,7 +887,7 @@ label day_1:
 
     "И в ту же секунду я понимаю."
 
-    show screen radio_screen("s_radio radio evil") with dissolve
+    show screen radio_screen("s_radio radio evil", noise = 10.0, jitter = 0.5, z = 1.2) with dissolve
 
     S "Ха...{w=0.2} ха{w=0.1}ха{w=0.1}ха{w=0.1}ха{w=0.1}ха."
 
@@ -896,7 +896,7 @@ label day_1:
     "Голоса не где-то впереди."
     "...Я стою прямо в их эпицентре."
 
-    show screen radio_screen("l_radio thinking idle") with dissolve
+    show screen radio_screen("l_radio thinking idle", noise = 10.0, jitter = 0.5, z = 1.2) with dissolve
 
     L "Помоги мне, Эхо..."
     L "Помоги, Эхо, привести ко мне новую{w} ж{w=0.1}Е{w=0.1}р{w=0.1}Т{w=0.1}в{w=0.1}У{w=0.1}..!"
