@@ -83,7 +83,7 @@ init -5 python:
         {"value": 0.5, "image": "skorost_chteniya_50"},
         {"value": 0.65, "image": "skorost_chteniya_65"},
         {"value": 0.8, "image": "skorost_chteniya_80"},
-        {"value": 1.0, "image": "skorost_chteniya_100"},
+        {"value": 0.99, "image": "skorost_chteniya_100"},
     ]
 
     contrast_values = [

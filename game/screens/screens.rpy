@@ -176,8 +176,13 @@ style confirm_prompt_text is gui_prompt_text
 style confirm_button is gui_medium_button
 style confirm_button_text is gui_medium_button_text
 
+image confirm_frame_bg = Transform(
+    At("gui/frame.png", radio_scan_effect("menu_ogurchik", brightness=2.00, width=0.08, speed=0.3)), 
+    size=(700, 250)
+)
+
 style confirm_frame:
-    background Frame([ "gui/frame_achievement.png"], gui.confirm_frame_borders, tile=gui.frame_tile)
+    background "confirm_frame_bg" #Frame([ "gui/frame_achievement.png"], gui.confirm_frame_borders, tile=gui.frame_tile)
     padding gui.confirm_frame_borders.padding
     xalign .5
     yalign .5

@@ -26,7 +26,7 @@ define config.check_conflicting_properties = True
 ## Цвета текста в интерфейсе.
 
 ## Акцентный цвет используется в заголовках и подчёркнутых текстах.
-define gui.accent_color = '#ff0000'
+define gui.accent_color = '#7096a0'
 define black_text_color = "#ECECEC"
 #hover = #c8ab5e
 ## Цвет, используемый в текстовой кнопке, когда она не выбрана и не наведена.
@@ -37,20 +37,20 @@ define gui.idle_color = '#ffffff'
 define gui.idle_small_color = '#ffffff'
 
 ## Цвет, используемых в кнопках и панелях, когда они наведены.
-define gui.hover_color = '#ff0000'
+define gui.hover_color = '#00ffff'
 
 ## Цвет, используемый текстовой кнопкой, когда она выбрана, но не наведена.
 ## Кнопка может быть выбрана, если это текущий экран или текущее значение
 ## настройки.
-define gui.selected_color = '#ff0000' #6e3c52
+define gui.selected_color = '#7096a0' #6e3c52
 
 ## Цвет, используемый текстовой кнопкой, когда она не может быть выбрана.
-define gui.insensitive_color = '#860000'
+define gui.insensitive_color = '#7e919e'
 
 ## Цвета, используемые для частей панелей, которые не заполняются. Они
 ## используются не напрямую, а только при воссоздании файлов изображений.
-define gui.muted_color = '#5e0000'
-define gui.hover_muted_color = '#860000'
+define gui.muted_color = '#7096a0'
+define gui.hover_muted_color = '#41565cff'
 
 ## Цвета, используемые в E0E0E0 диалогов и выборов.
 define gui.text_color = '#ECECEC'
@@ -257,7 +257,7 @@ define gui.main_menu_text_xalign = 1.0
 define gui.frame_borders = Borders(60, 75, 60, 60)
 
 ## Рамки, используемые в частях экрана подтверждения.
-define gui.confirm_frame_borders = Borders(80, 40, 80, 40)
+define gui.confirm_frame_borders = Borders(0, 0, 0, 0)
 
 ## Рамки, используемые в частях экрана пропуска.
 define gui.skip_frame_borders = Borders(24, 8, 75, 8)
