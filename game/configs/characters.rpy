@@ -15,7 +15,7 @@ define story_teller = Character(None, kind=nvl, color="#1a1a1f")
 
 #универсальный перс
 init python:
-    def speak_as(name, text, color="#232324"):
+    def speak_as(name, text, color="#ffffff"):
         Character(name, color=color)(text)
 
 #картинка для рации штаба
@@ -126,7 +126,7 @@ layeredimage r:
         attribute asharashen:
             "images/Sprites/Razer/Razer_base_asharashen.png"
 
-image side r_side = LayeredImageProxy("r", Transform(xalign=0.5, yalign=0.0, crop=(0.2, 0.0, 0.8, 0.8), crop_relative=True, yoffset=100))
+image side r_side = LayeredImageProxy("r", Transform(xalign=0.5, yalign=0.0, crop=(0.2, 0.0, 0.8, 0.8), crop_relative=True, yoffset=100, zoom=0.8, xzoom=-1.0))
 image r_radio = LayeredImageProxy("r", Transform(xalign=0.5, yalign=0.0, crop=(0.2, 0.0, 0.8, 0.8), crop_relative=True, yoffset=100))
 #endregion
 
@@ -158,7 +158,6 @@ layeredimage n:
             "images/Sprites/Nektar/Nektar_base_serious.png"            
 
     group emotion if_any "hands":
-        xoffset -70
         attribute sad:
             "images/Sprites/Nektar/Nektar_hands_sad.png"
         attribute relief default:
@@ -173,7 +172,7 @@ layeredimage n:
         attribute surprised default:
             "images/Sprites/Nektar/Nektar_hand_hide_surprised.png"
 
-image side n_side = LayeredImageProxy("n", Transform(xalign=0.5, yalign=0.0, crop=(0.2, 0.0, 0.8, 0.8), crop_relative=True, yoffset=60))
+image side n_side = LayeredImageProxy("n", Transform(xalign=0.5, yalign=0.0, crop=(0.2, 0.0, 0.8, 0.8), crop_relative=True, yoffset=60, zoom=0.8, xzoom=-1.0))
 image n_radio = LayeredImageProxy("n", Transform(xalign=0.5, yalign=0.0, crop=(0.2, 0.0, 0.8, 0.8), crop_relative=True, yoffset=60))
 
 # image s_radio = LayeredImageProxy("s", Transform(xalign=0.5, yalign=0.0, crop=(0.2, 0.0, 0.8, 0.8), crop_relative=True, yoffset=60))
@@ -221,7 +220,7 @@ layeredimage l:
         attribute surprised default:
             "images/Sprites/Leon2/Leon2_half_closed_surprised.png"
 
-image side l_side = LayeredImageProxy("l", Transform(xalign=0.5, yalign=0.0, crop=(0.2, 0.0, 0.8, 0.8), crop_relative=True, yoffset=60))
+image side l_side = LayeredImageProxy("l", Transform(xalign=0.5, yalign=0.0, crop=(0.2, 0.0, 0.8, 0.8), crop_relative=True, yoffset=60, zoom=0.8, xzoom=-1.0))
 image l_radio = LayeredImageProxy("l", Transform(xalign=0.5, yalign=0.0, crop=(0.2, 0.0, 0.8, 0.8), crop_relative=True, yoffset=60))
 #endregion
 
@@ -271,7 +270,8 @@ layeredimage s:
         attribute annoyed default:
             "images/Sprites/Leon2/Leon2_half_closed_surprised.png"
 
-image s_side = LayeredImageProxy("s", Transform(xalign=0.5, yalign=0.0, crop=(0.2, 0.0, 0.8, 0.8), crop_relative=True, yoffset=60))
+image s_side = LayeredImageProxy("s", Transform(xalign=0.5, yalign=0.0, crop=(0.2, 0.0, 0.8, 0.8), crop_relative=True, yoffset=60, zoom=0.8, xzoom=-1.0))
+image s_radio = LayeredImageProxy("s", Transform(xalign=0.5, yalign=0.0, crop=(0.2, 0.0, 0.8, 0.8), crop_relative=True, yoffset=60))
 #endregion
 
 #region Штаб
