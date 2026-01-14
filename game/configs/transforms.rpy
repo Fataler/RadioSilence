@@ -599,3 +599,23 @@ transform fade_on_show(t=1.0):
     on hide:
         alpha 1.0
         linear t alpha 0.0
+
+#для плавного движения экрана по оси y
+transform slide_y(z=1.2, dy=-100, t=1.0):
+    zoom z
+    align (0.5, 0.5)
+    anchor (0.5, 0.5)
+    ease t yoffset dy
+
+#для плавного движения экрана по оси x
+transform slide_x(z=1.2, dx=-100, t=1.0):
+    zoom z
+    align (0.5, 0.5)
+    anchor (0.5, 0.5)
+    ease t xoffset dx
+
+transform zoom_screen(z=1.2, dz=1.0, t=0.6):
+    zoom z
+    align (0.5, 0.5)
+    anchor (0.5, 0.5)
+    ease t zoom dz

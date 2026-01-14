@@ -16,6 +16,9 @@ image bg_4_1 = "images/Backgrounds/Background4.jpg"
 image bg_4_2Dummy = "images/Backgrounds/Background4Dummy.jpg"
 image bg_base_day = "images/Backgrounds/Base_day.jpg"
 image bg_base_night = "images/Backgrounds/Base_night.jpg"
+image bg_cars = "images/Backgrounds/Cars.jpg"
+image bg_hrushevki = "images/Backgrounds/Hrushevki.jpg"
+image bg_square = "images/Backgrounds/Ploschad.jpg"
 
 
 # credits images
