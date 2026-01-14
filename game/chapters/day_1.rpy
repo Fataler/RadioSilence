@@ -17,7 +17,7 @@ label day_1:
     "Уже несколько часов мы идём ровным строем после того, как покинувший нас водитель остановился на границе безопасной зоны."
     "Привал был совсем недавно, как раз перед старой городской чертой."
 
-    show r seriously idle left at Transform(xalign=1.3, yalign=1.0, alpha=0.0)
+    show r seriously idle left at Transform(xalign=0.9, yalign=1.0, alpha=0.0)
     show r at move_on_scene_show(xalign=0.5)
     pause 2.0
 
@@ -37,7 +37,7 @@ label day_1:
     "Особенность была в том, что они были посланы только на засекреченных военных частотах."
     "Командование приняло решение отправить нас, небольшой отряд разведчиков, в этот город, чтобы определить источник сообщений."
     
-    show s radio idle at Transform(xalign=1.3, yalign=1.0, alpha=0.0)
+    show s radio idle at Transform(xalign=0.9, yalign=1.0, alpha=0.0)
     show r at move_on_scene_hide(xalign=0)
     show s at move_on_scene_show(xalign=0.5)
     pause 2.0
@@ -69,26 +69,25 @@ label day_1:
     "У командования даже не было средств, чтобы обеспечить нас формой.{w=0.1} Зато всё ещё было оружие, поэтому мы больше напоминали народное ополчение."
     "У Стального не было никаких знаков на форме, как и у всех.{w=0.1} Нас опознавали только по биометрии."
 
-    show n base smile at Transform(xalign=1.3, yalign=1.0, alpha=0.0)
+    show n base smile at Transform(xalign=0.9, yalign=1.0, alpha=0.0)
     show n at move_on_scene_show(xalign=0.5)
     pause 1.0
 
     N "Никогда бы не подумала, что наш лидер допустит мысль, что будет захвачен врагом."
     "Ну, почти у всех.{w=0.1} У Нектар была повязка с красным крестом на плече."
-    s_side proud "Дальновидность – не грех, а благословение природы.{w=0.1} Всегда планируй непредвиденные ситуации на сто шагов вперёд, чтобы быть наездником судьбы!"
+    S_side handsome smug "Дальновидность – не грех, а благословение природы.{w=0.1} Всегда планируй непредвиденные ситуации на сто шагов вперёд, чтобы быть наездником судьбы!"
     
     show n hand_hide surprised with dissolve
 
     N "Как вообще можно планировать непредвиденные ситуации..."
     
     show n base idle with dissolve
-    pause 2.0
-    show n right with dissolve
 
-    n_side  "Но Вы правы. Леон-2, можешь посмотреть, что ждёт нас впереди?"
+    N "Но Вы правы. Леон-2, можешь посмотреть, что ждёт нас впереди?"
     "Нектар обратилась к спутнику, который уже долгое время ничего не говорил."
 
     show n at move_on_scene_hide(xalign=0.0)
+    show l at Transform(xalign=0.9, yalign=1.0, alpha=0.0)
     show l half_closed surprised left at move_on_scene_show(xalign=0.5)
 
     L "Конечно...{w} с-{w=0.1}сейчас."
@@ -100,64 +99,57 @@ label day_1:
     show l thinking idle with dissolve
 
     L "Туман слишком плотный...{w} но, кажется, ничьих следов я не заметил."
-
-    #show r base smile with dissolve
-
-    r_side base smile "Так кажется или не заметил?!"
+    R_side base smile "Так кажется или не заметил?!"
     
     show l closed shy with dissolve
 
     L "...Кажется."
 
-    show n at move_on_scene_hide(xalign=0.0)
-    show s at move_on_scene_hide(xalign=0.2)
-    show l at move_on_scene_hide(xalign=0.5)
+    show l at move_on_scene_hide(xalign=0.0)
 
     "Вот такой у нас отряд из лидера, медика, элитного бойца, снайпера и меня, связиста."
 
-    hide n
-    hide s
     hide l
 
     "Мы проходим ещё несколько километров, смотря по сторонам."
 
-    show r serious left with dissolve
+    show s radio idle left at Transform(xalign=1.0, yalign=1.0, alpha=0.0)
+    show s at move_on_scene_show(xalign=0.5)
 
     S "Все готовы?"
-    l_side half_closed surprised "А?{w=0.1} Вы про то, чтобы войти в г-{w=0.1}город?"
-    S smile "Ага. А ты о чём подумал?"
-    l_side embarrassed "Нет, я ни о чём...{w=0.1} эм, просто..."
-    S sad "Мои кошмарики, какие же вы все молодые.{w} Неужели сейчас обстановка настолько плоха, что всех важных бойцов забрали куда нужно и остались только вы?"
-    n_side base serious "Я уверена, что от всех нас просто хотели избавиться."
-    n_side "Неужели штаб правда верит в эту миссию?"
-    S smile "Верят в нас или нет – мы не должны вернуться с пустыми руками!"
-    S smug "А то это испортит мою репутацию в служебной книге."
+    L_side half_closed surprised "А?{w=0.1} Вы про то, чтобы войти в г-{w=0.1}город?"
+    S radio evil "Ага. А ты о чём подумал?"
+    L_side embarrassed "Нет, я ни о чём...{w=0.1} эм, просто..."
+    S handsome sad "Мои кошмарики, какие же вы все молодые.{w} Неужели сейчас обстановка настолько плоха, что всех важных бойцов забрали куда нужно и остались только вы?"
+    N_side base serious "Я уверена, что от всех нас просто хотели избавиться."
+    N_side "Неужели штаб правда верит в эту миссию?"
+    S smug "Верят в нас или нет – мы не должны вернуться с пустыми руками!"
+    S annoyed "А то это испортит мою репутацию в служебной книге."
     "...Он вполне мог этого не добавлять.{w=0.1} Но, кажется, его просто забавляет, как мы реагируем."
     
     #музыка затихает, небольшое затишье, например, через усиливающееся биение сердца каждые 2-3 реплики или через какие-то другие приёмы, чтобы разделить два трека по настроению
-    show s serious
-    with dissolve
+    show s explain serious with dissolve
 
     "Неожиданно весь его напускной вид исчез."
-    S serious "Как только мы войдём в этот город, помните: опасность может прийти оттуда, откуда вы её не ждёте."
+    S "Как только мы войдём в этот город, помните: опасность может прийти оттуда, откуда вы её не ждёте."
     S "Мы не знаем, с каким врагом или союзником нам придётся столкнуться."
     "Все останавливаются за последним укрытием перед тем, как выйти на открытое пространство."
-    S idle "Сообщайте обо всём странном.{w=0.1} Держите связь."
+    S radio idle "Сообщайте обо всём странном.{w=0.1} Держите связь."
     S "Слушайте мои команды.{w=0.1} Не проявляйте своевольничества."
     "Нам зачитывают памятку, как будто мы можем её забыть."
-    S "Если рядом кто-то упал и не двигается, убедитесь, что опасность миновала.{w} Не кричите и не трогайте тело до этого момента."
+    S surprised "Если рядом кто-то упал и не двигается, убедитесь, что опасность миновала.{w} Не кричите и не трогайте тело до этого момента."
     "Сердце колотится как бешеное."
-    S serious "И да...{w=0.1} Эхо."
+    S explain serious "И да...{w=0.1} Эхо."
     E tired surprised "Что?"
     #звуковой эффект стихает
     S "Если вы никого не слышите в эфире, а связь не работает, немедленно возвращайтесь обратно к Эхо.{w} Всё ясно?"
     $ speak_as("Все", "Так точно.")
 
-    show s smug with dissolve
+    show s handsome smug with dissolve
     pause 1.0
 
     "Стальной шумно вдыхает запах будущего поля битвы и медленно выдыхает."
-    S idle "Команда{w=0.1}: вперёд!"
+    S explain smile "Команда{w=0.1}: вперёд!"
 
     #фон №2: внутри небольшой разрушенной коммуналки
     scene bg_black
@@ -170,6 +162,8 @@ label day_1:
     pause 0.5
     #музыка №2
     #все спрайты появляются в левом нижнем углу окна. 
+    #звуки топота, дверей
+
     "Наш отряд врывается в ближайшую к краю многоэтажку через разные входы."
     "Все убегают вперёд, а я остаюсь под окном напротив единственного проёма, держа пистолет наготове."
     "Антенна переносной радиостанции поднимается ввысь, после чего я нажимаю кнопку генератора."
@@ -178,26 +172,25 @@ label day_1:
 
     E ear think "Эхо на связи, развёртывание завершено.{w=0.1} Жду отклика."
 
-    #поменять на стального
-    show screen radio_screen("b man") with dissolve
+    show screen radio_screen("s_radio radio idle") with dissolve
 
-    S idle "Стальной{w=0.1}, приём чистый. Направляюсь к выходу из магазина обуви, здесь всё обнесли, кроме пары левых ботинок."
+    S "Стальной{w=0.1}, приём чистый. Направляюсь к выходу из магазина обуви, здесь всё обнесли, кроме пары левых ботинок."
 
     show screen radio_screen("b base") with dissolve
 
     "Значит, у него всё хорошо. Переключаюсь на голосовую передачу с другим, но продолжаю принимать всех одновременно."
     E "Леон-2{w=0.1}, как обстановка?"
 
-    show screen radio_screen("l_side half_closed surprised") with dissolve
+    show screen radio_screen("l_radio half_closed surprised") with dissolve
 
     L "А{w=0.1}, Эхо!{w=0.1} Я на верхнем этаже, наблюдаю обзор, всё чисто."
 
-    show screen radio_screen("l_side thinking embarrassed") with dissolve
+    show screen radio_screen("l_radio thinking embarrassed") with dissolve
 
     L "...Ты оказалась громче, чем я ожидал.{w=0.1} Могу тебя убавить?"
     E "Я настраивала оборудование оптимально перед выходом...{w} Убавь, если только это мешает слышать всё вокруг."
     
-    show screen radio_screen("l_side closed shy") with dissolve
+    show screen radio_screen("l_radio closed shy") with dissolve
 
     "На другом конце линии слышно, как он мнётся."
     L "Боюсь трогать.{w=0.1} Я потерплю."
@@ -207,22 +200,22 @@ label day_1:
     "Полагаю, дело не в громкости – у него просто чувствительные уши. Он потерпит."
     E "Рэй{w=0.1}, приём!"
 
-    show screen radio_screen("r_side seriously idle") with dissolve
+    show screen radio_screen("r_radio seriously idle") with dissolve
 
     R "Да{w=0.1}, Эхо?"
     E "Что наблюдаешь?"
     R "В подвале много крыс, они разбегаются от моего фонарика.{w} Пока ничего необычн…"
 
-    show screen radio_screen("r_side idle asharashen") with dissolve
+    show screen radio_screen("r_radio base asharashen") with dissolve
 
     R " …ого."
     E ear asharashen "Рэй?"
 
-    show screen radio_screen("r_side idle surprised") with dissolve
+    show screen radio_screen("r_radio base surprised") with dissolve
 
     R "Здесь огромная дыра в полу.{w=0.1} Я пнула кучу камней, но даже не слышу, чтобы они упали."
 
-    show screen radio_screen("r_side seriously serious") with dissolve
+    show screen radio_screen("r_radio seriously serious") with dissolve
 
     R "Кажется, под домом после войны со временем образовался провал.{w} Не лучшее место для временной базы."
 
@@ -231,17 +224,16 @@ label day_1:
     E think "Передаю Стальному."
     E "Говорит Эхо{w=0.1}, Рэй обнаружила под домом провал.{w=0.1} Здание может рухнуть в любой момент."
 
-    #поменять на стального
-    show screen radio_screen("b base") with dissolve
+    show screen radio_screen("s_radio radio idle") with dissolve
 
     "Я вижу, как Стальной переключается на общую передачу."
-    S idle "Немедленно перемещаемся в соседний дом с большой жёлтой вывеской.{w=0.1} Приём."
+    S "Немедленно перемещаемся в соседний дом с большой жёлтой вывеской.{w=0.1} Приём."
 
-    show screen radio_screen("r_side seriously idle") with dissolve
+    show screen radio_screen("r_radio seriously idle") with dissolve
 
     R "Рэй.{w=0.1} Принято."
 
-    show screen radio_screen("l_side thinking idle") with dissolve
+    show screen radio_screen("l_radio thinking idle") with dissolve
 
     L idle "Леон-2.{w=0.1} Так точно."
 
@@ -254,12 +246,11 @@ label day_1:
     "Нет ответа."
     E asharashen "Вот чёрт...{w} Куда направилась Нектар?"
 
-    #поменять на стального
-    show screen radio_screen("b base") with dissolve
+    show screen radio_screen("s_radio explain serious") with dissolve
 
-    S serious "Последний раз должна была обходить здание по периметру."
+    S "Последний раз должна была обходить здание по периметру."
 
-    show screen radio_screen("l_side closed serious") with dissolve
+    show screen radio_screen("l_radio closed serious") with dissolve
 
     L "Нигде её не вижу.{w=0.1} Возможно, она в мёртвой зоне на юго-востоке."
 
@@ -277,10 +268,11 @@ label day_1:
     $ renpy.force_autosave()
     scene bg_3_2
     with Dissolve(1.0)
+    $ renpy.transition(vpunch)
 
     E base annoyed "Оставив радиостанцию стоять на полу, я перемахиваю через окно и падаю на сырую землю."
     "Я успела пробежать всего несколько метров вдоль стены, как вдруг слышу знакомый голос."
-    N "К...{w=0.2} кто ты?!{w} Я бросила оружие на землю!{w=0.1} Прошу, не убивай!"
+    N_side hands sad "К...{w=0.2} кто ты?!{w} Я бросила оружие на землю!{w=0.1} Прошу, не убивай!"
     E tired surprised "На Нектар напали?!"
     "Но весь ужас заключается в том, что я услышала её голос не в наушниках.{w} Он доносился из-за угла."
     "Кажется, она не может нажать на рацию, потому что подняла руки вверх."
@@ -292,6 +284,8 @@ label day_1:
     #фон №4.1 (или ЦГ №1.1): туман в конце уличной дороги, далеко в тумане стоит тёмный силуэт в противогазе и с направленным на читателя ружьём (а если это не фон, а ЦГ, то тогда можно просто вокруг нарисовать только густой непрозрачный туман, силуэт всё так же далеко, но уже сбоку, а с другого боку спиной к игроку стоит с поднятыми руками Нектар) //если это ЦГ, тогда спрайты Нектар в левом нижнем углу отображать не надо, а если фон, тогда спрайты Нектар отображаются на основном экране
     #если делать это как фон, тогда потребуется дополнительная вариация №4.2, когда мы становимся ближе к силуэту в тумане, туман слегка рассеивается и мы видим, что это примотанная к фонарному столбу (секс-)кукла (18+ не показывать, это будет просто как шутка по тексту) в загаженной голубями и осадками чёрной накидке до земли с капюшоном и с вложенным в руки ружьём. Достаточно давно тут стоит, поэтому кукле плохо, но в тумане изначально это не было заметно. А если делать как ЦГ, то тоже потребуется такая же дополнительная вариация №1.2 с приближением и частичным рассеиванием тумана
     $ renpy.force_autosave()
+    scene bg_3_2 at zoom_screen(z=1.0, dz=1.2)
+    pause 0.3
     scene bg_4_1
     with Dissolve(1.0)
     pause 0.5
@@ -309,16 +303,14 @@ label day_1:
 
     E ear think "Стальной{w=0.1}, на Нектар напал вооружённый человек.{w} Могу я его убить?"
 
-    #поменять на стального
-    show screen radio_screen("b base") with dissolve
+    show screen radio_screen("s_radio explain serious") with dissolve
 
-    S serious "Нет{w=0.1}, он может быть ключом к пониманию нашей главной цели.{w} Первый приоритет миссии – разведка."
+    S "Нет{w=0.1}, он может быть ключом к пониманию нашей главной цели.{w} Первый приоритет миссии – разведка."
     E asharashen "Он наставил на Нектар оружие!"
 
-    #поменять на стального
-    show screen radio_screen("b base") with dissolve
+    show screen radio_screen("s_radio handsome sad") with dissolve
     
-    S proud "Ты уверена, что убьёшь его моментально?{w=0.1} Что не промахнёшься и не просто заденешь, чтобы он успел дать ответный огонь?"
+    S "Ты уверена, что убьёшь его моментально?{w=0.1} Что не промахнёшься и не просто заденешь, чтобы он успел дать ответный огонь?"
     
     hide screen radio_screen
     
@@ -335,7 +327,7 @@ label day_1:
     #музыка затихает
 
     pause 0.5
-    show screen radio_screen("l_side thinking idle") with dissolve
+    show screen radio_screen("l_radio thinking idle") with dissolve
     pause 0.5
 
     L idle "Нектар{w=0.1}, Эхо{w=0.1}. Всё в порядке.{w=0.1} Это не наш враг."
@@ -347,18 +339,23 @@ label day_1:
 
     "Судя по всему, Нектар услышала голос, поэтому рухнула на землю."
     "Но силуэт продолжает целиться в конец переулка, словно видит что-то вдалеке."
+
+    hide n with dissolve
+
     "С пистолетом впереди я подхожу нему ближе..."
     #вариация .2. Появление спрайтов Нектар
-
+    
     scene bg_4_2Dummy
     with Dissolve(1.0)
+    pause 0.5
 
     E tired surprised "Ха..."
     "После того, как туман рассеялся, я чётко могу разглядеть стрелка."
     E "Это чучело."
 
-    show n at Transform(xalign=1.5, yalign=1.0)
-    show n hand_hide surprised at move_on_scene
+    show n at Transform(xalign=1.1, yalign=1.0, alpha=0.0)
+    show n hand_hide surprised at move_on_scene_show(xalign=0.75)
+    pause 1.0
 
     N "Какого...{w} Что оно тут делает?"
     E idle "Возможно, когда этот город всё ещё был в центре войны, оставшиеся местные поставили его здесь."
@@ -386,13 +383,15 @@ label day_1:
     E tired idle "Пустяки.{w=0.1} Я просто защищала товарищей."
     N "Я обязательно должна отплатить тебе чем-нибудь, Эхо."
 
-    show screen radio_screen("l_side thinking sad", xposNoise=500, xoffsetRadio=-734)
+    show screen radio_screen("l_radio thinking sad", xposNoise=500, xoffsetRadio=-734)
+    pause 0.5
 
     L "А мне?"
     N "А тебе – особенно!"
 
     hide screen radio_screen
-    show n base smile at move_on_scene_hide(xalign=0.3)
+    pause 0.5
+    show n at move_on_scene_hide(xalign=0.3)
     
     "С улыбкой на лице Нектар шагнула вперёд.{w} Кое-что приковало моё внимание за её спиной."
 
@@ -418,10 +417,13 @@ label day_1:
 
     N "Ты кого-то видишь?"
     E base sad "Кажется, показалось."
+
+    show n hand_hide surprised with dissolve
+
     N "Точно?{w} Ты уверена?"
     E base annoyed "Да. Я доверяю этим приборам больше, чем своему зрению."
 
-    show n idle with dissolve
+    show n base idle with dissolve
 
     N "Хм...{w=0.1} вот оно как.{w} Ну ладно, пошли."
 
@@ -446,14 +448,17 @@ label day_1:
     N "И внутри разбитого, полностью прогнившего мира!"
     E surprised "Ну{w=0.1}, что-то в этом и правда есть."
 
-    show s happy left at Transform(xalign=1.0, yalign=1.0, alpha=0.0)
+    show s explain happy left at Transform(xalign=1.0, yalign=1.0, alpha=0.0)
     show s at move_on_scene_show(xalign=0.45)
     hide n with dissolve
 
     S "Что ж, можно сказать, наша первая разведка местности увенчалась успехом."
     S "А это значит, мы обязаны донести это достижение штабу!"
     E tired idle "Предлагаете связаться со штабом?"
-    S proud "Я не предлагаю.{w=0.1} Мы ДОЛЖНЫ это сделать, понимаешь?"
+
+    show s smile with dissolve
+
+    S "Я не предлагаю.{w=0.1} Мы ДОЛЖНЫ это сделать, понимаешь?"
     "Он прав.{w=0.1} Нам действительно нужно доложить о входе в город."
 
     show screen radio_screen("b base")
@@ -471,43 +476,57 @@ label day_1:
     "Закончив сообщение, я прерываю разговор."
 
     show r seriously idle at Transform(xalign=1.2, yalign=1.0, alpha=0.0)
-    show r at move_on_scene_show(xalign=0.9)
+    show r at move_on_scene_show(xalign=1.0)
 
     R "Стальной, какие указания будут дальше?"
-    S smile "А какие могут быть?{w=0.1} Потихоньку продвигаться вперёд, вести наблюдение."
+
+    show s radio idle right with dissolve
+
+    S "А какие могут быть?{w=0.1} Потихоньку продвигаться вперёд, вести наблюдение."
 
     show r base surprised with dissolve
     
     R "Что?{w=0.1} Без точно поставленных задач?"
     S "Прежде всего, я уже отправил Леона-2 обозревать территорию вокруг.{w} Какое-то время мы ещё будем в безопасности."
+    N_side base serious "Нужно ли нам сейчас сидеть на месте?"
     
-    show n base serious with dissolve
+    show s handsome sad with dissolve
 
-    N "Нужно ли нам сейчас сидеть на месте?"
-    S proud "Это разумно.{w=0.1} С тех самых пор, как мы подошли к городу, нашей Эхо ни разу не удалось поймать сигнал."
-    S serious "Помните, что мы сейчас находимся в возможном логове врага.{w} А раз это так..."
+    S "Это разумно.{w=0.1} С тех самых пор, как мы подошли к городу, нашей Эхо ни разу не удалось поймать сигнал."
+    S "Помните, что мы сейчас находимся в возможном логове врага.{w} А раз это так..."
     E base annoyed "...то враг может скоро попытаться напасть на нас."
-    S happy "Именно!{w=0.1} Какая же ты умница."
-    S smile "У тебя отец случайно не был генералом?{w} Я бы без раздумий женился на его великолепной дочери."
+
+    show s explain smile with dissolve
+
+    S "Именно!{w=0.1} Какая же ты умница."
+
+    show s handsome smug with dissolve
+
+    S "У тебя отец случайно не был генералом?{w} Я бы без раздумий женился на его великолепной дочери."
     "Я пропустила мимо ушей последнюю фразу как белый шум."
 
     show r seriously serious with dissolve
 
     R "То есть мы будем просто сидеть на попе ровно и ждать, пока враг сам к нам придёт?"
-    S serious "Таков приказ.{w=0.1} Ты хочешь его осудить?"
+
+    show s radio evil with dissolve
+
+    S "Таков приказ.{w=0.1} Ты хочешь его осудить?"
 
     show r base sad with dissolve
 
     R "...Нет.{w=0.1} Вы правы."
     R "Давайте подождём, но не слишком долго."
-    S happy "Правильный выбор.{w=0.1} Нам с Нектар нужно кое-что обсудить, так что мы оставим вас двоих."
+
+    show s radio idle with dissolve
+
+    S "Правильный выбор.{w=0.1} Нам с Нектар нужно кое-что обсудить, так что мы оставим вас двоих."
     
-    show n at move_on_scene_hide(xalign=0.0)
-    show s at move_on_scene_hide(xalign=0.0)
+    show s left at move_on_scene_hide(xalign=0.0)
+    pause 1.0
 
     E tired idle "А ты быстро изменила мнение.{w=0.1} Я думала, что ещё поспоришь."
     
-    hide n
     hide s
     show r base smile with dissolve
 
@@ -593,55 +612,68 @@ label day_1:
     R "Ладно, лучше забудь всё это.{w=0.1} Не хотела тебя грузить."
     E thinking happy "Уж я-то точно не забуду."
     
-    show r stretching dissatisfied with dissolve
+    show r stretching mad with dissolve
 
     R "Ах ты ж жопа маленькая..."
 
-    show screen radio_screen("l_side thinking idle", xposNoise=1350, xoffsetRadio=116)
+    show screen radio_screen("l_radio thinking idle", xposNoise=1350, xoffsetRadio=116) with dissolve
+    pause 0.5
     show r seriously idle with dissolve
     L "А...{w=0.1} Простите, что прерываю ваш диалог!"
+
+    show screen radio_screen("b base", xposNoise=1350, xoffsetRadio=116) with dissolve
+
     R "Леон-2?{w=0.1} Что случилось?"
+
+    show screen radio_screen("l_radio thinking idle", xposNoise=1350, xoffsetRadio=116) with dissolve
+
     L "Т-{w=0.1}там...{w} кто-то в тумане."
 
+    show screen radio_screen("b base", xposNoise=1350, xoffsetRadio=116) with dissolve
     show r base surprised with dissolve
 
     "Мы с Рэй переглядываемся."
     E tired surprised "Ты уже сообщил Стальному?"
 
-    show screen radio_screen("l_side half_closed surprised", xposNoise=1350, xoffsetRadio=116)
+    show screen radio_screen("l_radio half_closed surprised", xposNoise=1350, xoffsetRadio=116) with dissolve
 
     L "Ещё нет.{w=0.1} Где его можно найти?"
 
-    show s smug with dissolve
+    show screen radio_screen("b base", xposNoise=1350, xoffsetRadio=116) with dissolve
+    show s explain happy left at Transform(xalign=1.0, yalign=1.0, alpha=0.0)
+    show s at move_on_scene_show(xalign=0.5)
+    show r at move_on_scene_hide(xalign=0.0)
 
     S "Меня искать не стоит{w=0.1} – я чую запах врага издалека!"
 
-    show s smile with dissolve
+    hide r
+    show s radio idle with dissolve
 
     S "Ну-с!{w=0.1} Рассказывай, что ты видел.{w=0.1} Да не упускай ни единой подробности!"
 
-    show screen radio_screen("l_side thinking idle", xposNoise=1350, xoffsetRadio=116)
+    show screen radio_screen("l_radio thinking idle", xposNoise=1350, xoffsetRadio=116) with dissolve
 
     L "Из-за тумана видимость плохая, поэтому я решил использовать для наблюдения тепловизионный прицел."
     L "И мне показало...{w} На два часа от места наблюдения большое скопление тепла, примерно в двухста местрах отсюда."
     L "Его было так много.{w=0.1} Где-то там находится достаточно большой враг."
 
-    show s smile with dissolve
+    show s explain serious with dissolve
+    hide screen radio_screen with dissolve
 
-    S serious "Значит, их много в одном месте..."
+    S "Значит, их много в одном месте..."
 
-    show s happy with dissolve
+    show s radio evil with dissolve
 
     S "Да это же наш шанс!{w=0.1} Мы их захватим быстрее, чем они что-то поймут."
     S "Сами загнали себя в ловушку, ха...{w=0.1} ха-{w=0.1}ха-{w=0.1}ха!"
     E tired surprised "Вы уверены что это не ловушка для нас?{w} Слишком уж всё просто."
 
-    show s proud with dissolve
+    show s radio idle with dissolve
 
     S "Да?{w=0.1} Почему ты так уверена?{w} Быть может, у них там убежище, а они про наши современные штучки знать не знают?"
     E base sad "М-м...{w=0.1} Прошу прощения.{w=0.1} Это идеальная возможность для нашей миссии."
     
-    show s smug with dissolve
+    show s handsome smug with dissolve
 
     S "Я в тебе не сомневался.{w=0.1} Ну что, минуту всем на сборы и выход!"
     "И всё же, у меня какое-то нехорошее предчувствие."
@@ -658,10 +690,9 @@ label day_1:
 
     "Но сколько бы мы ни искали, нам не удавалось их найти."
 
-    show n right at Transform(xalign=0.6, yalign=1.0, alpha=0.0)
-    show n base serious at move_on_scene_show(xalign=1.0)
-    pause 1.5
-    show n left with dissolve
+    show n left at Transform(xalign=1.3, yalign=1.0, alpha=0.0)
+    show n base serious at move_on_scene_show(xalign=0.95)
+    pause 0.5
 
     N "Проклятье...{w} Как сквозь землю провалились."
 
@@ -676,6 +707,9 @@ label day_1:
     show l thinking idle at move_on_scene_show(xalign=2)
 
     L "Да! Но...{w} теперь я их не вижу.{w=0.1} Должно быть, они ушли."
+
+    show s handsome annoyed with dissolve
+
     S "Ну так посмотри вокруг.{w=0.1} Давай, ещё раз!{w=0.1} Они не могли уйти далеко."
 
     show l half_closed surprised with dissolve
@@ -691,7 +725,10 @@ label day_1:
 
     E ear think "Раз мы их не видим, я попробую их прослушать.{w} Возможно, они тоже излучают свои разговоры в эфир."
     "Предупредив команду, я взяла в руки переносной радиоприёмник и начала перестраивать частоту."
-    S smug "Отличная идея!{w=0.1} Слушай внимательно, Эхо.{w} Быть может, ты снова услышишь тот загадочный сигнал."
+    
+    show s explain happy with dissolve
+
+    S "Отличная идея!{w=0.1} Слушай внимательно, Эхо.{w} Быть может, ты снова услышишь тот загадочный сигнал."
     
     hide n
     hide s
@@ -738,13 +775,16 @@ label day_1:
     "Голоса не доходят до меня, потому что затухают в окружающей среде.{w} Но выполнить избирательность по направлению и усилить нужные частоты..."
     
     #помеховое
-    show screen radio_screen("l_side thinking idle") with dissolve
+    show screen radio_screen("l_radio thinking idle") with dissolve
 
     L "...о...{w} ки...{w} т-т..."
+
+    show screen radio_screen("b base") with dissolve
+
     "Есть!{w=0.1} Я что-то поймала на западе."
     "Вожу антенной, пытаясь определить точный угол, где сигнал приходит сильнее всего, а затем иду туда."
 
-    show screen radio_screen("r_side seriously idle") with dissolve
+    show screen radio_screen("r_radio seriously idle") with dissolve
 
     R "Ж...{w} нг...{w} пО!.."
 
@@ -752,7 +792,7 @@ label day_1:
 
     "Я всё громче слышу их!"
 
-    show screen radio_screen("n_side base idle") with dissolve
+    show screen radio_screen("n_radio base idle") with dissolve
 
     N "ЭхО...{w} УшлА ОнА...{w} мОжЕт?.."
 
@@ -761,7 +801,7 @@ label day_1:
     "Да, становится всё чётче и чётче. Они точно где-то рядом!"
     #громкий шуршащий смех
 
-    show screen radio_screen("s_side radio idle") with dissolve
+    show screen radio_screen("s_radio radio idle") with dissolve
 
     S "Ха...{w=0.1} ХА{w=0.1}ХА{w=0.1}ХА{w=0.1}ХА{w=0.1}ХА{w=0.1}ХА!!!"
 
@@ -771,12 +811,12 @@ label day_1:
     "Что-то не так."
     "Почему я их слышу...{w} только через наушники?"
 
-    show screen radio_screen("n_side base idle") with dissolve
+    show screen radio_screen("n_radio base idle") with dissolve
 
     N "ЭХО...{w} ТЫ ЗДЕСЬ?{w} ...ИДИ К НАМ..."
     N "К НАМ..!{w} К НАМ..!{w} К НАМ..?"
 
-    show screen radio_screen("b base")
+    show screen radio_screen("b base") with dissolve
 
     "Почему последнюю фразу заело?"
     "Может, всё дело в многолучевом распространении?{w=0.1} Её голос, должно быть, отражается от стен и попадает на приёмник снова и снова."
@@ -784,11 +824,11 @@ label day_1:
     "Несмотря на очевидную близость к отряду, я не осмеливаюсь закричать, что я здесь."
     "Почему?{w=0.1} Что не так?"
 
-    show screen radio_screen("l_side thinking idle") with dissolve
+    show screen radio_screen("l_radio thinking idle") with dissolve
 
     L "...мама...{w} я боюсь...{w} помогите мне..."
 
-    show screen radio_screen("l_side thinking idle") with dissolve
+    show screen radio_screen("l_radio thinking idle") with dissolve
 
     L "ПоМоГи МнЕ...{w} эХо..."
 
@@ -813,7 +853,7 @@ label day_1:
     "Меня встречает совершенно мёртвая улица."
     "Я думала, голоса шли точно отсюда..."
 
-    show screen radio_screen("r_side seriously idle") with dissolve
+    show screen radio_screen("r_radio seriously idle") with dissolve
 
     R "Эхо, где ты?.."
 
@@ -822,7 +862,7 @@ label day_1:
     "Ну вот, я точно их улавливаю!"
     "Сигнал стал настолько чётким, что я точно знаю – он прямо по курсу."
 
-    show screen radio_screen("s_side radio idle") with dissolve
+    show screen radio_screen("s_radio radio idle") with dissolve
 
     S "Эхо?{w=0.1} Это ты?.."
 
@@ -830,7 +870,7 @@ label day_1:
 
     "Подождите.{w=0.1} Или не совсем?"
 
-    show screen radio_screen("l_side thinking idle") with dissolve
+    show screen radio_screen("l_radio thinking idle") with dissolve
 
     L "Помоги мне...{w} Эхо..."
 
@@ -838,7 +878,7 @@ label day_1:
 
     "Он где-то правее?{w=0.1} Или левее?"
 
-    show screen radio_screen("n_side base idle") with dissolve
+    show screen radio_screen("n_radio base idle") with dissolve
 
     N "Эхо, пожалуйста!.."
 
@@ -846,7 +886,7 @@ label day_1:
 
     "И в ту же секунду я понимаю."
 
-    show screen radio_screen("s_side radio idle") with dissolve
+    show screen radio_screen("s_radio radio evil") with dissolve
 
     S "Ха...{w=0.2} ха{w=0.1}ха{w=0.1}ха{w=0.1}ха{w=0.1}ха."
 
@@ -855,7 +895,7 @@ label day_1:
     "Голоса не где-то впереди."
     "...Я стою прямо в их эпицентре."
 
-    show screen radio_screen("l_side thinking idle") with dissolve
+    show screen radio_screen("l_radio thinking idle") with dissolve
 
     L "Помоги мне, Эхо..."
     L "Помоги, Эхо, привести ко мне новую{w} ж{w=0.1}Е{w=0.1}р{w=0.1}Т{w=0.1}в{w=0.1}У{w=0.1}..!"
@@ -866,7 +906,7 @@ label day_1:
     "Я в ужасе кричу и сдираю с головы наушники."
     "Те зависают в воздухе, держась на тонком проводе."
     E ear asharashen "Нееееет, пожалуйста, не ешьте меня!!!"
-    N "Эхо?{w=0.1} Что тут происходит?"
+    N_side hand_hide surprised "Эхо?{w=0.1} Что тут происходит?"
     "Я оборачиваюсь и вижу, как из-за поворота выходят мои друзья."
 
     scene bg_square:
@@ -875,24 +915,38 @@ label day_1:
         anchor (0.5, 0.5)
         ease 1.0 xoffset -100
 
-    show l at Transform(xalign=1.3, yalign=1.0, alpha=0.0)
-    show l half_closed surprised at move_on_scene_show with dissolve
+    show l at Transform(xalign=1.0, yalign=1.0, alpha=0.0)
+    show l half_closed surprised left at move_on_scene_show(xalign=0.5)
 
     L "Э-эм...{w=0.1} кто тебя ест?"
     E base sad "Ах...{w} ну..."
     "Меня опозорили перед всем отрядом."
-    S serious "Как твой руководитель, я вынужден тебя отчитать.{w} Ты отошла от нас всего на секунду, мы смотрим – а тебя уже и след простыл."
+
+    show s at Transform(xalign=1.0, yalign=1.0, alpha=0.0)
+    show s explain serious left at move_on_scene_show(xalign=0.95)
+
+    S "Как твой руководитель, я вынужден тебя отчитать.{w} Ты отошла от нас всего на секунду, мы смотрим – а тебя уже и след простыл."
     S "Ты знаешь, что прошла целых два двора?{w=0.1} Так и потеряться можно."
     "Два двора?..{w} Мне казалось, я плутала вечность."
     E "Я сама не знаю, что случилось...{w} Поднимаю голову, а вокруг никого."
     E annoyed "Потом я настроилась на частоту ваших голосов, шла-шла и пришла сюда.{w} Слышала, но никого не видела.{w} Пока не поняла, что ваши голоса окружили меня со всех сторон."
-    N hand_hide surprised "Наши голоса...{w} окружили тебя?"
+    
+    show n at Transform(xalign=0.0, yalign=1.0, alpha=0.0)
+    show n hand_hide surprised right at move_on_scene_show(xalign=0.15)
+    
+    N "Наши голоса...{w} окружили тебя?"
     E "Да.{w=0.1} Они были будто отдельно от ваших тел."
     "Поняв, как это звучит, я заныла."
     E sad "Ну пожалуйста, поверьте мне!{w=0.1} Честно, я не вру вам!{w} Всё так и было..!!"
     "Да сто процентов они мне не поверят.{w=0.1} Я бы и сама себе не поверила..."
-    N hands relief "Что ж...{w} Полагаю, все мы устали, да?{w=0.1} Давайте вернёмся на базу."
-    S smile "Прекрасное решение!{w=0.1} Мы всё равно не смогли никого найти.{w} А значит, стоит подождать врага ещё немного."
+
+    show n hands relief with dissolve
+
+    N "Что ж...{w} Полагаю, все мы устали, да?{w=0.1} Давайте вернёмся на базу."
+
+    show s radio idle with dissolve
+
+    S "Прекрасное решение!{w=0.1} Мы всё равно не смогли никого найти.{w} А значит, стоит подождать врага ещё немного."
     N "И почему мы решили, что ждём именно врага?{w=0.1} Может, сигнал посылал союзник, но испугался нашего прихода..."
     "А возможно, Нектар права..."
     "Под шум рассуждений мы отправились в наш временный штаб."
@@ -905,8 +959,8 @@ label day_1:
 
     "Когда начало смеркаться, ко мне подошла Нектар."
 
-    show n at Transform(xalign=1.3, yalign=1.0, alpha=0.0)
-    show n hands relief left at move_on_scene_show(xalign=0.5)
+    show n at Transform(xalign=0.8, yalign=1.0, alpha=0.0)
+    show n base smile left at move_on_scene_show(xalign=0.5)
 
     N "Ну, как ты себя чувствуешь, Эхо?{w=0.1} Рассказывай."
     "При упоминании клички меня вновь триггернуло на дневные галлюцинации.{w} Я еле улыбнулась"
@@ -915,7 +969,7 @@ label day_1:
     N "А тут ещё и загадочность происходящего.{w} Неизвестность пугает, правда?"
     E "Что-то вроде того."
 
-    show n sad with dissolve
+    show n hands sad with dissolve
 
     N "Какой нейтральный ответ."
     N "Если хочешь, то могу не донимать тебя.{w=0.1} Я просто волнуюсь за твоё состояние."
@@ -927,129 +981,129 @@ label day_1:
     N "Мой голос?"
     E "Да.{w=0.1} Мне нравится слушать голоса людей."
 
-    show n with dissolve
+    show n surprised with dissolve
 
-    N surprised "Интересно.{w=0.1} Почему же?"
+    N "Интересно.{w=0.1} Почему же?"
+
+    show n hands sad with dissolve
+
     E "Ну...{w} дело в том, что мне приходится постоянно не только смотреть за сигналами, но и слушать их."
     E "Но слушая белый шум часами, невольно начинаешь сходить с ума.{w} В этот момент так приятно услышать чьи-то голоса, даже если они мне не знакомы."
     E "И мне не важно, о чём они будут.{w=0.1} Просто слушая разные интонации, я ощущаю, что возвращаюсь в привычный человеческий мир."
     E "Знаешь, это похоже на то, словно из межгалактического эфира тебя возвращают на родную Землю!"
     
-    show n with dissolve
+    show n base idle with dissolve
 
-    N base idle "Ого, вот это сравнения.{w=0.1} Хотелось бы хоть раз прочувствовать, что ты имеешь в виду."
+    N "Ого, вот это сравнения.{w=0.1} Хотелось бы хоть раз прочувствовать, что ты имеешь в виду."
     E tired idle "Не, лучше не стоит.{w=0.1} В мире есть развлечения, гораздо интереснее этого."
     
-    show n with dissolve
+    show n hands relief with dissolve
     
-    N hands relief "Что ж, поверю тебе на слово."
+    N "Что ж, поверю тебе на слово."
     N "Тогда посижу с тобой столько, сколько ты захочешь. Если интересно послушать мой голос, то могу рассказать тебе о себе."
     
-    show n with dissolve
+    show n base smile with dissolve
 
-    N base smile "Либо, например, могу тебя гладить и читать сказки, пока ты будешь лежать на моих коленях."
+    N "Либо, например, могу тебя гладить и читать сказки, пока ты будешь лежать на моих коленях."
     N "Но перед этим я хочу, чтобы ты сняла наушники.{w=0.1} Напряжение не уйдёт, если позволить ему одолевать себя."
     E base sad "Я не могу этого сделать."
     
-    show n with dissolve
+    show n hands sad with dissolve
 
-    N sad "Почему же?"
+    N "Почему же?"
     E base annoyed "Тот сигнал может прийти в любой момент.{w=0.1} Я должна быть готова его перехватить."
     E "К тому же, раньше он приходил только ночью.{w=0.1} Это наш первый ночлег в этом месте, поэтому я настороже."
     N "Значит, ты страдаешь, выполняя для нас важную миссию..."
     E tired idle "Разве не все мы делаем здесь похожие вещи?{w=0.1} Рэй и Леон-2 на постоянном дозоре, сменяя друг друга, а по глазам Стального и вовсе кажется, что он не спит."
     
-    show n with dissolve
+    show n base idle with dissolve
 
-    N base idle "Ты права.{w=0.1} Мы не можем позволить себе расслабиться ни на секунду."
+    N "Ты права.{w=0.1} Мы не можем позволить себе расслабиться ни на секунду."
     
-    show n with dissolve
+    show n hand_hide surprised with dissolve
 
-    N hand_hide surprised "И всё же, ты уже дважды за этот день докладывала странные вещи."
+    N "И всё же, ты уже дважды за этот день докладывала странные вещи."
     N "Сначала это была тень в том переулке, где никого не было."
     N "А потом голоса?{w=0.1} Я едва ли могу поверить, что ты не сходишь с ума."
     
-    show n with dissolve
+    show n hands sad with dissolve
 
-    N hands sad "Прошу, Эхо.{w=0.1} Я искренне хочу, чтобы ты перестала изводить себя."
+    N "Прошу, Эхо.{w=0.1} Я искренне хочу, чтобы ты перестала изводить себя."
     N "Я никогда не забуду, как ты сегодня бросилась мне на помощь.{w} Но нельзя вечно жертвовать собой."
     "Как и ожидалось, мне никто не поверил."
     "Но...{w} должна ли я сама доверять себе? Теперь это всё кажется каким-то сном."
     
-    show n with dissolve
+    show n base serious with dissolve
     
-    N base serious "Я сама в армии натерпелась бед в прошлом."
+    N "Я сама в армии натерпелась бед в прошлом."
     N "Мои мысли доходили даже до того, чтобы наложить на себя руки."
     E tired surprised "Неужели всё было настолько плохо?"
     N "Говоря по правде, было просто ужасно."
     N "В прошлом отряде я оказалась единственной девушкой среди мужчин.{w} Это они дали мне кличку Нектар."
     
-    show n with dissolve
+    show n hands sad with dissolve
     
-    N hands sad "Скажем так...{w} они решили пользоваться моим положением.{w=0.1} Я даже не могла позвать на помощь."
+    N "Скажем так...{w} они решили пользоваться моим положением.{w=0.1} Я даже не могла позвать на помощь."
     N "Они контролировали меня, даже когда физически я была свободна."
     N "Я даже устроила попытку бегства...{w} очевидно, неудачную.{w=0.1} Они меня наказали ещё больнее."
     N "Но когда наша первая миссия подошла к концу, я сразу пошла с жалобами к командованию."
     N "Но люди сверху...{w} предпочли сделать вид, что меня не существует."
     
-    show n with dissolve
+    show n hand_hide surprised with dissolve
     
-    N hands_hide surprised "Меня полностью проигнорировали."
-    
-    show n with dissolve
-    
-    N hands fear "А затем...{w} началась вторая совместная с этим отрядом миссия."
+    N "Меня полностью проигнорировали."
+    N "А затем...{w} началась вторая совместная с этим отрядом миссия."
     N "Я могу не говорить, что это было ещё ужаснее?{w=0.1} Оказывается, кое-кто из командования был с ними на одной стороне и обо всём доложил."
     
-    show n with dissolve
+    show n hand_hide shy with dissolve
     
-    N hand_hide shy "Я больше не чувствовала, что была человеком...{w} просто их скотом, с которым они делали всё, что хотели."
+    N "Я больше не чувствовала, что была человеком...{w} просто их скотом, с которым они делали всё, что хотели."
     
-    show n with dissolve
+    show n hands sad with dissolve
     
-    N hands sad "Я...{w} я больше так не могла, Эхо..."
+    N "Я...{w} я больше так не могла, Эхо..."
     N "Но мне больше некуда было идти.{w=0.1} Дома меня ждёт четверо несовершеннолетних братьев, а также отец-инвалид."
     N "Я единственная могу хоть как-то достойно прокормить свою семью, поэтому отправляю все деньги им."
     N "Страна сейчас в упадке из-за многолетней войны.{w=0.1} Хорошую работу нигде не найти – только здесь."
     
-    show n with dissolve
+    show n base serious with dissolve
     
-    N base serious "Поэтому...{w} я молилась только об одном."
+    N "Поэтому...{w} я молилась только об одном."
     N "Чтобы меня не признали пропавшей без вести."
     N "Если о моей смерти доложат командованию, тогда моя семья должна получить огромную выплату."
     
-    show n with dissolve
+    show n hands sad with dissolve
     
-    N sad "На большее...{w} у меня нет надежд в этом мире."
+    N "На большее...{w} у меня нет надежд в этом мире."
     "У меня не поворачивался язык, чтобы ей что-то ответить."
     "Всё, что я могла делать – просто смотреть, как девушка передо мной находится на грани того, чтобы не сорваться и зареветь."
     E base sad "Прости...{w} я ужасна в поддержке.{w=0.1} Но это просто кошмар. Я...{w} я сильно тебе сочувствую.{w=0.1} Врагу не пожелаешь оказаться на твоём месте."
     
-    show n with dissolve
+    show n base smile with dissolve
     
-    N base smile "Не стоит...{w} я всё понимаю.{w=0.1} Не каждый день услышишь, как кто-то признаётся тебе в таком."
+    N "Не стоит...{w} я всё понимаю.{w=0.1} Не каждый день услышишь, как кто-то признаётся тебе в таком."
     N "Но, ты знаешь..."
     N "Даже несмотря на худшее положение в этой жизни, я смогла найти силы справиться."
     
-    show n with dissolve
+    show n hands relief with dissolve
     
-    N hands relief "Я ведь всё-таки врач, не забыла?{w=0.1} Какая же я спасительница, если не могу исцелить даже саму себя?"
+    N "Я ведь всё-таки врач, не забыла?{w=0.1} Какая же я спасительница, если не могу исцелить даже саму себя?"
     N "Однажды ночью я подделала всему отряду диагнозы."
     
-    show n with dissolve
+    show n base smile with dissolve
     
-    N base smile "Я понизила их всех в категории воинской годности.{w=0.1} Из-за нехватки персонала принятые мною решения никто не проверял."
+    N "Я понизила их всех в категории воинской годности.{w=0.1} Из-за нехватки персонала принятые мною решения никто не проверял."
     N "Их просто пустили по ленте бюрократической машины, а на выходе все насильники узнали, что их переводят в другие войска."
     
-    show n with dissolve
+    show n hands relief with dissolve
     
-    N hands relief "Таким образом, я избавилась от них в своей жизни.{w=0.1} И ты знаешь, хоть я чувствую себя злодейкой, но это одно из немногих, чем я могу гордиться."
+    N "Таким образом, я избавилась от них в своей жизни.{w=0.1} И ты знаешь, хоть я чувствую себя злодейкой, но это одно из немногих, чем я могу гордиться."
     N "Я выжила.{w=0.1} Я справилась теми, кто разрушал мою жизнь."
     N "И я сохранила своё место.{w=0.1} Даже встретила таких прекрасных людей, как вы."
     
-    show n with dissolve
+    show n base smile with dissolve
     
-    N base smile "Даже имея такое тяжёлое прошлое, я не унываю."
+    N "Даже имея такое тяжёлое прошлое, я не унываю."
     N "Ведь завтра всё может быть ещё хуже!"
     "Я отчётливо чувствую в её голосе маниакальную депрессию и безумие."
     "Но также она сохранила в себе частицы надежды."
@@ -1065,42 +1119,90 @@ label day_1:
     N "Да, хорошо.{w=0.1} Приходи ко мне, если тебе нужна будет помощь."
     
     show s at Transform(xalign=1.3, yalign=1.0, alpha=0.0)
-    show s happy at move_on_scene_show(xalign=0.9)
+    show s explain happy at move_on_scene_show(xalign=0.95)
+    pause 0.5
+    show n hand_hide surprised right with dissolve
 
     S "А если вы не знаете, что вам делать, вы всегда можете обратиться к своему любимому лидеру."
     E surprised "А?{w=0.1} Стальной?{w=0.1} Как долго Вы нас подслушивали?"
-    S smile "Хм?{w=0.1} Не знаю, о чём вы тут говорили.{w} Я только что подошёл и услышал последнюю фразу."
+
+    show s radio idle with dissolve
+
+    S "Хм?{w=0.1} Не знаю, о чём вы тут говорили.{w} Я только что подошёл и услышал последнюю фразу."
     
-    show n with dissolve
+    show n base serious with dissolve
     
-    N hand_hide surprised "Ладно..."
-    S surprised "Хо?{w=0.1} Я чувствую в ваших голосах недоверие.{w} Неужели я настолько подозрительный?"
-    S smug "Тц-тц...{w} это очень плохо.{w=0.1} Плохая коммуникация между лидером и подчинёнными может отразиться на исходе миссии."
+    N "Ладно..."
+
+    show s radio surprised with dissolve
+
+    S "Хо?{w=0.1} Я чувствую в ваших голосах недоверие.{w} Неужели я настолько подозрительный?"
+
+    show s handsome annoyed with dissolve
+
+    S "Тц-тц...{w} это очень плохо.{w=0.1} Плохая коммуникация между лидером и подчинёнными может отразиться на исходе миссии."
     E "Тогда, может быть, Вам стоит больше слушать остальных?"
-    S serious "Думаешь, я этого не делаю?{w=0.1} Кажется, меня принимают не за того, кого надо."
-    S happy "Неужели до вас дошли те слухи вокруг меня?..{w} Бросьте, они недостоверны."
-    S serious "Их распустили другие начальники, которые завидовали моим успехам, и передали своим отрядам."
+
+    show s explain serious with dissolve
+
+    S "Думаешь, я этого не делаю?{w=0.1} Кажется, меня принимают не за того, кого надо."
+
+    show s radio evil with dissolve
+
+    S "Неужели до вас дошли те слухи вокруг меня?..{w} Бросьте, они недостоверны."
+    S "Их распустили другие начальники, которые завидовали моим успехам, и передали своим отрядам."
     S "В этом мире нет доказательств моих преступлений по одной простой причине – я их не совершал."
     E thinking happy "Доказательство дьявола...{w} В это трудно поверить."
-    S sad "Ох, опять головная боль с новым отрядом из-за этого!..{w} Сколько ещё я должен это терпеть?"
-    S serious "Ну пускай. Давайте поговорим напрямую."
+
+    show s handsome annoyed with dissolve
+
+    S "Ох, опять головная боль с новым отрядом из-за этого!..{w} Сколько ещё я должен это терпеть?"
+
+    show n left at move_on_scene_hide(xalign=0.0)
+    show s at move_on_scene(xalign=0.5)
+
+    show s sad with dissolve
+
+    S "Ну пускай. Давайте поговорим напрямую."
+
+    hide n
+    show s radio idle with dissolve
+
     S "Эхо, я верю твоим показаниям.{w=0.1} В этом городе действительно ощущается что-то сверхъестественное."
     E tired surprised "Что..."
     E "Вы же говорили обратное!"
-    S smile "А что я должен был сказать? Если мы все с этим согласимся, то как доложить об этом тем, кто этого не испытывал?"
+
+    show s surprised with dissolve
+
+    S "А что я должен был сказать? Если мы все с этим согласимся, то как доложить об этом тем, кто этого не испытывал?"
     S "Руководство нам просто не поверит. Поэтому мы должны приходить к ним с результатами, а не жаловаться на свои подозрения."
-    S proud "Но я держу всё в голове!{w=0.1} Даже с такой невыполнимой миссией я должен найти способ, как добиться успеха.{w} Победа будет за нами!"
+
+    show s handsome smug with dissolve
+
+    S "Но я держу всё в голове!{w=0.1} Даже с такой невыполнимой миссией я должен найти способ, как добиться успеха.{w} Победа будет за нами!"
     E idle "В это слабо верится."
+
+    show s explain smile with dissolve
+
     S "Люди никогда в меня не верили.{w=0.1} Поэтому лучший способ это сделать – продемонстрировать!"
     S "Но для этого я прошу всех подождать нужного момента.{w} А для этого..."
+
+    show s happy with dissolve
+
     S "Я прошу вас – поверьте в меня хоть немного."
     "Когда он так артистично это просит, я не могу не задумываться о том, что хочу верить в успех миссии..."
+
+    show s radio idle with dissolve
+
     S "Не только ты сегодня видела и слышала то, чего не должна была.{w} Это также видел Леон-2 через тепловизионный прицел."
     "Точно!{w=0.1} Я не одна столкнулась со странностями."
     "Неужели...{w} с верой в Стального я начинаю обретать веру в себя?{w=0.1} Мне всё это не привиделось?"
     "Я чувствую желание Стального верить в наш отряд.{w=0.1} Он не испытывал того же, что я и Леон-2, но глубоко внутри он понимает, что мы ему не врём."
     "Что-то происходит – и это ощущаю не я одна."
     E "Прошу прощения...{w} мне надо всё обдумать."
+
+    show s explain smile with dissolve
+
     S "Конечно.{w=0.1} Ты испытала сегодня сильное эмоциональное потрясение."
     S "Мне не нужно, чтобы мои подчинённые перенапрягались и сходили с ума."
     S "Лучше оставь такую участь главе этой группы.{w=0.1} Только я несу ответственность за выполнение операции, а не вы."
@@ -1108,10 +1210,19 @@ label day_1:
     "Он производит вид человека, который плохо спит ночью, обдумывая разные вещи."
     "Даже когда все спят, он единственный остаётся на дозоре."
     "Интересно, спит ли он вообще?{w=0.1} И когда это происходит?"
+
+    show s happy with dissolve
+
     S "На тебя вся надежда, Эхо.{w=0.1} Не пропусти ночью нужный сигнал."
     E surprised "Будет сделано..."
     E "...Стальной."
+
+    show s right at move_on_scene_hide(xalign=1.0)
+
     "Мы понимающе друг другу улыбаемся и расходимся."
+
+    hide s
+
     "Оставшись один на один с привычным шумом, я задумалась."
     "Сегодня я ближе узнала истории Нектар, Рэй и Стального."
     "Я посмотрела выше – где-то на этаже выше должен быть Леон-2."
@@ -1151,35 +1262,37 @@ label day_1:
 
     R "ЧЁРТ!!!{w=0.1} ГДЕ ОН?!!"
     "Внезапно на базу врывается Рэйзор, которая должна была нести дозор снаружи."
-    E "Что?{w=0.1} Кто?"
+    E base annoyed "Что?{w=0.1} Кто?"
 
     show r at angry
 
     R "ГДЕ-Е ЛЕОН-2?!{w=0.1} ОН НУЖЕН МНЕ СЕЙЧАС ЖЕ!"
 
     show l at Transform(xalign=1.3, yalign=1.0, alpha=0.0)
-    show l thinking embarrassed left at move_on_scene_show(xalign=0.9)
+    show l thinking embarrassed left at move_on_scene_show(xalign=1.0)
 
     L "Я ч-{w=0.1}что-{w=0.1}т-{w=0.1}то сделал не так?"
 
     show r at angry
 
     R "Быстрее, к окну!{w=0.1} Доставай свой прицел и ищи!"
+
+    show l half_closed surprised with dissolve
+
     L "Да что происходит?.."
 
-    show r seriously serious with dissolve
+    show l at move_on_scene_hide(xalign=0.5)
+    show r seriously serious left with dissolve
 
     R "Это они...{w} Они пришли ко мне из тумана."
     E "А?{w=0.1} Какие ещё они?"
 
     show r at angry
+    hide l
 
     R "Те, кто убили моих товарищей по отряду!!!"
-    E "Ха{w=0.1}-а{w=0.1}-а{w=0.1}-а?!"
-
-    show l thinking sad with dissolve
-
-    L "Эм, Рэй...{w} Ты уверена?{w=0.1} Я нигде не вижу..."
+    E "Ха-а-а-а?!"
+    L_side thinking sad "Эм, Рэй...{w} Ты уверена?{w=0.1} Я нигде не вижу..."
     R "Да как два пальца!{w=0.1} Они только что были там и не могли уйти далеко!"
     E "Я всё понимаю, но почему ты решила, что это именно те, кто убил твой отряд?"
 
@@ -1187,23 +1300,23 @@ label day_1:
 
     R "Потому что они заговорили со мной."
     R "Я их не видела, потому что они скрывались в этом грёбаном тумане..."
+
+    show r seriously serious with dissolve
+
     R "Но я говорила с ними!{w=0.1} Понимаешь?!{w} Эти ублюдки мне всё сами рассказали!"
     E "С большой вероятностью, это были те же галлюцинации, как у нас..."
 
-    show r strength dissatisfied at angry with dissolve
+    show r stretching dissatisfied at angry with dissolve
 
     R "Нет!{w=0.1} Да чёрт возьми, что я вам доказываю?!{w=0.1} Вы их просто видели или слышали.{w} А я, мать их за ногу, взаимодействовала с ними!"
-    
-    show l half_closed surprised with dissolve
-    
-    L "Но т-ты ведь просто говорила?{w=0.1} Ничего больше, да?.."
+    L_side half_closed surprised "Но т-ты ведь просто говорила?{w=0.1} Ничего больше, да?.."
 
     show r seriously serious with dissolve
 
     R "Вы не верите мне?"
     E "Нет, конечно, ты нам не лжёшь, но...{w} Разве в прошлый раз это не было просто ловушкой?"
     R "Всё с вами понятно."
-    L "Э-Эхо правда хочет тебе сказать, что..."
+    L_side "Э-Эхо правда хочет тебе сказать, что..."
 
     show r base sad with dissolve
 
@@ -1215,12 +1328,11 @@ label day_1:
     R "Вы все..!"
 
     show s at Transform(xalign=1.3, yalign=1.0, alpha=0.0)
-    show s radio idle right at move_on_scene_show(xalign=0.9)
-    hide l with dissolve
+    show s radio idle left at move_on_scene_show(xalign=1.0)
 
     S "...Успокойся, Рэй."
 
-    show r base asharashen with dissolve
+    show r base asharashen right with dissolve
 
     R "Стальной?{w=0.1} И Вы туда же?"
     S "Они ушли.{w=0.1} Ты их не вернёшь прямо сейчас."
