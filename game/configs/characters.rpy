@@ -214,6 +214,55 @@ layeredimage l:
 image l_side = LayeredImageProxy("l", Transform(xalign=0.5, yalign=0.0, crop=(0.2, 0.0, 0.8, 0.8), crop_relative=True, yoffset=60))
 #endregion
 
+#region Стальной
+layeredimage s:
+    at auto_flip("s", "left")
+
+    group direction:
+        attribute right:
+            Null()
+        attribute left default:
+            Null()
+
+    group pose:
+        attribute radio default:
+            Null()
+        attribute explain:
+            Null()
+        attribute handsome:
+            Null()
+
+    group emotion if_any "radio":
+        attribute idle default:
+            "images/Sprites/Leon2/Leon2_thinking_idle.png"
+        attribute evil:
+            "images/Sprites/Leon2/Leon2_thinking_sad.png"
+        attribute thinking:
+            "images/Sprites/Leon2/Leon2_thinking_embarrassed.png"            
+        attribute surprised:
+            "images/Sprites/Leon2/Leon2_thinking_embarrassed.png" 
+
+    group emotion if_any "explain":
+        xoffset 70
+        attribute smile:
+            "images/Sprites/Leon2/Leon2_closed_shy.png"
+        attribute serious default:
+            "images/Sprites/Leon2/Leon2_closed_serious.png"
+        attribute happy:
+            "images/Sprites/Leon2/Leon2_closed_smile.png"
+
+    group emotion if_any "handsome":
+        xoffset 90
+        attribute sad default:
+            "images/Sprites/Leon2/Leon2_half_closed_surprised.png"
+        attribute smug default:
+            "images/Sprites/Leon2/Leon2_half_closed_surprised.png"
+        attribute annoyed default:
+            "images/Sprites/Leon2/Leon2_half_closed_surprised.png"
+
+image s_side = LayeredImageProxy("s", Transform(xalign=0.5, yalign=0.0, crop=(0.2, 0.0, 0.8, 0.8), crop_relative=True, yoffset=60))
+#endregion
+
 #region Штаб
 
 image side b_side = LayeredImageProxy("b", Transform(crop=(0, 0, 800, 550), yoffset=85, zoom=1.0))
