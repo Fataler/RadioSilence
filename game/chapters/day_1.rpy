@@ -268,6 +268,7 @@ label day_1:
     #фон 3.1: за углом того же дома. Из-за тумана дальше по дороге мы не видим ничего. Пример композиции прислал
     $ renpy.force_autosave()
     scene bg_3_2
+    show screen fog_layer
     with Dissolve(1.0)
     $ renpy.transition(vpunch)
 
@@ -286,8 +287,10 @@ label day_1:
     #если делать это как фон, тогда потребуется дополнительная вариация №4.2, когда мы становимся ближе к силуэту в тумане, туман слегка рассеивается и мы видим, что это примотанная к фонарному столбу (секс-)кукла (18+ не показывать, это будет просто как шутка по тексту) в загаженной голубями и осадками чёрной накидке до земли с капюшоном и с вложенным в руки ружьём. Достаточно давно тут стоит, поэтому кукле плохо, но в тумане изначально это не было заметно. А если делать как ЦГ, то тоже потребуется такая же дополнительная вариация №1.2 с приближением и частичным рассеиванием тумана
     $ renpy.force_autosave()
     scene bg_3_2 at zoom_screen(z=1.0, dz=1.2)
+    show screen fog_layer
     pause 0.3
     scene bg_4_1
+    show screen fog_layer
     with Dissolve(1.0)
     pause 0.5
 
@@ -347,6 +350,7 @@ label day_1:
     #вариация .2. Появление спрайтов Нектар
     
     scene bg_4_2Dummy
+    show screen fog_layer
     with Dissolve(1.0)
     pause 0.5
 
@@ -372,6 +376,7 @@ label day_1:
 
     $ renpy.force_autosave()
     scene bg_3_1_shadow
+    show screen fog_layer
     show n base smile left at Transform(xalign=0.75, yalign=1.0)
     with Dissolve(1.0)
     pause 0.5
@@ -684,8 +689,9 @@ label day_1:
     with dissolve
     pause 0.5
     #фон №6: улица в густом тумане (можно в теории переиспользовать фон №4, если с него убрать секс-куклу и он рисовался не как ЦГ, но я бы хотел иметь немного разных фонов улиц для новеллы, а не одну и ту же картинку)
-    scene bg_hrushevki at Transform(zoom=1.2, xalign=0.5, yalign=0.5):
+    scene bg_hrushevki at Transform(zoom=1.1, xalign=0.5, yalign=0.5):
         anchor (0.5, 0.5)
+    show screen fog_layer
     with dissolve
     pause 0.5
 
@@ -735,7 +741,8 @@ label day_1:
     hide s
     hide l
     with dissolve
-    scene bg_hrushevki at slide_y
+    scene bg_hrushevki at Transform(zoom=1.1), slide_y(z=1.0, dy=-80)
+    show screen fog_layer
     pause 1.0
     show screen radio_screen("b base")
 
@@ -750,7 +757,9 @@ label day_1:
     "Тем более когда мы вместе...{w} А?"
     
     hide screen radio_screen
-    scene bg_hrushevki at Transform(zoom=1.2), slide_y(dy=100)
+    scene bg_hrushevki at Transform(align=(0.5, 0.4), zoom=1.1), slide_y(z=1.0, dy=50)
+    show screen fog_layer
+    with Dissolve(1.0)
     pause 1.0
 
     "Я поднимаю голову и осознаю."
@@ -835,7 +844,8 @@ label day_1:
 
     hide screen radio_screen
     $ renpy.transition(hpunch)
-    scene bg_hrushevki at zoom_screen
+    scene bg_hrushevki at zoom_screen(z=1.1)
+    show screen fog_layer
 
     "Я отшатываюсь."
     "Может, всё дело в искажениях через приём, но голос Леона-2 звучит чужеродно."
@@ -844,11 +854,13 @@ label day_1:
 
     #фон №7: например, пустая площадь в густом тумане (главное, чтобы картинка сменилась)
     scene bg_hrushevki at zoom_screen(z=1.0, dz=1.2)
+    show screen fog_layer
     pause 0.5
     scene bg_square:
-        zoom 1.2
-        align (0.6, 0.5)
+        zoom 1.1
+        align (0.55, 0.5)
         anchor (0.5, 0.5)
+    show screen fog_layer
     with dissolve
 
     "Меня встречает совершенно мёртвая улица."
@@ -911,10 +923,11 @@ label day_1:
     "Я оборачиваюсь и вижу, как из-за поворота выходят мои друзья."
 
     scene bg_square:
-        zoom 1.2
-        align (0.6, 0.5)
+        zoom 1.1
+        align (0.55, 0.5)
         anchor (0.5, 0.5)
-        ease 1.0 xoffset -100
+        ease 1.0 xoffset -180
+    show screen fog_layer
 
     show l at Transform(xalign=1.0, yalign=1.0, alpha=0.0)
     show l half_closed surprised left at move_on_scene_show(xalign=0.5)
@@ -923,8 +936,8 @@ label day_1:
     E base sad "Ах...{w} ну..."
     "Меня опозорили перед всем отрядом."
 
-    show s at Transform(xalign=1.0, yalign=1.0, alpha=0.0)
-    show s explain serious left at move_on_scene_show(xalign=0.95)
+    show s at Transform(xalign=1.3, yalign=1.0, alpha=0.0)
+    show s explain serious left at move_on_scene_show(xalign=1.05)
 
     S "Как твой руководитель, я вынужден тебя отчитать.{w} Ты отошла от нас всего на секунду, мы смотрим – а тебя уже и след простыл."
     S "Ты знаешь, что прошла целых два двора?{w=0.1} Так и потеряться можно."
@@ -945,8 +958,10 @@ label day_1:
 
     N "Что ж...{w} Полагаю, все мы устали, да?{w=0.1} Давайте вернёмся на базу."
 
-    show s radio idle with dissolve
-
+    show s radio idle
+    show l thinking idle 
+    with dissolve
+    
     S "Прекрасное решение!{w=0.1} Мы всё равно не смогли никого найти.{w} А значит, стоит подождать врага ещё немного."
     N "И почему мы решили, что ждём именно врага?{w=0.1} Может, сигнал посылал союзник, но испугался нашего прихода..."
     "А возможно, Нектар права..."

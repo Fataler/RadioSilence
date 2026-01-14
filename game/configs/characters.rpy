@@ -222,11 +222,12 @@ layeredimage l:
             "images/Sprites/Leon2/Leon2_half_closed_surprised.png"
 
 image side l_side = LayeredImageProxy("l", Transform(xalign=0.5, yalign=0.0, crop=(0.2, 0.0, 0.8, 0.8), crop_relative=True, yoffset=60, zoom=0.8, xzoom=-1.0))
-image l_radio = LayeredImageProxy("l", Transform(xalign=0.5, yalign=0.0, crop=(0.2, 0.0, 0.8, 0.8), crop_relative=True, yoffset=60))
+image l_radio = LayeredImageProxy("l", Transform(xalign=0.5, yalign=0.0, crop=(0.2, 0.0, 0.8, 0.8), crop_relative=True, yoffset=60, zoom=1.05))
 #endregion
 
 #region Стальной
 layeredimage s:
+    zoom 0.95
     at auto_flip("s", "left")
 
     group direction:
@@ -245,34 +246,34 @@ layeredimage s:
 
     group emotion if_any "radio":
         attribute idle default:
-            "images/Sprites/Leon2/Leon2_thinking_idle.png"
+            "images/Sprites/Stalnoy/Stal_radio_idle.png"
         attribute evil:
-            "images/Sprites/Leon2/Leon2_thinking_sad.png"
+            "images/Sprites/Stalnoy/Stal_radio_evil.png"
         attribute thinking:
-            "images/Sprites/Leon2/Leon2_thinking_embarrassed.png"            
+            "images/Sprites/Stalnoy/Stal_radio_thinking.png"            
         attribute surprised:
-            "images/Sprites/Leon2/Leon2_thinking_embarrassed.png" 
+            "images/Sprites/Stalnoy/Stal_radio_surprised.png" 
 
     group emotion if_any "explain":
         xoffset 70
         attribute smile:
-            "images/Sprites/Leon2/Leon2_closed_shy.png"
+            "images/Sprites/Stalnoy/Stal_explain_smile.png"
         attribute serious default:
-            "images/Sprites/Leon2/Leon2_closed_serious.png"
+            "images/Sprites/Stalnoy/Stal_explain_serious.png"
         attribute happy:
-            "images/Sprites/Leon2/Leon2_closed_smile.png"
+            "images/Sprites/Stalnoy/Stal_explain_happy.png"
 
     group emotion if_any "handsome":
         xoffset 90
-        attribute sad default:
-            "images/Sprites/Leon2/Leon2_half_closed_surprised.png"
+        attribute sad:
+            "images/Sprites/Stalnoy/Stal_handsome_sad.png"
         attribute smug default:
-            "images/Sprites/Leon2/Leon2_half_closed_surprised.png"
-        attribute annoyed default:
-            "images/Sprites/Leon2/Leon2_half_closed_surprised.png"
+            "images/Sprites/Stalnoy/Stal_handsome_smug.png"
+        attribute annoyed:
+            "images/Sprites/Stalnoy/Stal_handsome_annoyed.png"
 
 image s_side = LayeredImageProxy("s", Transform(xalign=0.5, yalign=0.0, crop=(0.2, 0.0, 0.8, 0.8), crop_relative=True, yoffset=60, zoom=0.8, xzoom=-1.0))
-image s_radio = LayeredImageProxy("s", Transform(xalign=0.5, yalign=0.0, crop=(0.2, 0.0, 0.8, 0.8), crop_relative=True, yoffset=60))
+image s_radio = LayeredImageProxy("s", Transform(xalign=0.5, yalign=0.0, crop=(0.2, 0.0, 0.8, 0.8), crop_relative=True, yoffset=100, zoom=1.1))
 #endregion
 
 #region Штаб
