@@ -52,7 +52,6 @@ define gui.about = _p("""
 {w=0}     - Featharine ({a=https://vk.com/sweet_sour_figures}ВК{/a}) - \n
 {w=0}     - Yele_nir - \n
 {w=0}     - Blackfox998 - \n
-{w=0}     - ArsenVinger2000 - \n
 {w=0}     - Fataler ({a=https://steamcommunity.com/id/fataler}Steam{/a}) - \n
 {w=0}     - Kapushishin ({a=https://steamcommunity.com/id/Kapushishin}Steam{/a}) - \n
 """% {"jam": URL_JAM})
@@ -62,7 +61,7 @@ define gui.about = _p("""
 ## постройке дистрибутивов. Оно должно содержать текст формата ASCII и не должно
 ## содержать пробелы, двоеточия и точки с запятой.
 
-define build.name = "BEyONd_thE_event_horizon"
+define build.name = "RadioSilence"
 
 
 ## Звуки и музыка ##############################################################
@@ -180,7 +179,7 @@ define config.has_sync = False
 ## Этот параметр обычно не должен изменяться, а если и изменился, должен быть
 ## текстовой строчкой, а не выражением.
 
-define config.save_directory = "Beyond_the_event_horizon-10_08_2024"
+define config.save_directory = "RadioSilence-10082024"
 
 
 ## Иконка ######################################################################
@@ -256,4 +255,4 @@ init python:
 ## Имя пользователя и название проекта, ассоциированные с проектом на itch.io,
 ## разделённые дробью.
 
-define build.itch_project = "featharine/beyond-the-event-horizon"
+define build.itch_project = "featharine/radio-silence"
