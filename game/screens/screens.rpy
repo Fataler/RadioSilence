@@ -219,7 +219,7 @@ screen skip_indicator():
         hbox:
             spacing 9
 
-            text _("МММ... СКИПАЕШ...  ")
+            text _("МММ... СКИПАЕШЬ...  ")
 
             text "-_-" at delayed_blink(0.0, 1.0)
             text "-_-" at delayed_blink(0.2, 1.0)

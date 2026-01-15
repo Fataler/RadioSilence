@@ -1,4 +1,5 @@
 label day_1:
+    call show_disclaimer
     stop music fadeout 1.0
     pause 0.5
     scene bg_black
@@ -14,6 +15,8 @@ label day_1:
     #фон №1: (единственный, показывающий город снаружи) небольшой город вдалеке в тумане, слабо проглядывается из-за плотного тумана. По бокам вплоть до города можно изобразить лес либо, например, склоны оврагов или гор, можно хоть микс (что вам интереснее). Так как темой игры является туман, можно предположить, что это умеренный климатический пояс либо близко к субарктическому
     #музыка №1: атмосферная, спокойная, вступительная. В сцене 50/50 будут знакомства с обстоятельствами ситуации и нашими персонажами, с которыми мы в отряде впервые (можете предложить иной вариант музыкальной темы). Музыка в следующей сцене будет слегка напряженной, потому что в следующей сцене наш военный отряд будет входить в город и в темпе исследовать его, поэтому можно на контрасте поставить первую мелодию относительно спокойную
 
+    $ quick_menu = True
+    
     "Каждый шаг приближает нас к городу, расположенному вдали от нынешнего центра цивилизации."
     "Уже несколько часов мы идём ровным строем после того, как покинувший нас водитель остановился на границе безопасной зоны."
     "Привал был совсем недавно, как раз перед старой городской чертой."
@@ -447,22 +450,23 @@ label day_1:
 
     E tired idle "Вот она – наша разбитая база внутри разбитого дома!"
 
-    show n right at Transform(xalign=-0.3, alpha=0.0)
-    show n base smile right at move_on_scene_show(xalign=0)
+    show n right at Transform(xalign=0.8, alpha=0.0)
+    show n base smile left at move_on_scene_show(xalign=0.5)
     pause 0.5
 
     N "И внутри разбитого, полностью прогнившего мира!"
     E surprised "Ну{w=0.1}, что-то в этом и правда есть."
 
-    show s explain happy left at Transform(xalign=1.0, yalign=1.0, alpha=0.0)
-    show s at move_on_scene_show(xalign=0.45)
-    hide n with dissolve
+    show s explain happy left at Transform(xalign=0.8, yalign=1.0, alpha=0.0)
+    show s at move_on_scene_show(xalign=0.5)
+    show n at move_on_scene_hide(xalign=0.2)
 
     S "Что ж, можно сказать, наша первая разведка местности увенчалась успехом."
     S "А это значит, мы обязаны донести это достижение штабу!"
     E tired idle "Предлагаете связаться со штабом?"
 
     show s smile with dissolve
+    hide n
 
     S "Я не предлагаю.{w=0.1} Мы ДОЛЖНЫ это сделать, понимаешь?"
     "Он прав.{w=0.1} Нам действительно нужно доложить о входе в город."
@@ -502,7 +506,7 @@ label day_1:
     S "Помните, что мы сейчас находимся в возможном логове врага.{w} А раз это так..."
     E base annoyed "...то враг может скоро попытаться напасть на нас."
 
-    show s explain smile with dissolve
+    show s explain smile left with dissolve
 
     S "Именно!{w=0.1} Какая же ты умница."
 
@@ -515,11 +519,13 @@ label day_1:
 
     R "То есть мы будем просто сидеть на попе ровно и ждать, пока враг сам к нам придёт?"
 
-    show s radio evil with dissolve
+    show s radio evil right with dissolve
 
     S "Таков приказ.{w=0.1} Ты хочешь его осудить?"
 
-    show r base sad with dissolve
+    show r base sad
+    show s explain happy
+    with dissolve
 
     R "...Нет.{w=0.1} Вы правы."
     R "Давайте подождём, но не слишком долго."
@@ -1269,8 +1275,8 @@ label day_1:
         parallel:
             ease 0.6 yoffset 100
     hide bg_black 
-    show r at Transform(xalign=0.0, yalign=1.0, alpha=0.0)
-    show r stretching rage right at move_on_scene_show(xalign=0.5)
+    show r at Transform(xalign=1.0, yalign=1.0, alpha=0.0)
+    show r stretching rage left at move_on_scene_show(xalign=0.75)
     with dissolve
     $ renpy.transition(vpunch)
     pause 1.0
@@ -1284,8 +1290,8 @@ label day_1:
 
     R "ГДЕ-Е ЛЕОН-2?!{w=0.1} ОН НУЖЕН МНЕ СЕЙЧАС ЖЕ!"
 
-    show l at Transform(xalign=1.3, yalign=1.0, alpha=0.0)
-    show l thinking embarrassed left at move_on_scene_show(xalign=1.0)
+    show l at Transform(xalign=0, yalign=1.0, alpha=0.0)
+    show l thinking embarrassed right at move_on_scene_show(xalign=0.25)
 
     L "Я ч-{w=0.1}что-{w=0.1}т-{w=0.1}то сделал не так?"
 
@@ -1297,7 +1303,7 @@ label day_1:
 
     L "Да что происходит?.."
 
-    show l at move_on_scene_hide(xalign=0.5)
+    show l left at move_on_scene_hide(xalign=0)
     show r seriously serious left with dissolve
 
     R "Это они...{w} Они пришли ко мне из тумана."
@@ -1343,12 +1349,12 @@ label day_1:
 
     R "Вы все..!"
 
-    show s at Transform(xalign=1.3, yalign=1.0, alpha=0.0)
-    show s radio idle left at move_on_scene_show(xalign=1.0)
+    show s at Transform(xalign=0.0, yalign=1.0, alpha=0.0)
+    show s radio idle right at move_on_scene_show(xalign=0.2)
 
     S "...Успокойся, Рэй."
 
-    show r base asharashen right with dissolve
+    show r base asharashen with dissolve
 
     R "Стальной?{w=0.1} И Вы туда же?"
     S "Они ушли.{w=0.1} Ты их не вернёшь прямо сейчас."
@@ -1372,7 +1378,7 @@ label day_1:
 
     R "Ладно...{w} Всё равно я их сейчас не догоню."
 
-    show r at move_on_scene_hide
+    show r at move_on_scene_hide(xalign=0.2)
     hide s with dissolve
 
     "Пробормотав это про себя, Рэй устало побрела внутрь комнаты."
@@ -1384,4 +1390,4 @@ label day_1:
     "...и по какой-то причине хмурилась."
 
     $ renpy.force_autosave()
-    #jump day_2
+    jump day_2

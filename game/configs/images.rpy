@@ -19,6 +19,7 @@ image bg_base_night = "images/Backgrounds/Base_night.jpg"
 image bg_cars = "images/Backgrounds/Cars.jpg"
 image bg_hrushevki = "images/Backgrounds/Hrushevki.jpg"
 image bg_square = "images/Backgrounds/Ploschad.jpg"
+image bg_ovrag = "images/Backgrounds/Ovrag.jpg"
 
 
 # credits images
@@ -42,8 +43,8 @@ image bg_black_t_80 = Solid("#000000cc")
 image bg_black_t_90 = Solid("#000000e6")
 
 ## цгшки
-image mirror_default:
-    "images/CG/CG_mirror/CG_mirror.png"
+image razer_nektar:
+    "images/CG/Razer_Nektar/Razer_Nektar.png"
 
 
 ## Эффекты
@@ -64,3 +65,4 @@ transform fade_to_light:
     linear 1.0 matrixcolor TintMatrix("#000000") * ColorMatrix(1.0, 1.0, 1.0, 0.0)
 
 
+image shadow = "images/Sprites/Base/shadow.png"

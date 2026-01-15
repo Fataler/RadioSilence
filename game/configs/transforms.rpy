@@ -188,14 +188,32 @@ transform move_on_scene_show(time=1.5, xalign=0.95):
         alpha 0.0
         ease (time * 0.3) alpha 1.0
 
-transform move_on_scene_slow(time=6.0, xalign=2.0):
+transform move_on_scene_slide_hide(time=1.5, xalign=0.95):
+    parallel:
+        ease time xalign xalign
+    parallel:
+        ease (time * 0.3) alpha 0.0
+
+transform move_on_scene_slide_show(time=1.5, xalign=0.95):
+    yalign 1.0
+    parallel:
+        ease time xalign xalign
+    parallel:
+        alpha 0.0
+        ease (time * 0.3) alpha 1.0
+
+transform move_on_scene_slide(time=1.5, xalign=0.95):
+    parallel:
+        ease time xalign xalign
+
+transform move_on_scene_slow(time=3.0, xalign=2.0):
     parallel:
         ease time xalign xalign
     parallel:
         block:
             ease 0.4 yoffset 20
             ease 0.4 yoffset 0
-            repeat (int(time * 5.0))
+            repeat (int(time * 3.0))
 
 #как листочек типа падает
 transform fall_like_leaf(time=5.0, yalign=25.0):
@@ -228,10 +246,10 @@ transform step_up(steps=1, step_time=0.3, step_size=10):
     ease step_time yoffset 0
     repeat steps
 
-transform move_step(xoffset=-100, time=0.3, steps = 1):
+transform move_step_slow(xoffset=-400, time=0.7, force=8, steps = 4):
     parallel:
         xoffset 0
-        linear time xoffset xoffset
+        linear time*force xoffset xoffset
     parallel:
         yoffset 0
         ease time yoffset 10
@@ -440,7 +458,7 @@ transform shaky_fast(time=15.0):
 transform down_little:
     xalign 0.5
     yalign 1.0
-    linear 0.6 yoffset 50  
+    linear 0.6 yoffset 300  
 
 #и встал
 transform up_little:
