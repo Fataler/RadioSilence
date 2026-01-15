@@ -1,6 +1,6 @@
 #region characters
 define E = Character("Эхо", image="e")
-define E_t = Character(None, image="r")
+define E_t = Character(None, image="e")
 define E_f = Character("Эхо", image="e_f")
 define R = Character("Рэйзор", image="r")
 define R_side = Character("Рэйзор", image="r_side")
