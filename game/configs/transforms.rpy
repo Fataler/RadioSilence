@@ -637,3 +637,54 @@ transform zoom_screen(z=1.2, dz=1.0, t=0.6):
     align (0.5, 0.5)
     anchor (0.5, 0.5)
     ease t zoom dz
+
+transform soot_drift_bottom(speed=0.60, zoom=1.0, amplitude=6, x_amplitude=0, blink = True):
+    subpixel True
+    zoom zoom
+    parallel:
+        block:
+            easein_cubic speed yoffset -amplitude
+            easeout_cubic speed yoffset 0
+            easein_cubic speed yoffset amplitude
+            easeout_cubic speed yoffset 0
+            repeat
+    parallel:
+        block:
+            linear speed xoffset x_amplitude
+            linear speed xoffset -x_amplitude
+            linear speed xoffset 0
+            repeat
+    parallel:
+        block:
+            linear 0.40 alpha (0.90 if blink else 1.00)
+            linear 0.60 alpha (1.00 if blink else 1.00)
+            linear 0.30 alpha (0.95 if blink else 1.00)
+            linear 0.40 alpha (1.00 if blink else 1.00)
+            repeat
+
+# вспышка
+transform flash_screen(in_time=0.3, out_time=2.0, peak=1.0):
+    alpha 0.0
+    linear in_time alpha peak
+    linear out_time alpha 0.0
+
+transform soft_shake_loop(time=0.35, dx=6, dy=4, step=0.04):
+    xoffset 0
+    yoffset 0
+    parallel:
+        block:
+            pause step
+            xoffset dx
+            pause step
+            xoffset -dx
+            repeat int(time/(2*step))
+    parallel:
+        block:
+            pause step
+            yoffset dy
+            pause step
+            yoffset -dy
+            repeat int(time/(2*step))
+    on hide:
+        xoffset 0
+        yoffset 0

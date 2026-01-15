@@ -43,8 +43,22 @@ image bg_black_t_80 = Solid("#000000cc")
 image bg_black_t_90 = Solid("#000000e6")
 
 ## цгшки
-image razer_nektar:
-    "images/CG/Razer_Nektar/Razer_Nektar.png"
+image CG_knife_1:
+    "images/CG/Knife/CG_knife_1.png"
+image CG_knife_2:
+    "images/CG/Knife/CG_knife_2.png"
+image CG_knife_3:
+    "images/CG/Knife/CG_knife_3.png"
+image CG_knife_nektar_fear = At("CG/Knife/CG_knife_nektar_fear.png", fade_on_show)
+image CG_knife_nektar_fear_cry = At("CG/Knife/CG_knife_nektar_fear_cry.png", fade_on_show)
+image CG_knife_nektar_smile = At("CG/Knife/CG_knife_nektar_smile.png", fade_on_show)
+image CG_knife_nektar_smile_cry = At("CG/Knife/CG_knife_nektar_smile_cry.png", fade_on_show)
+image CG_knife_nektar_hurt = At("CG/Knife/CG_knife_nektar_hurt.png", fade_on_show)
+image CG_knife_ray_asharashen = At("CG/Knife/CG_knife_ray_asharashen.png", fade_on_show)
+image CG_knife_ray_cry = At("CG/Knife/CG_knife_ray_cry.png", fade_on_show)
+image CG_knife_ray_rage = At("CG/Knife/CG_knife_ray_rage.png", fade_on_show)
+image CG_knife_tumansk = At("images/CG/Knife/CG_knife_tumansk.png", soot_drift_bottom)
+
 
 
 ## Эффекты
