@@ -57,7 +57,7 @@ image CG_knife_nektar_hurt = At("CG/Knife/CG_knife_nektar_hurt.png", fade_on_sho
 image CG_knife_ray_asharashen = At("CG/Knife/CG_knife_ray_asharashen.png", fade_on_show)
 image CG_knife_ray_cry = At("CG/Knife/CG_knife_ray_cry.png", fade_on_show)
 image CG_knife_ray_rage = At("CG/Knife/CG_knife_ray_rage.png", fade_on_show)
-image CG_knife_tumansk = At("images/CG/Knife/CG_knife_tumansk.png", soot_drift_bottom)
+image CG_knife_tumansk = At("images/CG/Knife/CG_knife_tumansk.png", fog_float(z=1.3, ypos=0.4))
 
 image CG_Stalnoy_duel_serious:
     "images/CG/StalnoyxStalnoy/eto_baza_seryozniy.png"
@@ -67,7 +67,7 @@ image CG_Stalnoy_duel_ST1_seryozniy = At("CG/StalnoyxStalnoy/ST1_seryozniy.png",
 image CG_Stalnoy_duel_ST1_smile = At("CG/StalnoyxStalnoy/ST1_zloy.png", fade_on_show)
 image CG_Stalnoy_duel_CH_seryozniy = At("CG/StalnoyxStalnoy/ST2_seryozniy.png", fade_on_show)
 image CG_Stalnoy_duel_CH_smile = At("CG/StalnoyxStalnoy/ST2_zloy.png", fade_on_show)
-image CG_Stalnoy_duel_tumansk = At("CG/StalnoyxStalnoy/tumansk.png", soot_drift_bottom)
+image CG_Stalnoy_duel_tumansk = At("CG/StalnoyxStalnoy/tumansk.png", fog_float(z=1.3, ypos=0.4))
 image CG_Stalnoy_aim = At("CG/StalnoyxStalnoy/aim.png", soot_drift_bottom)
 
 image CG_LeonxExo:
@@ -76,7 +76,25 @@ image CG_LeonxExo_Exo_smile = At("CG/LeonxExo/ebich_EXO_hehe.png", fade_on_show)
 image CG_LeonxExo_Exo_idle = At("CG/LeonxExo/ebich_EXO_mmm.png", fade_on_show)
 image CG_LeonxExo_Leon_smile = At("CG/LeonxExo/ebich_LEON_hehe.png", fade_on_show)
 image CG_LeonxExo_Leon_shy = At("CG/LeonxExo/ebich_LEON_oy.png", fade_on_show)
-image CG_LeonxExo_tumansk = At("CG/LeonxExo/tumansk-nad.png", soot_drift_bottom)
+image CG_LeonxExo_tumansk = At("CG/LeonxExo/tumansk-nad.png", fog_float(z=1.3, ypos=0.4))
+
+image CG_siluety:
+    "images/CG/Siluety/siluety.png"
+image CG_fon:
+    "images/CG/Siluety/fon.png"
+image CG_tumansk_1:
+    "images/CG/Siluety/tumansk_1.png"
+image CG_tumansk_2:
+    "images/CG/Siluety/tumansk_2.png"
+image CG_tumansk_3:
+    "images/CG/Siluety/tumansk_3.png"
+image CG_tumansk_4:
+    "images/CG/Siluety/tumansk_4.png"
+image CG_tumansk_nijniy:
+    "images/CG/Siluety/tumansk_nijniy.png"
+image CG_tumansk_smile:
+    "images/CG/Siluety/ulibka_TUMANA.png"
+
 
 ## Эффекты
 transform darken:

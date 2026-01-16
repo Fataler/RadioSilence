@@ -737,3 +737,13 @@ transform aim_drift_move(px=0, py=0, move_t=2.0, amp=10, drift_t=0.35, zoom=0.3)
         ease drift_t pos (px - amp//3,   py - amp)
         ease drift_t pos (px,            py)
         repeat
+
+transform fog_float(t=16.0, x=260, y=-25, z=1.15, ypos=0.5):
+    subpixel True
+    zoom z
+    anchor(0.5, 0.5)
+    pos(0.5, ypos)
+    block:
+        ease t xoffset x yoffset y
+        ease t xoffset 0 yoffset 0
+        repeat
