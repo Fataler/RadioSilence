@@ -21,8 +21,7 @@ label day_1:
     E_t "Уже несколько часов мы идём ровным строем после того, как покинувший нас водитель остановился на границе безопасной зоны."
     E_t "Привал был совсем недавно, как раз перед старой городской чертой."
 
-    show r seriously idle left at Transform(xalign=0.9, yalign=1.0, alpha=0.0)
-    show r at move_on_scene_show(xalign=0.5)
+    show r seriously idle left at move_on_scene_show(x1=0.9, xalign=0.5)
     pause 2.0
 
     R "Я вижу что-то вдалеке...{w} Это же и есть тот город, да?"
@@ -41,9 +40,8 @@ label day_1:
     E_t "Особенность была в том, что они были посланы только на засекреченных военных частотах."
     E_t "Командование приняло решение отправить нас, небольшой отряд разведчиков, в этот город, чтобы определить источник сообщений."
     
-    show s radio idle at Transform(xalign=0.9, yalign=1.0, alpha=0.0)
     show r at move_on_scene_hide(xalign=0)
-    show s at move_on_scene_show(xalign=0.5)
+    show s radio idle at move_on_scene_show(x1=0.8, xalign=0.5)
     pause 2.0
     $ S.name = "Товарищ сержант"
     hide r
@@ -51,13 +49,16 @@ label day_1:
     E tired idle "Товарищ старший сержант, сталкивались ли Вы с подобными ситуациями за время службы?"
     S radio idle "Что-то не припоминаю.{w=0.1} Такие мелочи обычно незначительны и, как правило, о них даже не докладывают."
     S "Кажется, этот случай особый, раз заинтересовал старших!"
-    S explain smile "О, и, Эхо...{w=0.1} Не стоит ко мне обращаться как \"товарищ старший сержант\"."
-    S radio evil "Ты же не хочешь, чтобы враг узнал, кто в нашем отряде главный?{w=0.1} Это может повлечь за собой...{w} угрозу моей жизни."
+    showd s explain smile
+    S "О, и, Эхо...{w=0.1} Не стоит ко мне обращаться как \"товарищ старший сержант\"."
+    showd s radio evil
+    S "Ты же не хочешь, чтобы враг узнал, кто в нашем отряде главный?{w=0.1} Это может повлечь за собой...{w} угрозу моей жизни."
     E tired surprised "Прошу прощения...{w} Как мне к Вам лучше обращаться?"
 
     $ S.name = "Стальной"
 
-    S handsome smug "Ярко и просто – Стальной. В конце концов, именно такое прозвище мне досталось за заслуги!"
+    showd s handsome smug
+    S "Ярко и просто – Стальной. В конце концов, именно такое прозвище мне досталось за заслуги!"
     "Стальной сказал это с такой гордостью и любовью, словно это была его главная награда за все пройденные битвы."
     E "Но тогда это не будет отличать обращения к Вам от обращений к остальным членам отряда?"
     S "Именно, моя золотая Эхо!{w=0.1} Разве не гениальную вещь я придумал?"
@@ -73,8 +74,7 @@ label day_1:
     E_t "У командования даже не было средств, чтобы обеспечить нас формой.{w=0.1} Зато всё ещё было оружие, поэтому мы больше напоминали народное ополчение."
     E_t "У Стального не было никаких знаков на форме, как и у всех.{w=0.1} Нас опознавали только по биометрии."
 
-    show n base smile at Transform(xalign=0.9, yalign=1.0, alpha=0.0)
-    show n at move_on_scene_show(xalign=0.5)
+    show n base smile at move_on_scene_show(x1=0.7, xalign=0.5)
     pause 1.0
 
     N "Никогда бы не подумала, что наш лидер допустит мысль, что будет захвачен врагом."
@@ -91,8 +91,7 @@ label day_1:
     "Нектар обратилась к спутнику, который уже долгое время ничего не говорил."
 
     show n at move_on_scene_hide(xalign=0.0)
-    show l at Transform(xalign=0.9, yalign=1.0, alpha=0.0)
-    show l half_closed surprised left at move_on_scene_show(xalign=0.5)
+    show l half_closed surprised left at move_on_scene_show(x1=0.7, xalign=0.5)
 
     L "Конечно...{w} с-{w=0.1}сейчас."
 
@@ -117,8 +116,7 @@ label day_1:
 
     E_t "Мы проходим ещё несколько километров, смотря по сторонам."
 
-    show s radio idle left at Transform(xalign=1.0, yalign=1.0, alpha=0.0)
-    show s at move_on_scene_show(xalign=0.5)
+    show s radio idle left at move_on_scene_show(x1=0.8, xalign=0.5)
 
     S "Все готовы?"
     L_side half_closed surprised "А?{w=0.1} Вы про то, чтобы войти в г-{w=0.1}город?"
@@ -361,8 +359,7 @@ label day_1:
     E_t tired surprised "После того, как туман рассеялся, я чётко могу разглядеть стрелка."
     E "Это чучело."
 
-    show n at Transform(xalign=1.1, yalign=1.0, alpha=0.0)
-    show n hand_hide surprised at move_on_scene_show(xalign=0.75)
+    show n hand_hide surprised at move_on_scene_show(x1=1.1, xalign=0.75)
     pause 1.0
 
     N "Какого...{w} Что оно тут делает?"
@@ -450,15 +447,13 @@ label day_1:
 
     E tired idle "Вот она – наша разбитая база внутри разбитого дома!"
 
-    show n right at Transform(xalign=0.8, alpha=0.0)
-    show n base smile left at move_on_scene_show(xalign=0.5)
+    show n base smile left at move_on_scene_show(x1=0.8, xalign=0.5)
     pause 0.5
 
     N "И внутри разбитого, полностью прогнившего мира!"
     E surprised "Ну{w=0.1}, что-то в этом и правда есть."
 
-    show s explain happy left at Transform(xalign=0.8, yalign=1.0, alpha=0.0)
-    show s at move_on_scene_show(xalign=0.5)
+    show s explain happy left at move_on_scene_show(x1=0.8, xalign=0.5)
     show n at move_on_scene_hide(xalign=0.2)
 
     S "Что ж, можно сказать, наша первая разведка местности увенчалась успехом."
@@ -485,8 +480,7 @@ label day_1:
 
     E_t tired idle "Закончив сообщение, я прерываю разговор."
 
-    show r seriously idle at Transform(xalign=1.2, yalign=1.0, alpha=0.0)
-    show r at move_on_scene_show(xalign=1.0)
+    show r seriously idle at move_on_scene_show(x1=1.2, xalign=1.0)
 
     R "Стальной, какие указания будут дальше?"
 
@@ -654,9 +648,8 @@ label day_1:
 
     L "Ещё нет.{w=0.1} Где его можно найти?"
 
-    show screen radio_screen("b base", xoffsetRadio=116) with dissolve
-    show s explain happy left at Transform(xalign=1.0, yalign=1.0, alpha=0.0)
-    show s at move_on_scene_show(xalign=0.5)
+    show screen radio_screen("b base", xposNoise=1350, xoffsetRadio=116) with dissolve
+    show s explain happy left at move_on_scene_show(x1=0.8, xalign=0.5)
     show r at move_on_scene_hide(xalign=0.0)
 
     S "Меня искать не стоит{w=0.1} – я чую запах врага издалека!"
@@ -706,21 +699,18 @@ label day_1:
 
     E_t tired idle "Но сколько бы мы ни искали, нам не удавалось их найти."
 
-    show n left at Transform(xalign=1.3, yalign=1.0, alpha=0.0)
-    show n base serious at move_on_scene_show(xalign=0.95)
+    show n base serious left at move_on_scene_show(x1= 1.3, xalign=0.95)
     pause 0.5
 
     N "Проклятье...{w} Как сквозь землю провалились."
 
-    show s right at Transform(xalign=0.2, yalign=1.0, alpha=0.0)
-    show s explain serious at move_on_scene_show(xalign=0.5)
+    show s explain serious right at move_on_scene_show(x1=0.2, xalign=0.5)
     pause 1.5
     show s left with dissolve
 
     S "Леон-2{w=0.1}, ты уверен, что это было именно здесь?"
 
-    show l right at Transform(xalign=-0.2, yalign=1.0, alpha=0.0)
-    show l thinking idle at move_on_scene_show(xalign=2)
+    show l thinking idle right at move_on_scene_show(x1=0.2, xalign=2)
 
     L "Да! Но...{w} теперь я их не вижу.{w=0.1} Должно быть, они ушли."
 
@@ -938,15 +928,13 @@ label day_1:
         ease 1.0 xoffset -180
     show screen fog_layer
 
-    show l at Transform(xalign=1.0, yalign=1.0, alpha=0.0)
-    show l half_closed surprised left at move_on_scene_show(xalign=0.5)
+    show l half_closed surprised left at move_on_scene_show(x1=0.8, xalign=0.5)
 
     L "Э-эм...{w=0.1} кто тебя ест?"
     E base sad "Ах...{w} ну..."
     E_t base sad "Меня опозорили перед всем отрядом."
 
-    show s at Transform(xalign=1.3, yalign=1.0, alpha=0.0)
-    show s explain serious left at move_on_scene_show(xalign=1.05)
+    show s explain serious left at move_on_scene_show(x1=1.3, xalign=1.05)
 
     S "Как твой руководитель, я вынужден тебя отчитать.{w} Ты отошла от нас всего на секунду, мы смотрим – а тебя уже и след простыл."
     S "Ты знаешь, что прошла целых два двора?{w=0.1} Так и потеряться можно."
@@ -954,8 +942,7 @@ label day_1:
     E "Я сама не знаю, что случилось...{w} Поднимаю голову, а вокруг никого."
     E annoyed "Потом я настроилась на частоту ваших голосов, шла-шла и пришла сюда.{w} Слышала, но никого не видела.{w} Пока не поняла, что ваши голоса окружили меня со всех сторон."
     
-    show n at Transform(xalign=0.0, yalign=1.0, alpha=0.0)
-    show n hand_hide surprised right at move_on_scene_show(xalign=0.15)
+    show n hand_hide surprised right at move_on_scene_show(x1=0.0, xalign=0.15)
     
     N "Наши голоса...{w} окружили тебя?"
     E "Да.{w=0.1} Они были будто отдельно от ваших тел."
@@ -984,8 +971,7 @@ label day_1:
 
     E_t "Когда начало смеркаться, ко мне подошла Нектар."
 
-    show n at Transform(xalign=0.8, yalign=1.0, alpha=0.0)
-    show n base smile left at move_on_scene_show(xalign=0.5)
+    show n base smile left at move_on_scene_show(x1=0.8, xalign=0.5)
 
     N "Ну, как ты себя чувствуешь, Эхо?{w=0.1} Рассказывай."
     E_t tired idle "При упоминании клички меня вновь триггернуло на дневные галлюцинации.{w} Я еле улыбнулась"
@@ -1143,8 +1129,7 @@ label day_1:
     E tired idle "Прости, Нектар...{w} Мне нужно о кое-чём подумать."
     N "Да, хорошо.{w=0.1} Приходи ко мне, если тебе нужна будет помощь."
     
-    show s at Transform(xalign=1.3, yalign=1.0, alpha=0.0)
-    show s explain happy at move_on_scene_show(xalign=0.95)
+    show s explain happy at move_on_scene_show(x1=1.3, xalign=0.95)
     pause 0.5
     show n hand_hide surprised right with dissolve
 
@@ -1278,8 +1263,7 @@ label day_1:
         parallel:
             ease 0.6 yoffset 100
     hide bg_black 
-    show r at Transform(xalign=1.0, yalign=1.0, alpha=0.0)
-    show r stretching rage left at move_on_scene_show(xalign=0.75)
+    show r stretching rage left at move_on_scene_show(x1=1.0, xalign=0.75)
     with dissolve
     $ renpy.transition(vpunch)
     pause 1.0
@@ -1293,8 +1277,7 @@ label day_1:
 
     R "ГДЕ-Е ЛЕОН-2?!{w=0.1} ОН НУЖЕН МНЕ СЕЙЧАС ЖЕ!"
 
-    show l at Transform(xalign=0, yalign=1.0, alpha=0.0)
-    show l thinking embarrassed right at move_on_scene_show(xalign=0.25)
+    show l thinking embarrassed right at move_on_scene_show(x1=0.0, xalign=0.25)
 
     L "Я ч-{w=0.1}что-{w=0.1}т-{w=0.1}то сделал не так?"
 
@@ -1352,8 +1335,7 @@ label day_1:
 
     R "Вы все..!"
 
-    show s at Transform(xalign=0.0, yalign=1.0, alpha=0.0)
-    show s radio idle right at move_on_scene_show(xalign=0.2)
+    show s radio idle right at move_on_scene_show(x1=0.0, xalign=0.2)
 
     S "...Успокойся, Рэй."
 

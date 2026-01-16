@@ -59,7 +59,24 @@ image CG_knife_ray_cry = At("CG/Knife/CG_knife_ray_cry.png", fade_on_show)
 image CG_knife_ray_rage = At("CG/Knife/CG_knife_ray_rage.png", fade_on_show)
 image CG_knife_tumansk = At("images/CG/Knife/CG_knife_tumansk.png", soot_drift_bottom)
 
+image CG_Stalnoy_duel_serious:
+    "images/CG/StalnoyxStalnoy/eto_baza_seryozniy.png"
+image CG_Stalnoy_duel_evil:
+    "images/CG/StalnoyxStalnoy/eto_baza_zloy.png"
+image CG_Stalnoy_duel_ST1_seryozniy = At("CG/StalnoyxStalnoy/ST1_seryozniy.png", fade_on_show)
+image CG_Stalnoy_duel_ST1_smile = At("CG/StalnoyxStalnoy/ST1_zloy.png", fade_on_show)
+image CG_Stalnoy_duel_CH_seryozniy = At("CG/StalnoyxStalnoy/ST2_seryozniy.png", fade_on_show)
+image CG_Stalnoy_duel_CH_smile = At("CG/StalnoyxStalnoy/ST2_zloy.png", fade_on_show)
+image CG_Stalnoy_duel_tumansk = At("CG/StalnoyxStalnoy/tumansk.png", soot_drift_bottom)
+image CG_Stalnoy_aim = At("CG/StalnoyxStalnoy/aim.png", soot_drift_bottom)
 
+image CG_LeonxExo:
+    "images/CG/LeonxExo/ETO_BAZA.png"
+image CG_LeonxExo_Exo_smile = At("CG/LeonxExo/ebich_EXO_hehe.png", fade_on_show)
+image CG_LeonxExo_Exo_idle = At("CG/LeonxExo/ebich_EXO_mmm.png", fade_on_show)
+image CG_LeonxExo_Leon_smile = At("CG/LeonxExo/ebich_LEON_hehe.png", fade_on_show)
+image CG_LeonxExo_Leon_shy = At("CG/LeonxExo/ebich_LEON_oy.png", fade_on_show)
+image CG_LeonxExo_tumansk = At("CG/LeonxExo/tumansk-nad.png", soot_drift_bottom)
 
 ## Эффекты
 transform darken:

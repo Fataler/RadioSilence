@@ -175,8 +175,9 @@ transform move_on_scene_hide(time=1.5, xalign=0.95):
     parallel:
         ease (time * 0.3) alpha 0.0
 
-transform move_on_scene_show(time=1.5, xalign=0.95):
-    yalign 1.0
+transform move_on_scene_show(time=1.5, x1=1.2, xalign=0.95):
+    align (x1, 1.0)
+    alpha 0.0
     parallel:
         ease time xalign xalign
     parallel:
@@ -194,8 +195,9 @@ transform move_on_scene_slide_hide(time=1.5, xalign=0.95):
     parallel:
         ease (time * 0.3) alpha 0.0
 
-transform move_on_scene_slide_show(time=1.5, xalign=0.95):
-    yalign 1.0
+transform move_on_scene_slide_show(time=1.5, x1=1.2, xalign=0.95):
+    align (x1, 1.0)
+    alpha 0.0
     parallel:
         ease time xalign xalign
     parallel:
@@ -688,3 +690,50 @@ transform soft_shake_loop(time=0.35, dx=6, dy=4, step=0.04):
     on hide:
         xoffset 0
         yoffset 0
+
+"""transform aim_drift(zoom=1.35, amp=10, t=0.5, xalign=0.5, yalign=0.5):
+    subpixel True
+    align (xalign, yalign)
+    zoom zoom
+
+    xoffset 0
+    yoffset 0
+
+    block:
+        ease t xoffset ( amp) yoffset (-amp//2)
+        ease t xoffset (-amp) yoffset ( amp//3)
+        ease t xoffset ( amp//2) yoffset ( amp)
+        ease t xoffset (-amp//3) yoffset (-amp)
+        ease t xoffset 0 yoffset 0
+        repeat"""
+
+transform aim_drift(cx=0, cy=0, amp=10, t=0.35, zoom=0.3, xalign=0.5, yalign=0.5):
+    subpixel True
+    align (xalign, yalign)
+    zoom zoom
+
+    xoffset cx
+    yoffset cy
+
+    block:
+        ease t xoffset (cx + amp)      yoffset (cy - amp//2)
+        ease t xoffset (cx - amp)      yoffset (cy + amp//3)
+        ease t xoffset (cx + amp//2)   yoffset (cy + amp)
+        ease t xoffset (cx - amp//3)   yoffset (cy - amp)
+        ease t xoffset cx              yoffset cy
+        repeat
+
+transform aim_drift_move(px=0, py=0, move_t=2.0, amp=10, drift_t=0.35, zoom=0.3):
+    subpixel True
+    anchor (0.5, 0.5)
+    zoom zoom
+
+    ease move_t pos (px, py)
+
+    block:
+        ease drift_t pos (px + amp,      py - amp//2)
+        ease drift_t pos (px - amp,      py + amp//3)
+        ease drift_t pos (px + amp//2,   py + amp)
+        ease drift_t pos (px - amp//3,   py - amp)
+        ease drift_t pos (px,            py)
+        repeat

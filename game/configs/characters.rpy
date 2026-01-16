@@ -8,7 +8,7 @@ define N = Character("Нектар", image="n")
 define N_side = Character("Нектар", image="n_side")
 define S = Character("Стальной", image="s")
 define S_side = Character("Стальной", image="s_side")
-define CH = Character("Стальной", image="s")
+define CH = Character("Человек из тумана", image="s")
 define L = Character("Леон-2", image="l")
 define L_side = Character("Леон-2", image="l_side")
 define B = Character("Штаб", image="b")
@@ -253,7 +253,6 @@ layeredimage s:
             "images/Sprites/Stalnoy/Stal_radio_surprised.png" 
 
     group emotion if_any "explain":
-        xoffset 70
         attribute smile:
             "images/Sprites/Stalnoy/Stal_explain_smile.png"
         attribute serious default:
@@ -262,7 +261,6 @@ layeredimage s:
             "images/Sprites/Stalnoy/Stal_explain_happy.png"
 
     group emotion if_any "handsome":
-        xoffset 90
         attribute sad:
             "images/Sprites/Stalnoy/Stal_handsome_sad.png"
         attribute smug default:
