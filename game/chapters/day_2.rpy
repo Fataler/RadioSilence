@@ -66,7 +66,7 @@ label day_2:
     E "Может быть, тогда и Леона-2..."
 
     show s at Transform(xalign=1.1, yalign=1.0, alpha=0.0)
-    show s radio surprised left at move_on_scene_show(xalign=0.95, yalign=1.0)
+    show s radio surprised left at move_on_scene_show(xalign=0.95)
     showd n hands sad
 
     S "Я вам не позволю это сделать."
