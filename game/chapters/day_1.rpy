@@ -392,7 +392,7 @@ label day_1:
     E tired idle "Пустяки.{w=0.1} Я просто защищала товарищей."
     N "Я обязательно должна отплатить тебе чем-нибудь, Эхо."
 
-    show screen radio_screen("l_radio thinking sad", xposNoise=500, xoffsetRadio=-734)
+    show screen radio_screen("l_radio thinking sad", xoffsetRadio=-734)
     pause 0.5
 
     L "А мне?"
@@ -631,30 +631,30 @@ label day_1:
 
     R "Ах ты ж жопа маленькая..."
 
-    show screen radio_screen("l_radio thinking idle", xposNoise=1350, xoffsetRadio=116) with dissolve
+    show screen radio_screen("l_radio thinking idle", xoffsetRadio=116) with dissolve
     pause 0.5
     show r seriously idle with dissolve
     L "А...{w=0.1} Простите, что прерываю ваш диалог!"
 
-    show screen radio_screen("b base", xposNoise=1350, xoffsetRadio=116) with dissolve
+    show screen radio_screen("b base", xoffsetRadio=116) with dissolve
 
     R "Леон-2?{w=0.1} Что случилось?"
 
-    show screen radio_screen("l_radio thinking idle", xposNoise=1350, xoffsetRadio=116) with dissolve
+    show screen radio_screen("l_radio thinking idle", xoffsetRadio=116) with dissolve
 
     L "Т-{w=0.1}там...{w} кто-то в тумане."
 
-    show screen radio_screen("b base", xposNoise=1350, xoffsetRadio=116) with dissolve
+    show screen radio_screen("b base", xoffsetRadio=116) with dissolve
     show r base surprised with dissolve
 
     E_t tired surprised "Мы с Рэй переглядываемся."
     E tired surprised "Ты уже сообщил Стальному?"
 
-    show screen radio_screen("l_radio half_closed surprised", xposNoise=1350, xoffsetRadio=116) with dissolve
+    show screen radio_screen("l_radio half_closed surprised", xoffsetRadio=116) with dissolve
 
     L "Ещё нет.{w=0.1} Где его можно найти?"
 
-    show screen radio_screen("b base", xposNoise=1350, xoffsetRadio=116) with dissolve
+    show screen radio_screen("b base", xoffsetRadio=116) with dissolve
     show s explain happy left at Transform(xalign=1.0, yalign=1.0, alpha=0.0)
     show s at move_on_scene_show(xalign=0.5)
     show r at move_on_scene_hide(xalign=0.0)
@@ -666,7 +666,7 @@ label day_1:
 
     S "Ну-с!{w=0.1} Рассказывай, что ты видел.{w=0.1} Да не упускай ни единой подробности!"
 
-    show screen radio_screen("l_radio thinking idle", xposNoise=1350, xoffsetRadio=116) with dissolve
+    show screen radio_screen("l_radio thinking idle", xoffsetRadio=116) with dissolve
 
     L "Из-за тумана видимость плохая, поэтому я решил использовать для наблюдения тепловизионный прицел."
     L "И мне показало...{w} На два часа от места наблюдения большое скопление тепла, примерно в двухста метрах отсюда."
@@ -750,7 +750,7 @@ label day_1:
     hide s
     hide l
     with dissolve
-    scene bg_hrushevki at Transform(zoom=1.1), slide_y(z=1.0, dy=-80)
+    scene bg_hrushevki at Transform(zoom=1.2), slide_y(z=1.0, dy=-80)
     show screen fog_layer
     pause 1.0
     show screen radio_screen("b base")

@@ -1,46 +1,55 @@
 image bg_radio = "images/Radio/Racia.png"
 image noise = "images/Radio/Noise.png"
 
-screen radio_screen(char_img, xposNoise=1234, xoffsetRadio=0, noise = 1.0, jitter = 0.01, z = 1.03):
+transform radio_content_animation:
+    on show:
+        alpha 0.0
+        pause 0.5
+        linear 0.5 alpha 1.0
+    on replace:
+        alpha 1.0
+    on hide:
+        linear 0.5 alpha 0.0
+
+transform radio_bg_animation:
+    on show:
+        alpha 0.0
+        linear 0.5 alpha 1.0
+    on replace:
+        alpha 1.0
+    on hide:
+        pause 0.5
+        linear 0.5 alpha 0.0
+
+screen radio_screen(char_img, xoffsetRadio=0, ypos=0, noise=1.0, jitter=0.01, z=1.03):
     tag radio_ui
     
-    fixed:
-        at screen_fade_effect(0.3)
+    python:
+        tint_color = (0.5, 1.0, 0.5)
         
-        fixed:
-            xpos xposNoise ypos 339
-            xsize 360 ysize 190
+        noise_part = At(
+            Transform("noise", align=(0.5, 0.5), yoffset=-11, xoffset=-9, zoom=z),
+            radio_crt_effect(tint=tint_color, noise=noise, jitter=jitter, curvature=0.0)
+        )
+        
+        char_part = At(
+            Transform(char_img, align=(0.5, 0.5), zoom=0.6),
+            radio_crt_effect(tint=tint_color, noise=noise, jitter=jitter, curvature=0.08), 
+            radio_content_animation
+        )
+        
+        fixed_content = Fixed(noise_part, char_part, xsize=360, ysize=190)
+        content = AlphaMask(fixed_content, "images/Radio/noise.png")
 
-            python:
-                tint_color = (0.5, 1.0, 0.5)
-                
-                noise_lvl = noise
-                jitter_lvl = jitter
-            
-            add "noise":
-                align (0.5, 0.5)
-                yoffset -11
-                xoffset -10
-                zoom z
-                at radio_crt_effect(
-                    tint=tint_color, 
-                    noise=noise_lvl, 
-                    jitter=jitter_lvl,
-                    curvature=0.0
-                )
+    fixed:
+        at radio_bg_animation
+        xpos xoffsetRadio ypos ypos
+        
+        add content:
+            xpos 1225 ypos 328
+            zoom 1.05
 
-            add char_img:
-                align (0.5, 0.5)
-                zoom 0.6
-                at radio_crt_effect(
-                    tint=tint_color, 
-                    noise=noise_lvl, 
-                    jitter=jitter_lvl,
-                    curvature=0.08
-                )
-
-        add "bg_radio" alpha 1.0:
-            xoffset xoffsetRadio
+        add "bg_radio"
 
 
 label test_radio:

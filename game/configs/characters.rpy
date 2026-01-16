@@ -127,8 +127,8 @@ layeredimage r:
         attribute asharashen:
             "images/Sprites/Razer/Razer_base_asharashen.png"
 
-image side r_side = LayeredImageProxy("r", Transform(xalign=0.5, yalign=0.0, crop=(0.2, 0.0, 0.8, 0.8), crop_relative=True, yoffset=100, zoom=0.8, xzoom=-1.0))
-image r_radio = LayeredImageProxy("r", Transform(xalign=0.5, yalign=0.0, crop=(0.2, 0.0, 0.8, 0.8), crop_relative=True, yoffset=100))
+image side r_side = LayeredImageProxy("r", Transform(xalign=0.5, yalign=0.0, crop=(0.0, 0.0, 1.0, 0.8), crop_relative=True, yoffset=180, xoffset=-130, zoom=0.9, xzoom=-1.0))
+image r_radio = LayeredImageProxy("r", Transform(xalign=0.5, yalign=0.0, crop=(0.0, 0.0, 1.0, 0.8), crop_relative=True, yoffset=105, xoffset=-20))
 #endregion
 
 #region Нектар
@@ -173,8 +173,8 @@ layeredimage n:
         attribute surprised default:
             "images/Sprites/Nektar/Nektar_hand_hide_surprised.png"
 
-image side n_side = LayeredImageProxy("n", Transform(xalign=0.5, yalign=0.0, crop=(0.2, 0.0, 0.8, 0.8), crop_relative=True, yoffset=60, zoom=0.8, xzoom=-1.0))
-image n_radio = LayeredImageProxy("n", Transform(xalign=0.5, yalign=0.0, crop=(0.2, 0.0, 0.8, 0.8), crop_relative=True, yoffset=60))
+image side n_side = LayeredImageProxy("n", Transform(xalign=0.5, yalign=0.0, crop=(0.0, 0.0, 1.0, 0.8), crop_relative=True, yoffset=90, xoffset=-80, zoom=0.9, xzoom=-1.0))
+image n_radio = LayeredImageProxy("n", Transform(xalign=0.5, yalign=0.0, crop=(0.0, 0.0, 1.0, 0.8), crop_relative=True, yoffset=60))
 
 # image s_radio = LayeredImageProxy("s", Transform(xalign=0.5, yalign=0.0, crop=(0.2, 0.0, 0.8, 0.8), crop_relative=True, yoffset=60))
 
@@ -219,8 +219,8 @@ layeredimage l:
         attribute surprised default:
             "images/Sprites/Leon2/Leon2_half_closed_surprised.png"
 
-image side l_side = LayeredImageProxy("l", Transform(xalign=0.5, yalign=0.0, crop=(0.2, 0.0, 0.8, 0.8), crop_relative=True, yoffset=60, zoom=0.8, xzoom=-1.0))
-image l_radio = LayeredImageProxy("l", Transform(xalign=0.5, yalign=0.0, crop=(0.2, 0.0, 0.8, 0.8), crop_relative=True, yoffset=60, zoom=1.05))
+image side l_side = LayeredImageProxy("l", Transform(xalign=0.5, yalign=0.0, crop=(0.0, 0.0, 1.0, 0.8), crop_relative=True,  yoffset=180, xoffset=-120, zoom=0.9, xzoom=-1.0)) #xoffset = 80,
+image l_radio = LayeredImageProxy("l", Transform(xalign=0.5, yalign=0.0, crop=(0.0, 0.0, 1.0, 0.8), crop_relative=True, yoffset=90, zoom=1.05))
 #endregion
 
 #region Стальной
@@ -270,14 +270,14 @@ layeredimage s:
         attribute annoyed:
             "images/Sprites/Stalnoy/Stal_handsome_annoyed.png"
 
-image s_side = LayeredImageProxy("s", Transform(xalign=0.5, yalign=0.0, crop=(0.2, 0.0, 0.8, 0.8), crop_relative=True, yoffset=60, zoom=0.8, xzoom=-1.0))
-image s_radio = LayeredImageProxy("s", Transform(xalign=0.5, yalign=0.0, crop=(0.2, 0.0, 0.8, 0.8), crop_relative=True, yoffset=100, zoom=1.1))
+image side s_side = LayeredImageProxy("s", Transform(xalign=0.5, yalign=0.0, crop=(0.0, 0.0, 1.0, 0.8), crop_relative=True, yoffset=180, xoffset=-90, zoom=0.9, xzoom=-1.0))
+image s_radio = LayeredImageProxy("s", Transform(xalign=0.5, yalign=0.0, crop=(0.0, 0.0, 1.0, 0.8), crop_relative=True, yoffset=120, zoom=1.1))
 #endregion
 
 #region Штаб
 
-image side b_side = LayeredImageProxy("b", Transform(crop=(0, 0, 800, 550), yoffset=85, zoom=1.0))
-image b_radio = LayeredImageProxy("b", Transform(crop=(0, 0, 800, 550), yoffset=85, zoom=1.0))
+image side b_side = LayeredImageProxy("b", Transform(crop=(0.0, 0.0, 1.0, 0.8), crop_relative=True, yoffset=85, zoom=1.0))
+image b_radio = LayeredImageProxy("b", Transform(crop=(0.0, 0.0, 1.0, 0.8), crop_relative=True, yoffset=85, zoom=1.0))
 
 layeredimage b:
 
