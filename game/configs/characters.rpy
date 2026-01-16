@@ -208,7 +208,6 @@ layeredimage l:
             "images/Sprites/Leon2/Leon2_thinking_embarrassed.png"            
 
     group emotion if_any "closed":
-        xoffset 70
         attribute shy:
             "images/Sprites/Leon2/Leon2_closed_shy.png"
         attribute serious default:
@@ -217,7 +216,6 @@ layeredimage l:
             "images/Sprites/Leon2/Leon2_closed_smile.png"
 
     group emotion if_any "half_closed":
-        xoffset 90
         attribute surprised default:
             "images/Sprites/Leon2/Leon2_half_closed_surprised.png"
 
