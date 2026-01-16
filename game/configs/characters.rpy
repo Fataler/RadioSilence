@@ -270,7 +270,7 @@ layeredimage s:
         attribute annoyed:
             "images/Sprites/Stalnoy/Stal_handsome_annoyed.png"
 
-image side s_side = LayeredImageProxy("s", Transform(xalign=0.5, yalign=0.0, crop=(0.0, 0.0, 1.0, 0.8), crop_relative=True, yoffset=180, xoffset=-90, zoom=0.9, xzoom=-1.0))
+image s_side = LayeredImageProxy("s", Transform(xalign=0.5, yalign=0.0, crop=(0.0, 0.0, 1.0, 0.8), crop_relative=True, yoffset=60, zoom=0.8, xzoom=-1.0))
 image s_radio = LayeredImageProxy("s", Transform(xalign=0.5, yalign=0.0, crop=(0.0, 0.0, 1.0, 0.8), crop_relative=True, yoffset=120, zoom=1.1))
 #endregion
 

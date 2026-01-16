@@ -54,6 +54,14 @@ init -1:
         function circle_motion(radius, duration, start_angle, clockwise)
         repeat
 
+    #add flashback effect (show layer master at flashback_effect)
+    transform flashback_effect:
+        matrixcolor SaturationMatrix(0.2) * TintMatrix("#ffeec2") * ContrastMatrix(1.1)
+
+    #hide effect
+    transform reset_layer:
+        matrixcolor IdentityMatrix()
+
 init python:
         import math
         def _circle_motion(radius, duration, start_angle_deg, clockwise, trans, st, at):
