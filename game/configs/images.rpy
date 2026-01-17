@@ -59,6 +59,24 @@ image CG_knife_ray_cry = At("CG/Knife/CG_knife_ray_cry.png", fade_on_show)
 image CG_knife_ray_rage = At("CG/Knife/CG_knife_ray_rage.png", fade_on_show)
 image CG_knife_tumansk = At("images/CG/Knife/CG_knife_tumansk.png", fog_float(z=1.3, ypos=0.4))
 
+image CG_NektarxRey1:
+    "images/CG/NektarxRey/base_base.png"
+image CG_NektarxRey2:
+    "images/CG/NektarxRey/cry_die.png"
+image CG_NektarxRey3:
+    "images/CG/NektarxRey/cry_smile.png"
+image CG_NektarxRey_fon:
+    "images/CG/NektarxRey/fon.png"
+image CG_NektarxRey_nektar_base = At("CG/NektarxRey/nektar_base.png", fade_on_show)
+image CG_NektarxRey_nektar_die = At("CG/NektarxRey/nektar_die.png")
+image CG_NektarxRey_nektar_smile = At("CG/NektarxRey/nektar_smile.png", fade_on_show)
+image CG_NektarxRey_ray_base = At("CG/NektarxRey/ray_base.png", fade_on_show)
+image CG_NektarxRey_ray_cry = At("CG/NektarxRey/ray_cry.png")
+image CG_NektarxRey_tumansk_nad:
+    "images/CG/NektarxRey/tumansk_nad.png"
+image CG_NektarxRey_fon_tumansk_pod:
+    "images/CG/NektarxRey/tumansk_pod.png"
+
 image CG_Stalnoy_duel_serious:
     "images/CG/StalnoyxStalnoy/eto_baza_seryozniy.png"
 image CG_Stalnoy_duel_evil:
@@ -89,7 +107,7 @@ image CG_LeonxExo_Exo_smile = At("CG/LeonxExo/ebich_EXO_hehe.png", fade_on_show)
 image CG_LeonxExo_Exo_idle = At("CG/LeonxExo/ebich_EXO_mmm.png")
 image CG_LeonxExo_Leon_smile = At("CG/LeonxExo/ebich_LEON_hehe.png", fade_on_show)
 image CG_LeonxExo_Leon_shy = At("CG/LeonxExo/ebich_LEON_oy.png", fade_on_show)
-image CG_LeonxExo_tumansk = At("CG/LeonxExo/tumansk-nad.png", fog_float(z=1.3, ypos=0.4))
+image CG_LeonxExo_tumansk = At("CG/LeonxExo/tumansk_nad.png", fog_float(t=40, z=1.3))
 
 image CG_siluety:
     "images/CG/Siluety/siluety.png"
