@@ -689,13 +689,15 @@ label day_2:
     E_t tired idle "Я только что поняла, что ничего не ела с самого утра."
     E tired idle "Я тоже присоединюсь."
     showd s handsome sad
+    stop music fadeout 2
     S "Буду ждать вас у порога.{w=0.5} Время пошло!"
 
     show s right at move_on_scene_hide(xalign=1.0)
     show l thinking idle at move_on_scene(xalign=0.5)
     $ renpy.pause(1.0, hard=True)
     showd l left
-
+    play music music_yes_you_are_made_in_japan fadein 2 loop
+    
     E_t "Мы с Леоном-2 садимся вместе за еду."
     E_t "Я вспоминаю, что хотела узнать о нём больше."
     E "М-м, слушай..."
@@ -799,10 +801,9 @@ label day_2:
     L "Но спасибо тебе.{w=0.5} За то, что просто выслушала всё это."
     
     show l thinking idle right at move_on_scene_hide(xalign=0.8)
-
+    stop music fadeout 2
     E_t tired idle "Больше ничего не говоря, мы возвращаемся к командиру и втроём выходим на улицу."
 
-    #фон: улица туман светло (можно взять из старого)
     scene bg_black with dissolve
     pause 0.5
     scene bg_square at Transform(zoom=1.1, xalign=0.5, yalign=0.5):
@@ -814,11 +815,9 @@ label day_2:
     show s radio thinking left at Transform(xalign=0.25, yalign=1.0)
     show l closed serious left at Transform(xalign=0.75, yalign=1.0) 
     with dissolve
-
+    play music music_verse fadein 2 loop
     E_t tired idle "С каждым разом туман снаружи кажется всё более зловещим."
     E_t "Не знаю, дело ли в моей фантазии или же всему виной события, произошедшие в нём."
-    #на следующие 2-3 предложения можно показывать всех героев в левом низу окна
-    #это собьет с толку читателя, как будто говорит этот герой
     E_t "Судя по всему, моё настроение передалось всей группе.{w=0.5} Леон-2 с тревогой озирался по сторонам, замыкая цепочку."
     showd s radio idle
     E_t "Стальной шёл впереди, то поглядывая на карту, то резко вскидывая взгляд, словно оценивал окружение."
@@ -826,11 +825,16 @@ label day_2:
     E_t "Внезапно Стальной вскидывает руку и указывает куда-то далеко в туман."
     showd s explain smile
     S "А вот и гости пожаловали."
-    E_t surprised "Я устремляю взгляд в указанном направлении, а затем смотрю на показания приборов."
+    hide s
+    hide l
+    with dissolve
+    "Я устремляю взгляд в указанном направлении, а затем смотрю на показания приборов."
     E tired surprised "Там никого нет."
-    showd l half_closed surprised
+    show l half_closed surprised at Transform(xalign=0.75, yalign=1.0) 
+    with dissolve
     L "Я тоже н-{w=0.5}не вижу..."
-    showd s explain serious
+    show s explain serious at Transform(xalign=0.25, yalign=1.0)
+    with dissolve
     $ renpy.pause(0.5, hard=True)
 
     E_t tired idle "Стальной выдерживает паузу, смеряя нас недоверчивым взглядом."
@@ -868,7 +872,6 @@ label day_2:
     E_t "Я еле успеваю уменьшить громкость."
     L_side half_closed panic "О...{w=0.5} о боже..."
     E_t ear think "Подняв взгляд, я вижу, на что обратил внимание Леон-2."
-    #появляется силуэт
 
     scene bg_square:
         zoom 1.1
@@ -900,8 +903,6 @@ label day_2:
     hide shadow with dissolve
     E_t "И в этот миг фигура выходит из тумана..."
 
-    #ЦГ: два Стальных (один наш, второй с чёрной копотью на волосах, более грязный и измученный) стоят как на дуэли, направив друг на друга пистолеты, туман вокруг них на фоне
-    #спрайты Леона-2 тоже перемещаются вниз окна, как и Эхо. Спрайты Стальных не показываются, но могут меняться эмоции на ЦГ
     show CG_Stalnoy_duel_serious zorder 0
     show CG_Stalnoy_duel_tumansk zorder 50
     show screen fog_layer
@@ -1019,7 +1020,6 @@ label day_2:
     E "А теперь по моей команде.{w=0.5} Готовься!{w=0.5} Раз, два..."
     E "Три!"
 
-    #предлагаю весь экран сделать белым. Типа момент вспышки
     #звук выстрела
     $ renpy.transition(hpunch)
     $ renpy.pause(0.1, hard=True)
@@ -1030,7 +1030,6 @@ label day_2:
     E_t "В ту же секунду раздались два громких выстрела."
     E_t "На мгновение моё зрение затуманилось.{w=0.5} Но когда я сообразила, что вижу перед собой..."
 
-    #вариация ЦГ с двойниками: оба Стальных держатся за окровавленную ногу (у каждого по одной такой), но всё ещё наставляют пушки друг на друга
     show CG_Stalnoy_legs1 zorder 0
     show CG_Stalnoy_legs_tumansk zorder 50
     show screen fog_layer

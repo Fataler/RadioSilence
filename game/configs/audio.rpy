@@ -8,6 +8,9 @@ define music_23_peak = "audio/bg/foot037_01-qx55-23_peak.mp3"
 define music_casasoso = "audio/bg/foot037_08-qx55-casasoso.mp3"
 define music_atmosphere = "audio/bg/foot040_01-wshgaukd-atmosphere.mp3"
 define music_after_all = "audio/bg/foot037_11-qx55-after_all.mp3"
+define music_yes_you_are_made_in_japan = "audio/bg/foot038_09-qx55-yes_you_are_made_in_japan.mp3"
+define music_maestro = "audio/bg/foot269_02-ollie_cram-maestro.mp3"
+define music_verse = "audio/bg/foot269_03-ollie_cram-verse.mp3"
 
 # Игра
 
