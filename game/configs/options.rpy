@@ -55,7 +55,7 @@ define gui.about = _p("""
 Авторы: \n
 {w=0}     - Featharine ({a=https://vk.com/sweet_sour_figures}ВК{/a}) - художник (концепты, покрас спрайтов и цг)\n
 {w=0}     - Yele_nir - художник (спрайты, лайн)\n
-{w=0}     - LehanFox - фоновик, ui\n
+{w=0}     - LehanFox ({a=https://t.me/LehanFox}TG{/a}) - фоновик, ui\n
 {w=0}     - Danya Balakhnin ({a=https://vk.com/gospodin_balakhnin}ВК{/a}) - сценарист\n
 {w=0}     - Fataler ({a=https://steamcommunity.com/id/fataler}Steam{/a}) - программист, редактор, ui\n
 {w=0}     - Kapushishin ({a=https://steamcommunity.com/id/Kapushishin}Steam{/a}) - режиссёр анимаций, референс-концепт, кодер\n

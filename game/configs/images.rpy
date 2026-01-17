@@ -25,6 +25,7 @@ image CG_Stalnoy_empty = "images/CG/StalnoyxStalnoy/Fon_bez_spritov.png"
 
 
 # credits images
+image credits_logo = "images/credits/logo.png"
 image credits_img_1 = "images/Credits/Credits_img_1.png"
 image credits_img_2 = "images/Credits/Credits_img_2.png"
 image credits_img_3 = "images/Credits/Credits_img_3.png"
