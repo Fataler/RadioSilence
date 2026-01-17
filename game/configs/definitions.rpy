@@ -7,7 +7,7 @@ define URL_JAM = "https://vk.com/chapel_jam"
 default MAIN_MENU_SCREEN = "main_menu"
 default PAUSE_MENU_SCREEN = "pause_menu"
 
-define splash_enabled = False
+define splash_enabled = True if not config.developer else False
 
 default textbox_style = "gui/textbox.png"
 
