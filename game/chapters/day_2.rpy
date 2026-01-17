@@ -830,10 +830,10 @@ label day_2:
     with dissolve
     "Я устремляю взгляд в указанном направлении, а затем смотрю на показания приборов."
     E tired surprised "Там никого нет."
-    showd l half_closed surprised at Transform(xalign=0.75, yalign=1.0) 
+    show l half_closed surprised at Transform(xalign=0.75, yalign=1.0) 
     with dissolve
     L "Я тоже н-{w=0.5}не вижу..."
-    showd s explain serious at Transform(xalign=0.25, yalign=1.0)
+    show s explain serious at Transform(xalign=0.25, yalign=1.0)
     with dissolve
     $ renpy.pause(0.5, hard=True)
 
