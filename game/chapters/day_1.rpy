@@ -395,7 +395,7 @@ label day_1:
     E_t "Там, где раньше ничего не было, появился чей-то силуэт."
     E_t base sad "Я моргнула, убедившись, что мне не мерещится."
 
-    show n base smile left at Transform(xalign=0.75, yalign=1.0) with dissolve
+    show n base smile left at Transform(xalign=0.5, yalign=1.0) with dissolve
 
     N "Что такое?"
     E base annoyed "Ты никого не видишь...{w=0.5} вон там?"
