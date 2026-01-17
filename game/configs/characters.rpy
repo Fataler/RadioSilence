@@ -26,7 +26,7 @@ image b_side = LayeredImageProxy("b", Transform(xalign=0.5, yalign=0.0, crop=(0.
 
 #region Эхо
 
-image side e = LayeredImageProxy("e_f", Transform(crop=(0, 0, 800, 550), yoffset=85, zoom=1.0))
+image side e = LayeredImageProxy("e_f", Transform(crop=(0, 0, 800, 550), yoffset=85, xoffset=80, zoom=1.0))
 image e_radio = LayeredImageProxy("e_f", Transform(crop=(0, 0, 800, 550), yoffset=85, zoom=1.0))
 
 layeredimage e_f:
@@ -56,7 +56,6 @@ layeredimage e_f:
             "images/Sprites/Exo/Exo_tired_surprised.png"
 
     group emotion if_any "thinking":
-        xoffset -40
         yoffset 10
         attribute smile default:
             "images/Sprites/Exo/Exo_thinking_smile.png"
@@ -227,7 +226,7 @@ layeredimage l:
         attribute panic:
             "images/Sprites/Leon2/Leon2_half_closed_panic.png"
 
-image side l_side = LayeredImageProxy("l", Transform(xalign=0.5, yalign=0.0, crop=(0.0, 0.0, 1.0, 0.8), crop_relative=True,  yoffset=180, xoffset=-120, zoom=0.9, xzoom=-1.0)) #xoffset = 80,
+image side l_side = LayeredImageProxy("l", Transform(xalign=0.5, yalign=0.0, crop=(0.0, 0.0, 1.0, 0.8), crop_relative=True, xoffset=-100, yoffset=180, zoom=0.9, xzoom=-1.0))
 image l_radio = LayeredImageProxy("l", Transform(xalign=0.5, yalign=0.0, crop=(0.0, 0.0, 1.0, 0.8), crop_relative=True, yoffset=90, zoom=1.05))
 #endregion
 
@@ -276,7 +275,7 @@ layeredimage s:
         attribute annoyed:
             "images/Sprites/Stalnoy/Stal_handsome_annoyed.png"
 
-image s_side = LayeredImageProxy("s", Transform(xalign=0.5, yalign=0.0, crop=(0.0, 0.0, 1.0, 0.8), crop_relative=True, yoffset=60, zoom=0.8, xzoom=-1.0))
+image side s_side = LayeredImageProxy("s", Transform(xalign=0.5, yalign=0.0, crop=(0.0, 0.0, 1.0, 0.8), crop_relative=True, yoffset=60, zoom=0.8, xzoom=-1.0))
 image s_radio = LayeredImageProxy("s", Transform(xalign=0.5, yalign=0.0, crop=(0.0, 0.0, 1.0, 0.8), crop_relative=True, yoffset=120, zoom=1.1))
 #endregion
 

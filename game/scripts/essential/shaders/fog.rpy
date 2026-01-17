@@ -87,12 +87,12 @@ label test_fog:
 
     show screen fog_layer
 
-    show tuman_bg
+    show bg_1_1
     with dissolve
 
     "Тест1"
 
-    show bg_dinner_block
+    show bg_4_2Dummy
     with dissolve
 
     "Тест2"

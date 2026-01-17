@@ -32,7 +32,7 @@ screen say(who, what):
                     text who id "who"
 
     if not renpy.variant("small"):
-        add SideImage() xalign 0.0 yalign 1.0 zoom 0.9
+        add SideImage() xpos 300 xanchor 0.5 yalign 1.0 zoom 0.9
 
     # if not (config.developer):
     #     key "mouseup_4" action ShowMenu("history")
@@ -72,7 +72,7 @@ style say_window:
 
 style namebox:
     subpixel True
-    xpos -0.008
+    xpos -0.007
     xanchor 0.0
     xminimum 740
     ypos -0.072

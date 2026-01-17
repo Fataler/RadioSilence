@@ -24,7 +24,11 @@ image bg_ovrag_zapotel = "images/Backgrounds/Ovrag_zapotel.png"
 
 
 # credits images
-
+image credits_img_1 = "images/Credits/Credits_img_1.png"
+image credits_img_2 = "images/Credits/Credits_img_2.png"
+image credits_img_3 = "images/Credits/Credits_img_3.png"
+image credits_img_4 = "images/Credits/Credits_img_4.png"
+image credits_img_5 = "images/Credits/Credits_img_5.png"
 
 ## Общие изображения
 image bg_black = Solid("#000")

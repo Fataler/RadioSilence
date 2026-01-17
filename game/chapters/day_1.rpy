@@ -1,6 +1,6 @@
 label day_1:
     stop music fadeout 2.0
-    call show_disclaimer
+    call show_disclaimer from _call_show_disclaimer
     $ renpy.pause(0.5, hard=True)
     scene bg_black
     with dissolve
@@ -111,7 +111,11 @@ label day_1:
     show s radio idle left at move_on_scene_show(x1=0.8, xalign=0.5)
 
     S "Все готовы?"
+
+    show l half_closed
     L_side half_closed surprised "А?{w=0.5} Вы про то, чтобы войти в г-{w=0.5}город?"
+    show l thinking embarrassed
+    L_side closed shy "trstsda"
     S radio evil "Ага. А ты о чём подумал?"
     L_side thinking embarrassed "Нет, я ни о чём... эм, просто..."
     S handsome sad "Мои кошмарики, какие же вы все молодые.{w=0.5} Неужели сейчас обстановка настолько плоха, что всех важных бойцов забрали куда нужно и остались только вы?"
@@ -957,7 +961,7 @@ label day_1:
     E thinking smile "Хуже, чем было, не стало."
     N "М-м, да{w=0.5}, понимаю-понимаю.{w=0.5} Каждая миссия для солдата проходит нервно."
     N "А тут ещё и загадочность происходящего.{w=0.5} Неизвестность пугает, правда?"
-    E bas sad "Что-то вроде того."
+    E base sad "Что-то вроде того."
 
     show n hands sad with dissolve
 
