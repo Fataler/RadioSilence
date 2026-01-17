@@ -916,6 +916,7 @@ label day_2:
     L_side half_closed surprised "Стойте!{w=0.5} Это может быть Рэй!"
     hide shadow with dissolve
     E_t "И в этот миг фигура выходит из тумана..."
+    stop sfx3 fadeout 1
 
     show CG_Stalnoy_duel_serious zorder 0
     show CG_Stalnoy_duel_tumansk zorder 50
