@@ -1,5 +1,49 @@
 шрифты:
+https://fonts.google.com/specimen/Lora/ - Шрифт Lora
+https://online-fonts.com/fonts/dejavu-sans-mono - Шрифт DejaVuSansMono
+https://fonts-online.ru/fonts/bebas-neue - Bebas Neue
 
 звуки:
+https://freesound.org/people/kleinleinlein/sounds/511716/ быстрые шаги
+https://freesound.org/people/taure/sounds/363470/ бег по деревянному покрытию
+https://freesound.org/people/renatofarabeuf/sounds/232663/ бег по лестнице
+https://freesound.org/people/Magdaadga/sounds/420393/ шаги по листьям
+https://freesound.org/people/TILIADESIGN/sounds/591534/ шаги дефолт
+http://freesound.org/people/newagesoup/sounds/349315/ белый шум
+https://freesound.org/people/HowardV/sounds/402820/ нарастающий белый шум
+https://freesound.org/people/deadrobotmusic/sounds/669953/ шорох
+https://freesound.org/people/johnnypanic/sounds/32676/ ритмичный белый шум
+https://freesound.org/people/tsidilin/sounds/346228/ белый шум дефолт
+https://freesound.org/people/DN_KP/sounds/117928/ щелчок рации
+https://freesound.org/people/uwesoundboiz/sounds/109826/ скрип
+https://freesound.org/people/ramas26/sounds/114460/ стремные скрипы с ветром
+https://freesound.org/people/Koops/sounds/17871/ открытие металической двери
+https://freesound.org/people/Zagorius_mpc/sounds/136397/ стремный шелест
+https://freesound.org/people/JapanYoshiTheGamer/sounds/697788/ стук в дверь
+https://freesound.org/people/MattRuthSound/sounds/381962/ удар
+https://freesound.org/people/Mafon2/sounds/379803/ скрип метал двери
+https://freesound.org/people/pagancow/sounds/15419/ открытие двери
+https://freesound.org/people/Anthousai/sounds/406274/ удар по дереву
+https://freesound.org/people/nicocadiou/sounds/220075/ удар по металлу громкий
+https://freesound.org/people/AUDACITIER/sounds/625687/ удар стук
+https://freesound.org/people/blou27/sounds/841281/ стук в дверь яростный
+https://freesound.org/people/florian_reinke/sounds/63535/ стук щелчок
+https://freesound.org/people/CogFireStudios/sounds/547040/ взмах ножом
+https://freesound.org/people/Nomagician/sounds/840717/ звук ножа
+https://freesound.org/people/thanvannispen/sounds/9666/ ветер
+https://freesound.org/people/finnbuster/sounds/16950/ ветер 2 ХОРОШИЙ
+https://freesound.org/people/gynation/sounds/82380/ шелест бумаги 
+https://freesound.org/people/LukaCafuka/sounds/757830/ шаги по стеклу
+https://freesound.org/people/MysteryPancake/sounds/434450/ разбитое стекло
+https://freesound.org/people/Zabuhailo/sounds/143250/ крысы бегают
+https://freesound.org/people/M4D3R0/sounds/238148/ крысы пищат
+https://freesound.org/people/areniporgen/sounds/712084/ шаги дефолт
+https://freesound.org/people/fedsmoker/sounds/208531/ шаги дефолт побыстрее
+https://freesound.org/people/TSP-Talk/sounds/643040/ бег дефолт
+https://freesound.org/people/WasabiWielder/sounds/334218/ шорох
+https://freesound.org/people/rottako/sounds/693592/ шорох 2
+https://freesound.org/people/sonsdebarcelona/sounds/187811/ шорох 3
 
+музыка: 
+https://www.bumpfoot.net/about.html
 
