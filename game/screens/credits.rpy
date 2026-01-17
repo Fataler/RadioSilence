@@ -1,4 +1,4 @@
-define credits_duration = 70.0
+define credits_duration = 50#40.0
 
 init python:    
     class Credits(renpy.Displayable):
@@ -47,39 +47,44 @@ screen credits():
     default skip_fading = False
     default skip_time = 0.0
     default credits_obj = Credits(
-"""{image=logo_short}
+"""{image=menu_logo}
+
 
 {size=65}{i}Команда:{/i}{/size}
 
-
 {size=45}{b}{k=5}Featharine{/k}{/b}{/size}
-оригинальная идея
 лидер
-сценарий
-персонажи
-CG
-дизайн UI
-музыка
+художник
+(концепты, покрас спрайтов и ЦГ)
 
-{size=45}{b}{k=5}Fataler{/k}{/b}{/size}
-код
-мини игры
-верстка
-анимации
 
 {size=45}{b}{k=5}Kapushishin{/k}{/b}{/size}
-фоны
-сборка эпизодов
-режиссура
-референсы
-звуки
+режиссёр анимаций
+референс-концепт
+программист
+
+{size=45}{b}{k=5}LehanFox{/k}{/b}{/size}
+фоновик
+UI (художник)
+
+{size=45}{b}{k=5}Yelenir{/k}{/b}{/size}
+идея новеллы
+художник спрайтов и ЦГ (лайн)
+
+{size=45}{b}{k=5}Fataler{/k}{/b}{/size}
+программист
+редактор
+UI (программист)
+
+{size=45}{b}{k=5}Danya Balakhnin{/k}{/b}{/size}
+сценарист
+звуки и музыка
 
 
-{size=65}{i}Отдельная 
+{size=65}{i}Отдельная
 благодарность:{/i}{/size}
 
 {size=45}{b}{k=5}Коты Тигр и Лиса{/k}{/b}{/size}
-
 катание по клавиатуре
 моральная поддержка
 
@@ -95,40 +100,37 @@ CG
         yfill True
         at show_screen_transform(show_time=1.0, hide_time=1.0)
 
-        add "bg_black":
+        add "menu_bg":
             alpha 0.5
         
-        # Картинки
-        timer (credits_duration * 0.22) action Show("credits_image", img_name="credits_img_2", is_left=True)
-        timer (credits_duration * 0.30) action Hide("credits_image")
-
-        timer (credits_duration * 0.32) action Show("credits_image", img_name="credits_img_1", is_left=False)
-        timer (credits_duration * 0.40) action Hide("credits_image")
-
-        timer (credits_duration * 0.42) action Show("credits_image", img_name="credits_img_4", is_left=True)
-        timer (credits_duration * 0.50) action Hide("credits_image")
-
-        timer (credits_duration * 0.52) action Show("credits_image", img_name="credits_img_3", is_left=False)
-        timer (credits_duration * 0.60) action Hide("credits_image")
-
-        timer (credits_duration * 0.62) action Show("credits_image", img_name="credits_img_5", is_left=True)
-        timer (credits_duration * 0.70) action Hide("credits_image")
-
-        timer (credits_duration * 0.72) action Show("credits_image", img_name="credits_img_6", is_left=False)
-        timer (credits_duration * 0.80) action Hide("credits_image")
-
-        timer (credits_duration * 0.82) action Show("credits_image", img_name="credits_img_7", is_left=True)
         timer (credits_duration * 1.00) action Hide("credits_image")
         
         add credits_obj xalign 0.5
 
-        timer credits_duration + 5 action Show("credits_end")
+        timer credits_duration + 1 action Show("credits_end")
+
+        # Картинки
+        timer (credits_duration * 0.18) action Show("credits_image", img_name="credits_img_1", is_left=True)
+        timer (credits_duration * 0.30) action Hide("credits_image")
+
+        timer (credits_duration * 0.34) action Show("credits_image", img_name="credits_img_2", is_left=False)
+        timer (credits_duration * 0.46) action Hide("credits_image")
+
+        timer (credits_duration * 0.50) action Show("credits_image", img_name="credits_img_3", is_left=True)
+        timer (credits_duration * 0.62) action Hide("credits_image")
+
+        timer (credits_duration * 0.66) action Show("credits_image", img_name="credits_img_4", is_left=False)
+        timer (credits_duration * 0.78) action Hide("credits_image")
+
+        timer (credits_duration * 0.82) action Show("credits_image", img_name="credits_img_5", is_left=True)
+        timer (credits_duration * 0.94) action Hide("credits_image")
 
         #Click blocker
         button:
             xfill True
             yfill True
             background None
+            mouse "default"
             action [SetScreenVariable("skip_visible", True), SetScreenVariable("skip_fading", False), SetScreenVariable("skip_time", 0.0)]
             hover_sound None
             activate_sound None
@@ -148,13 +150,17 @@ CG
 
 screen credits_end():
     layer "master"
-    text "Спасибо за игру!":
-        size 95 
-        align (0.5, 0.5)
-        color "#ffffff"
-        at credits_thanks
 
-    timer 8.0 action Return()
+    fixed:
+        at credits_thanks()
+
+        text "Спасибо за игру!":
+            style "gui_text"
+            size 95 
+            align (0.5, 0.5)
+            color "#ffffff"
+
+    timer 10.0 action Return()
 
 transform credits_thanks:
     subpixel True
