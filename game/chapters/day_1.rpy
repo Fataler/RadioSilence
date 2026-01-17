@@ -25,7 +25,7 @@ label day_1:
     E tired idle "Сейчас проверю."
     play sfx2 sfx_radio_bar_switch
     E_t ear think "Я поправляю наушники и настраиваюсь на нужную полосу частот."
-    play sfx3 sfx_white_noise_defolt fadein 0.5 loop
+    play sfx3 sfx_white_noise_defolt fadein 0.5 fadeout 0.5
     "Эксперт ближнего боя по кличке Рэйзор останавливается, а за ней и весь отряд, ожидая ответа."    
     E ear think "Нет, в эфире один шум. Но можно сказать точно, что мы пришли куда надо."
     stop sfx3 fadeout 0.5
