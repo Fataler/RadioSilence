@@ -48,10 +48,10 @@ define gui.about = _p("""
 Использованные сторонние ресурсы лежат в файле {i}external_resources.txt{/i}.
 
 Авторы: \n
-{w=0}     - ktotolab9 - \n
 {w=0}     - Featharine ({a=https://vk.com/sweet_sour_figures}ВК{/a}) - \n
 {w=0}     - Yele_nir - \n
-{w=0}     - Blackfox998 - \n
+{w=0}     - LehanFox - \n
+{w=0}     - Danya Balakhnin ({a=https://vk.com/gospodin_balakhnin}ВК{/a}) - \n
 {w=0}     - Fataler ({a=https://steamcommunity.com/id/fataler}Steam{/a}) - \n
 {w=0}     - Kapushishin ({a=https://steamcommunity.com/id/Kapushishin}Steam{/a}) - \n
 """% {"jam": URL_JAM})
