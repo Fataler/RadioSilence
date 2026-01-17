@@ -1,5 +1,5 @@
 # Музыка
-define music_main_theme = "audio/bg/Menu/Alone_in_the_space_edit.mp3"
+define music_main_theme = "audio/foot290_02-iliaque-singularite.mp3"
 define music_waves = "audio/bg/waves.mp3"
 define music_theme_5day = "audio/bg/Theme_5day.mp3"
 define music_quite_ambient = "audio/bg/Quite_ambient.mp3"
