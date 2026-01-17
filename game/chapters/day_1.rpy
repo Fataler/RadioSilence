@@ -1,15 +1,15 @@
 label day_1:
     call show_disclaimer
     stop music fadeout 1.0
-    pause 0.5
+    $ renpy.pause(0.5, hard=True)
     scene bg_black
     with dissolve
     $ renpy.force_autosave()
-    pause 1.0
+    $ renpy.pause(1.0, hard=True)
     scene bg_1_1
     show screen fog_layer
     with Dissolve(1.5)
-    pause 1.0
+    $ renpy.pause(1.0, hard=True)
     #play music music_ fadein 1.0 loop
     
     #фон №1: (единственный, показывающий город снаружи) небольшой город вдалеке в тумане, слабо проглядывается из-за плотного тумана. По бокам вплоть до города можно изобразить лес либо, например, склоны оврагов или гор, можно хоть микс (что вам интереснее). Так как темой игры является туман, можно предположить, что это умеренный климатический пояс либо близко к субарктическому
@@ -22,7 +22,7 @@ label day_1:
     E_t "Привал был совсем недавно, как раз перед старой городской чертой."
 
     show r seriously idle left at move_on_scene_show(x1=0.9, xalign=0.5)
-    pause 2.0
+    $ renpy.pause(2.0, hard=True)
 
     R "Я вижу что-то вдалеке...{w} Это же и есть тот город, да?"
     R "Эхо, идёт ли сигнал?"
@@ -42,7 +42,7 @@ label day_1:
     
     show r at move_on_scene_hide(xalign=0)
     show s radio idle at move_on_scene_show(x1=0.8, xalign=0.5)
-    pause 2.0
+    $ renpy.pause(2.0, hard=True)
     $ S.name = "Товарищ сержант"
     hide r
 
@@ -75,7 +75,7 @@ label day_1:
     E_t "У Стального не было никаких знаков на форме, как и у всех.{w=0.1} Нас опознавали только по биометрии."
 
     show n base smile at move_on_scene_show(x1=0.7, xalign=0.5)
-    pause 1.0
+    $ renpy.pause(1.0, hard=True)
 
     N "Никогда бы не подумала, что наш лидер допустит мысль, что будет захвачен врагом."
     E_t surprised "Ну, почти у всех.{w=0.1} У Нектар была повязка с красным крестом на плече."
@@ -148,7 +148,7 @@ label day_1:
     $ speak_as("Все", "Так точно.")
 
     show s handsome smug with dissolve
-    pause 1.0
+    $ renpy.pause(1.0, hard=True)
 
     "Стальной шумно вдыхает запах будущего поля битвы и медленно выдыхает."
     S explain smile "Команда{w=0.1}: вперёд!"
@@ -331,9 +331,9 @@ label day_1:
     E_t base annoyed "Патовая ситуация..."
     #музыка затихает
 
-    pause 0.5
+    $ renpy.pause(0.5, hard=True)
     show screen radio_screen("l_radio thinking idle") with dissolve
-    pause 0.5
+    $ renpy.pause(0.5, hard=True)
 
     L idle "Нектар{w=0.1}, Эхо{w=0.1}. Всё в порядке.{w=0.1} Это не наш враг."
     E "А?{w=0.1} Что?"
@@ -360,7 +360,7 @@ label day_1:
     E "Это чучело."
 
     show n hand_hide surprised at move_on_scene_show(x1=1.1, xalign=0.75)
-    pause 1.0
+    $ renpy.pause(1.0, hard=True)
 
     N "Какого...{w} Что оно тут делает?"
     E idle "Возможно, когда этот город всё ещё был в центре войны, оставшиеся местные поставили его здесь."
@@ -396,7 +396,7 @@ label day_1:
     N "А тебе – особенно!"
 
     hide screen radio_screen
-    pause 0.5
+    $ renpy.pause(0.5, hard=True)
     show n at move_on_scene_hide(xalign=0.3)
     
     E_t tired surprised "С улыбкой на лице Нектар шагнула вперёд.{w} Кое-что приковало моё внимание за её спиной."
@@ -448,7 +448,7 @@ label day_1:
     E tired idle "Вот она – наша разбитая база внутри разбитого дома!"
 
     show n base smile left at move_on_scene_show(x1=0.8, xalign=0.5)
-    pause 0.5
+    $ renpy.pause(0.5, hard=True)
 
     N "И внутри разбитого, полностью прогнившего мира!"
     E surprised "Ну{w=0.1}, что-то в этом и правда есть."
@@ -529,7 +529,7 @@ label day_1:
     S "Правильный выбор.{w=0.1} Нам с Нектар нужно кое-что обсудить, так что мы оставим вас двоих."
     
     show s left at move_on_scene_hide(xalign=0.0)
-    pause 1.0
+    $ renpy.pause(1.0, hard=True)
 
     E tired idle "А ты быстро изменила мнение.{w=0.1} Я думала, что ещё поспоришь."
     
@@ -578,7 +578,7 @@ label day_1:
     E thinking smile "Мало?{w=0.1} У тебя что{w=0.1}, Альцгеймер?"
 
     show r sad with dissolve
-    pause 0.5
+    $ renpy.pause(0.5, hard=True)
 
     E_t tired idle "Я отпустила это просто в шутку.{w=0.1} Но внезапно Рэйзор посмотрела на меня измученным взглядом и кивнула."
     R "Знаешь{w=0.1}, я стараюсь не особо об этом распространяться...{w} Или погоди, я тебе об этом уже рассказывала?"
@@ -626,7 +626,7 @@ label day_1:
     R "Ах ты ж жопа маленькая..."
 
     show screen radio_screen("l_radio thinking idle", xoffsetRadio=116) with dissolve
-    pause 0.5
+    $ renpy.pause(0.5, hard=True)
     show r seriously idle with dissolve
     L "А...{w=0.1} Простите, что прерываю ваш диалог!"
 
@@ -700,12 +700,12 @@ label day_1:
     E_t tired idle "Но сколько бы мы ни искали, нам не удавалось их найти."
 
     show n base serious left at move_on_scene_show(x1= 1.3, xalign=0.95)
-    pause 0.5
+    $ renpy.pause(0.5, hard=True)
 
     N "Проклятье...{w} Как сквозь землю провалились."
 
     show s explain serious right at move_on_scene_show(x1=0.2, xalign=0.5)
-    pause 1.5
+    $ renpy.pause(1.5, hard=True)
     show s left with dissolve
 
     S "Леон-2{w=0.1}, ты уверен, что это было именно здесь?"
@@ -723,11 +723,11 @@ label day_1:
     L "Как скажете..."
 
     show l thinking idle with dissolve
-    pause 0.5
+    $ renpy.pause(0.5, hard=True)
 
     "Снайпер снова приставил винтовку к глазу и начал всматриваться в туман."
 
-    pause 0.5
+    $ renpy.pause(0.5, hard=True)
 
     E ear think "Раз мы их не видим, я попробую их прослушать.{w} Возможно, они тоже излучают свои разговоры в эфир."
     E_t ear think "Предупредив команду, я взяла в руки переносной радиоприёмник и начала перестраивать частоту."
@@ -765,7 +765,7 @@ label day_1:
     E_t "...что вокруг меня никого нет."
     E tired surprised "Ребята?{w=0.1} Где вы?"
 
-    pause 1.0
+    $ renpy.pause(1.0, hard=True)
 
     E_t "Туман ответил мне молчанием."
     E_t ear think "Я достаю рацию и пытаюсь связаться."
@@ -773,7 +773,7 @@ label day_1:
     E_t "Я повторяю это ещё раз пять, но на конце линии глухо как в танке."
     E "Ребята?{w=0.1} Ау-у-у?"
 
-    pause 0.5
+    $ renpy.pause(0.5, hard=True)
 
     E_t "Стоп, что я делаю?{w=0.1} Если это услышит враг, то он быстро до меня доберётся."
     E_t "Я ведь связист, у меня в руках есть мощный инструмент."
@@ -1130,7 +1130,7 @@ label day_1:
     N "Да, хорошо.{w=0.1} Приходи ко мне, если тебе нужна будет помощь."
     
     show s explain happy at move_on_scene_show(x1=1.3, xalign=0.95)
-    pause 0.5
+    $ renpy.pause(0.5, hard=True)
     show n hand_hide surprised right with dissolve
 
     S "А если вы не знаете, что вам делать, вы всегда можете обратиться к своему любимому лидеру."
@@ -1266,7 +1266,7 @@ label day_1:
     show r stretching rage left at move_on_scene_show(x1=1.0, xalign=0.75)
     with dissolve
     $ renpy.transition(vpunch)
-    pause 1.0
+    $ renpy.pause(1.0, hard=True)
     show r at angry
 
     R "ЧЁРТ!!!{w=0.1} ГДЕ ОН?!!"
