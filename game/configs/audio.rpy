@@ -8,9 +8,12 @@ define music_23_peak = "audio/bg/foot037_01-qx55-23_peak.mp3"
 define music_casasoso = "audio/bg/foot037_08-qx55-casasoso.mp3"
 define music_atmosphere = "audio/bg/foot040_01-wshgaukd-atmosphere.mp3"
 define music_after_all = "audio/bg/foot037_11-qx55-after_all.mp3"
+define music_after_all_7 = "audio/bg/foot076_08-qx55-after_all.mp3"
 define music_yes_you_are_made_in_japan = "audio/bg/foot038_09-qx55-yes_you_are_made_in_japan.mp3"
 define music_maestro = "audio/bg/foot269_02-ollie_cram-maestro.mp3"
 define music_verse = "audio/bg/foot269_03-ollie_cram-verse.mp3"
+define music_travel_in_peace = "audio/bg/foot076_05-qx55-travel_in_peace.mp3"
+define music_monochrome = "audio/bg/bump218_04-hzk-monochrome.mp3"
 
 # Игра
 define sfx_door_knocks_modern = "audio/sfx/door-knocks-modern.ogg"
@@ -51,6 +54,7 @@ define sfx_white_noise_reverse = "audio/sfx/white-noise-reverse.ogg"
 define sfx_whitenoiserhythm = "audio/sfx/whitenoiserhythm.ogg"
 define sfx_wind = "audio/sfx/wind.ogg"
 define sfx_switch = "audio/sfx/switch.wav"
+define sfx_shotgun = "audio/sfx/182271__martian__gun-for-lui.wav"
 
 # Интерфейс
 define sfx_ui_click = "audio/sfx/switch.wav"#"audio/sfx/shelk_knock.ogg"
