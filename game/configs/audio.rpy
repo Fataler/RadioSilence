@@ -1,6 +1,6 @@
 # Музыка
 define music_main_theme = "audio/foot290_02-iliaque-singularite.mp3"
-define music_waves = "audio/bg/waves.mp3"
+define music_experimental_android_work_06 = "audio/foot280_02-ish10_yow1r0-experimental_android_work_06.mp3"
 define music_theme_5day = "audio/bg/Theme_5day.mp3"
 define music_quite_ambient = "audio/bg/Quite_ambient.mp3"
 define music_quite_ambient2 = "audio/bg/Quite_ambient2.mp3"
