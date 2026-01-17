@@ -62,6 +62,8 @@ layeredimage e_f:
             "images/Sprites/Exo/Exo_thinking_smile.png"
         attribute happy:
             "images/Sprites/Exo/Exo_thinking_happy.png"
+        attribute fear:
+            "images/Sprites/Exo/Exo_thinking_fear.png"
 
     group emotion if_any "base":
         xoffset 10
@@ -70,6 +72,10 @@ layeredimage e_f:
             "images/Sprites/Exo/Exo_base_annoyed.png"
         attribute sad:
             "images/Sprites/Exo/Exo_base_sad.png"
+        attribute cry:
+            "images/Sprites/Exo/Exo_base_cry.png"
+        attribute panic:
+            "images/Sprites/Exo/Exo_base_isteric.png"
     
     group emotion if_any "ear":
         xoffset -40
@@ -218,6 +224,8 @@ layeredimage l:
     group emotion if_any "half_closed":
         attribute surprised default:
             "images/Sprites/Leon2/Leon2_half_closed_surprised.png"
+        attribute panic:
+            "images/Sprites/Leon2/Leon2_half_closed_panic.png"
 
 image side l_side = LayeredImageProxy("l", Transform(xalign=0.5, yalign=0.0, crop=(0.0, 0.0, 1.0, 0.8), crop_relative=True,  yoffset=180, xoffset=-120, zoom=0.9, xzoom=-1.0)) #xoffset = 80,
 image l_radio = LayeredImageProxy("l", Transform(xalign=0.5, yalign=0.0, crop=(0.0, 0.0, 1.0, 0.8), crop_relative=True, yoffset=90, zoom=1.05))
