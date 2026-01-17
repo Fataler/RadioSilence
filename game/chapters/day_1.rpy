@@ -635,7 +635,7 @@ label day_1:
 
     L "Ещё нет.{w=0.5} Где его можно найти?"
 
-    show screen radio_screen("b base", xposNoise=1350, xoffsetRadio=116) with dissolve
+    show screen radio_screen("b base", xoffsetRadio=116) with dissolve
     show s explain happy left at move_on_scene_show(x1=0.8, xalign=0.5)
     show r at move_on_scene_hide(xalign=0.0)
 

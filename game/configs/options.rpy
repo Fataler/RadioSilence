@@ -4,6 +4,12 @@
 ## раскомментировать. Строки, начинающиеся с одной '#' — комментированный код,
 ## который вы можете раскомментировать, если посчитаете это нужным.
 
+python early:
+    import os
+    _is_dev = os.path.exists(os.path.join(config.basedir, "project.json"))
+    
+    config.developer = _is_dev
+    config.console = _is_dev
 
 ## Основное ####################################################################
 
@@ -15,7 +21,6 @@
 define config.name = _("RadioSilence")
 define config.image_cache_size_mb = 512
 
-define config.developer = True
 define config.fast_skipping = True if config.developer else False
 
 define config.menu_include_disabled = True
@@ -48,12 +53,12 @@ define gui.about = _p("""
 Использованные сторонние ресурсы лежат в файле {i}external_resources.txt{/i}.
 
 Авторы: \n
-{w=0}     - Featharine ({a=https://vk.com/sweet_sour_figures}ВК{/a}) - \n
-{w=0}     - Yele_nir - \n
-{w=0}     - LehanFox - \n
-{w=0}     - Danya Balakhnin ({a=https://vk.com/gospodin_balakhnin}ВК{/a}) - \n
-{w=0}     - Fataler ({a=https://steamcommunity.com/id/fataler}Steam{/a}) - \n
-{w=0}     - Kapushishin ({a=https://steamcommunity.com/id/Kapushishin}Steam{/a}) - \n
+{w=0}     - Featharine ({a=https://vk.com/sweet_sour_figures}ВК{/a}) - художник (концепты, покрас спрайтов и цг)\n
+{w=0}     - Yele_nir - художник (спрайты, лайн)\n
+{w=0}     - LehanFox - фоновик, ui\n
+{w=0}     - Danya Balakhnin ({a=https://vk.com/gospodin_balakhnin}ВК{/a}) - сценарист\n
+{w=0}     - Fataler ({a=https://steamcommunity.com/id/fataler}Steam{/a}) - программист, редактор, ui\n
+{w=0}     - Kapushishin ({a=https://steamcommunity.com/id/Kapushishin}Steam{/a}) - режиссёр анимаций, референс-концепт, кодер\n
 """% {"jam": URL_JAM})
 
 
@@ -139,7 +144,7 @@ define config.window_hide_transition = Dissolve(.3)
 
 init python:
     # Set "A" for auto-forward mode
-    for k in ['a', 'A', "ф", "Ф"]:
+    for k in ['a', "ф"]:
         if k not in config.keymap['toggle_afm']:
             config.keymap['toggle_afm'].append(k)
 
@@ -222,27 +227,22 @@ init python:
     build.classify('**/.**', None)
     build.classify('**/#**', None)
     build.classify('**/thumbs.db', None)
+    build.classify('**.py', None)
+    build.classify('**.json', None)
+    build.classify('**.ico', None)
 
-    ## Чтобы архивировать файлы, классифицируйте их, например, как 'archive'.
+    build.classify('external_resources.txt', 'all')
+    build.classify('walkthrough.txt', 'all')
 
-    # build.classify('game/**.png', 'archive')
-    # build.classify('game/**.jpg', 'archive')
+    build.classify('game/**.rpy', None)
+    build.classify('game/saves/**', None)
+    build.classify('game/cache/**', None)
+    build.classify('**.txt', None)
 
-    build.classify('game/**.png', 'archive')
-    build.classify('game/**.jpg', 'archive')
-    build.classify('game/**.ogv', 'archive')
-    build.classify('game/**.ogg', 'archive')
-    build.classify('game/**.ttf', 'archive')
-    build.classify('game/**.otf', 'archive')
-    
-    build.classify('game/**.rpy', 'archive')
-    build.classify('game/**.rpym', 'archive')
+    build.classify('game/**', 'archive')
 
-    ## Файлы, соответствующие образцам документации, дублируются в приложениях
-    ## Mac, чтобы они появлялись и в приложении, и в zip архиве.
-
-    build.documentation('*.html')
     build.documentation('*.txt')
+    build.documentation('*.html')
 
 
 ## Для совершения покупок в приложении требуется лицензионный ключ Google Play.
