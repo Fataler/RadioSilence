@@ -41,6 +41,14 @@ screen say(who, what):
 
 ## Делает namebox доступным для стилизации через объект Character.
 init python:
+    import re
+    
+    def fast_text_filter(text):
+        if preferences.text_cps == 0:
+            return re.sub(r'\{w(?:=[^}]*)?\}', '', text)
+        return text
+    
+    config.say_menu_text_filter = fast_text_filter
     config.character_id_prefixes.append('namebox')
 
 style window is default

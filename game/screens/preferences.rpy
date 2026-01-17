@@ -67,13 +67,13 @@ init -5 python:
     ]
 
     text_speed_values = [
-        {"value": 0.0, "image": "skorost_teksta_0"},
+        {"value": 0.1, "image": "skorost_teksta_0"},
         {"value": 0.25, "image": "skorost_teksta_25"},
         {"value": 0.4, "image": "skorost_teksta_40"},
         {"value": 0.5, "image": "skorost_teksta_50"},
         {"value": 0.65, "image": "skorost_teksta_65"},
         {"value": 0.8, "image": "skorost_teksta_80"},
-        {"value": 1.0, "image": "skorost_teksta_100"},
+        {"value": 0.0, "image": "skorost_teksta_100"},
     ]
 
     auto_read_speed_values = [
