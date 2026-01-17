@@ -7,6 +7,7 @@ define music_p5 = "audio/bg/foot167_06-zmg-p5.mp3"
 define music_23_peak = "audio/bg/foot037_01-qx55-23_peak.mp3"
 define music_casasoso = "audio/bg/foot037_08-qx55-casasoso.mp3"
 define music_atmosphere = "audio/bg/foot040_01-wshgaukd-atmosphere.mp3"
+define music_after_all = "audio/bg/foot037_11-qx55-after_all.mp3"
 
 # Игра
 
