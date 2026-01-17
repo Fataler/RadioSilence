@@ -4,7 +4,7 @@ label day_2:
     pause 1.0
     
     E_t tired idle "До самого утра я находилась в полудрёме, слушая белый шум."
-    play sfx3 sfx_white_noise_defolt fadein 1.0 loop
+    play sfx3 sfx_white_noise_defolt fadein 1.0 fadeout 1.0
     E_t "Сигнал так и не появился – он бы быстро разбудил меня характерным писком."
     stop sfx3 fadeout 1.0
     E_t "Я зеваю и приоткрываю глаза."
@@ -1398,6 +1398,7 @@ label day_2:
     "Поэтому мы смело шагаем вперёд навстречу неизведанному будущему."
     "Если только."
     "Если только этот туман позволит нам уйти..."
+    window hide
     #вариация ЦГ к растворившимся в тумане Эхо и Леону-2: улыбка в тумане
     hide CG_siluety with Dissolve(2.0)
     $ renpy.pause(2.0, hard=True)
