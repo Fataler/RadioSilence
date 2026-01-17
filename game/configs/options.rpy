@@ -234,7 +234,6 @@ init python:
     build.classify('external_resources.txt', 'all')
     build.classify('walkthrough.txt', 'all')
 
-    build.classify('game/**.rpy', None)
     build.classify('game/saves/**', None)
     build.classify('game/cache/**', None)
     build.classify('**.txt', None)
