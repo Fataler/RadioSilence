@@ -730,7 +730,6 @@ label day_1:
     S "Отличная идея!{w=0.5} Слушай внимательно, Эхо.{w=0.5} Быть может, ты снова услышишь тот загадочный сигнал."
     
     play music music_p5 loop
-    play sfx3 sfx_white_noise_defolt fadein 1.0 loop
     hide n
     hide s
     hide l
@@ -1250,8 +1249,10 @@ label day_1:
     stop music fadeout 2
     E_t "Но я чувствовала, что завтра будет ещё труднее."
     E_t "Как и сказала Нектар..."
-    
+    play sfx sfx_door_opening
+    play sfx2 sfx_fast_steps
     play music music_casasoso fadeout 2 loop
+    
     scene bg_base_night at zoom_screen():
         zoom 1.2
         align (0.5, 0.4)
@@ -1266,8 +1267,6 @@ label day_1:
     show r at angry
 
     R "ЧЁРТ!!!{w=0.5} ГДЕ ОН?!!"
-    play sfx sfx_door_opening
-    play sfx2 sfx_fast_steps
     "Внезапно на базу врывается Рэйзор, которая должна была нести дозор снаружи."
     E base annoyed "Что?{w=0.5} Кто?"
 

@@ -6,13 +6,13 @@ label day_2:
     E_t tired idle "До самого утра я находилась в полудрёме, слушая белый шум."
     play sfx3 sfx_white_noise_defolt fadein 1.0 loop
     E_t "Сигнал так и не появился – он бы быстро разбудил меня характерным писком."
+    stop sfx3 fadeout 1.0
     E_t "Я зеваю и приоткрываю глаза."
 
     scene bg_base_day at Transform(zoom=1.1, xalign=0.5, yalign=0.5):
         anchor (0.5, 0.54)
     with eye_on
     pause 0.5
-    stop sfx3 fadeout 1.0
     play music music_atmosphere loop
     E_t tired surprised "...чтобы увидеть пустой спальный мешок Рэй."
 
