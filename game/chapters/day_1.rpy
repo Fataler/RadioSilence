@@ -951,11 +951,11 @@ label day_1:
     E_t tired idle "А возможно, Нектар права..."
     E_t "Под шум рассуждений мы отправились в наш временный штаб."
 
-    #фон базы вечерний
     scene bg_black with dissolve
     pause 1.0
     scene bg_base_day
     with dissolve
+    play music music_23_peak fadeout 2
 
     E_t "Когда начало смеркаться, ко мне подошла Нектар."
 

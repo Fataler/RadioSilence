@@ -4,6 +4,7 @@ define music_experimental_android_work_06 = "audio/bg/foot280_02-ish10_yow1r0-ex
 define music_overthrive_uncharted_realms = "audio/bg/foot291_05-overthrive-uncharted_realms.mp3"
 define music_ashes = "audio/bg/foot284_04-deep_intruder-ashes.mp3"
 define music_p5 = "audio/bg/foot167_06-zmg-p5.mp3"
+define music_23_peak = "audio/bg/foot037_01-qx55-23_peak.mp3"
 
 # Игра
 
