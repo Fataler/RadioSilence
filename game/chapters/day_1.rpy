@@ -1,6 +1,6 @@
 label day_1:
+    stop music fadeout 2.0
     call show_disclaimer
-    stop music fadeout 1.0
     $ renpy.pause(0.5, hard=True)
     scene bg_black
     with dissolve
