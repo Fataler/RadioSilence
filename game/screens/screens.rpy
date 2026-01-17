@@ -31,6 +31,12 @@ style button:
     hover_sound sfx_ui_over
     activate_sound sfx_ui_click
 
+style image_button is button:
+    activate_sound sfx_ui_click
+
+style hotspot is button:
+    activate_sound sfx_ui_click
+
 style button_text is gui_text:
     properties gui.text_properties("button")
     yalign 0.5

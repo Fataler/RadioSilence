@@ -631,7 +631,7 @@ label day_2:
     with dissolve
     E_t tired idle "Стальной присел и скрестил руки у носа."
     E_t "Это означало, что командир о чём-то сильно думает."
-    showd s radio idle with dissolve
+    showd s radio idle
     E_t "Наконец, он встал, чтобы огласить итог."
     S "Дезертирство ничего не изменит.{w=0.5} Мы будем такими же изгнанными, только во внешнем мире, где опасности станет куда больше."
     E tired surprised "Даже если мы перейдём на сторону врага?"
@@ -1394,8 +1394,15 @@ label day_2:
     hide CG_siluety with Dissolve(2.0)
     $ renpy.pause(2.0, hard=True)
     show CG_tumansk_smile with Dissolve(2.0):
-        alpha 0.8
+        alpha 0.7
+
     $ renpy.pause(3.0, hard=True)
+    
     scene bg_black
+    with Dissolve(3.0)
+    
+    $ quick_menu = False
     #Конец утраченного и обретённого счастья
+
+    call label_credits from _call_label_credits
     return

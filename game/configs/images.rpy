@@ -21,6 +21,7 @@ image bg_hrushevki = "images/Backgrounds/Hrushevki.jpg"
 image bg_square = "images/Backgrounds/Ploschad.jpg"
 image bg_ovrag = "images/Backgrounds/Ovrag.jpg"
 image bg_ovrag_zapotel = "images/Backgrounds/Ovrag_zapotel.png"
+image CG_Stalnoy_empty = "images/CG/StalnoyxStalnoy/Fon_bez_spritov.png"
 
 
 # credits images

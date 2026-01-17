@@ -336,3 +336,9 @@ screen preferences():
         action Return()
         align (0.95, 0.95)
         focus_mask True
+
+style pref_hotspot_button is button:
+    activate_sound sfx_ui_shelk
+
+style pref_hotspot_image_button is image_button:
+    activate_sound sfx_ui_click

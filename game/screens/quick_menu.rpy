@@ -15,7 +15,7 @@ image auto_button_off :
     "gui/auto_off_baget.png"
     alpha 0.8
 
-screen quick_menu():
+screen quick_menu_screen():
 
     ## Гарантирует, что оно появляется поверх других экранов.
     zorder 100
@@ -53,8 +53,8 @@ screen quick_menu():
 ## Данный код гарантирует, что экран быстрого меню будет показан в игре в любое
 ## время, если только игрок не скроет интерфейс.
 init python:
-    if "quick_menu" not in config.overlay_screens:
-        config.overlay_screens.append("quick_menu")
+    if "quick_menu_screen" not in config.overlay_screens:
+        config.overlay_screens.append("quick_menu_screen")
 
 default quick_menu = True
 

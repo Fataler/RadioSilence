@@ -12,9 +12,9 @@ define music_after_all = "audio/bg/foot037_11-qx55-after_all.mp3"
 # Игра
 
 # Интерфейс
-define sfx_ui_achieve = "audio/sfx/UI 01 Achive.ogg"
-define sfx_ui_click = "audio/sfx/UI 02 Click.ogg"
+define sfx_ui_click = "audio/sfx/switch.wav"#"audio/sfx/shelk_knock.ogg"
 define sfx_ui_over = "audio/sfx/UI 03 Over.ogg"
+define sfx_ui_shelk = "audio/sfx/switch.wav"
 
 # каналы
 init python:

@@ -36,10 +36,12 @@ label label_credits:
     call screen credits
     with dissolve
     
-
+    $ quick_menu = False
     #pause
     scene bg_black
     with dissolve
+
+    $ quick_menu = True
     return
 
 screen credits():
