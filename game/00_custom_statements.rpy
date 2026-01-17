@@ -42,14 +42,22 @@ python early:
                             execute=execute_hidef, 
                             predict=predict_hidef)
 
-init -100 python:
+init -150 python:
     def _get_cubic_warper():
         try:
             return renpy.atl.warpers.get('easein_cubic', lambda t: t**3)
         except:
             return lambda t: t**3
 
-    ds = Dissolve(1.0, time_warp=_get_cubic_warper())
+    if not hasattr(renpy.store, '_old_Dissolve'):
+        _old_Dissolve = Dissolve
+
+    def Dissolve(t, *args, **kwargs):
+        if 'time_warp' not in kwargs:
+            kwargs['time_warp'] = _get_cubic_warper()
+        return _old_Dissolve(t, *args, **kwargs)
+
+    dissolve = Dissolve(0.5)
     
-    def Sdissolve(t):
-        return Dissolve(t, time_warp=_get_cubic_warper())
+    Sdissolve = Dissolve
+    ds = Dissolve(1.0)

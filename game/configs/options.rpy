@@ -107,7 +107,7 @@ define config.intra_transition = Dissolve(0.5)
 
 ## Переход, используемый после загрузки слота сохранения.
 
-define config.after_load_transition = Dissolve(.2)
+define config.after_load_transition = Dissolve(.3)
 
 
 ## Используется при входе в главное меню после того, как игра закончится.
@@ -134,8 +134,8 @@ define config.window = "auto"
 
 ## Переходы, используемые при показе и скрытии диалогового окна
 
-define config.window_show_transition = Dissolve(.2)
-define config.window_hide_transition = Dissolve(.2)
+define config.window_show_transition = Dissolve(.3)
+define config.window_hide_transition = Dissolve(.3)
 
 init python:
     # Set "A" for auto-forward mode
