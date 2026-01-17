@@ -70,10 +70,23 @@ image CG_Stalnoy_duel_CH_smile = At("CG/StalnoyxStalnoy/ST2_zloy.png", fade_on_s
 image CG_Stalnoy_duel_tumansk = At("CG/StalnoyxStalnoy/tumansk.png", fog_float(z=1.3, ypos=0.4))
 image CG_Stalnoy_aim = At("CG/StalnoyxStalnoy/aim.png", soot_drift_bottom)
 
+image CG_Stalnoy_legs1:
+    "images/CG/Prostrel_eggs/Baza_1.png"
+image CG_Stalnoy_legs2:
+    "images/CG/Prostrel_eggs/Baza_2.png"
+image CG_Stalnoy_legs3:
+    "images/CG/Prostrel_eggs/Baza_3.png"
+image CG_Stalnoy_legs_CH_serious = At("CG/Prostrel_eggs/face_1.png", fade_on_show)
+image CG_Stalnoy_legs_S_serious = At("CG/Prostrel_eggs/face_2.png", fade_on_show)
+image CG_Stalnoy_legs_CH_smile = At("CG/Prostrel_eggs/face_3.png", fade_on_show)
+image CG_Stalnoy_legs_S_smile_pain = At("CG/Prostrel_eggs/face_4.png", fade_on_show)
+image CG_Stalnoy_legs_S_smile = At("CG/Prostrel_eggs/face_5.png", fade_on_show)
+image CG_Stalnoy_legs_tumansk = At("CG/Prostrel_eggs/tumansk_nad.png", fog_float(z=1.3, ypos=0.4))
+
 image CG_LeonxExo:
     "images/CG/LeonxExo/ETO_BAZA.png"
 image CG_LeonxExo_Exo_smile = At("CG/LeonxExo/ebich_EXO_hehe.png", fade_on_show)
-image CG_LeonxExo_Exo_idle = At("CG/LeonxExo/ebich_EXO_mmm.png", fade_on_show)
+image CG_LeonxExo_Exo_idle = At("CG/LeonxExo/ebich_EXO_mmm.png")
 image CG_LeonxExo_Leon_smile = At("CG/LeonxExo/ebich_LEON_hehe.png", fade_on_show)
 image CG_LeonxExo_Leon_shy = At("CG/LeonxExo/ebich_LEON_oy.png", fade_on_show)
 image CG_LeonxExo_tumansk = At("CG/LeonxExo/tumansk-nad.png", fog_float(z=1.3, ypos=0.4))
