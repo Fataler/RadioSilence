@@ -4,14 +4,14 @@ label day_2:
     pause 1.0
     
     E_t tired idle "До самого утра я находилась в полудрёме, слушая белый шум."
-    E_t "Сигнал так и не появился, потому что он бы быстро разбудил меня характерным писком."
+    E_t "Сигнал так и не появился – он бы быстро разбудил меня характерным писком."
     E_t "Я зеваю и приоткрываю глаза."
 
     scene bg_base_day at Transform(zoom=1.1, xalign=0.5, yalign=0.5):
         anchor (0.5, 0.54)
     with eye_on
     pause 0.5
-
+    play music music_atmosphere loop
     E_t tired surprised "...чтобы увидеть пустую лежанку Рэй."
 
     scene bg_base_day at Transform(zoom=1.1), slide_y(z=1.1, dy=80)
@@ -103,7 +103,6 @@ label day_2:
 
     "Последние слова я не услышала, потому что Нектар с силой меня повела наружу."
 
-    #фон с туманной улицей (можно взять один из старых)
     scene bg_black with dissolve
     pause 1.0
     scene bg_cars at Transform(zoom=1.1):
