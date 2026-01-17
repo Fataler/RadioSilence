@@ -80,7 +80,7 @@ define config.has_music = True
 define config.has_voice = False
 
 define config.default_sfx_volume = 0.8
-define config.default_music_volume = 0.4
+define config.default_music_volume = 0.6
 
 ## Чтобы разрешить игроку тестировать громкость на звуковом или голосовом
 ## каналах, раскомментируйте строчку и настройте пример звука для прослушивания.
