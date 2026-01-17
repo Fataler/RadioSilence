@@ -4,6 +4,7 @@ label day_2:
     pause 1.0
     
     E_t tired idle "До самого утра я находилась в полудрёме, слушая белый шум."
+    play sfx3 sfx_white_noise_defolt fadein 1.0 loop
     E_t "Сигнал так и не появился – он бы быстро разбудил меня характерным писком."
     E_t "Я зеваю и приоткрываю глаза."
 
@@ -11,6 +12,7 @@ label day_2:
         anchor (0.5, 0.54)
     with eye_on
     pause 0.5
+    stop sfx3 fadeout 1.0
     play music music_atmosphere loop
     E_t tired surprised "...чтобы увидеть пустой спальный мешок Рэй."
 
@@ -43,6 +45,7 @@ label day_2:
 
     E_t "И тут я замечаю, что возле её спального мешка кое-кто находится."
     E_t "Нектар держит в руках помятую записку прямо над местом Рэй."
+    play sfx sfx_gynation_paper_medium_3
     N "...\"Предатели\"..."
 
     showd n sad
@@ -102,6 +105,7 @@ label day_2:
     hide s with dissolve
 
     "Последние слова я не услышала, потому что Нектар с силой меня повела наружу."
+    play sfx sfx_door_opening
 
     scene bg_black with dissolve
     pause 1.0
@@ -111,6 +115,7 @@ label day_2:
     show n base idle right at Transform(xalign=0.0, yalign=1.0)
     with dissolve
     pause 0.5
+    play sfx3 sfx_wind fadein 1.0 loop
 
     E_t tired idle "Казалось, что туман с новой силой обступил этот город-призрак."
     E_t "Я и Нектар – совсем не опытные бойцы. При себе у нас есть только базовое оружие ближнего и дальнего боя."
@@ -139,6 +144,7 @@ label day_2:
     R "А... Так вот, значит, где вы..."
 
     show r serious at move_step_slow
+    play sfx2 sfx_steps_on_concrete
 
     E_t base annoyed "Она идёт прямо на нас. Медленно, словно каждый шаг даётся с трудом."
     E_t "Я чувствую, как она тяжело дышит и сжимает нож в руке."
@@ -165,6 +171,7 @@ label day_2:
     R "НА МОЕЙ ДУШЕЕЕЕЕ!!!"
 
     show r stretching mad at move_on_scene_slide(time=0.75, xalign=0.0)
+    play sfx2 sfx_fast_steps
     $ renpy.pause(0.1, hard=True)
     show layer master at screen_step
     hide r
@@ -184,11 +191,13 @@ label day_2:
     show screen fog_layer
     $ renpy.transition(hpunch)
     pause 0.05
-    hide fog_layer
+    hide screen fog_layer
     scene bg_black
     with eye_off()
 
     E_t ear asharashen "...и внезапно проваливаюсь куда-то вниз."
+    play sfx sfx_udar
+    stop sfx3 fadeout 1.0
 
     #фон - туман внутри оврага (Эхо)
     $ renpy.force_autosave()
@@ -224,6 +233,7 @@ label day_2:
         alpha 0.5
     
     E_t "Я слышу её рычание и грузные шаги, которые звучат всё ближе и ближе."
+    play sfx2 sfx_footsteps
 
     hide shadow with Dissolve(1.0)
 
@@ -251,6 +261,7 @@ label day_2:
     E_t "Даже не задумываясь, она замахивается ножом на меня, словно я какой-то враг."
     E_t "В тщетной попытке сопротивления я успеваю только закрыться руками и зажмурить глаза."
     E_t "Всего доля секунды – нож резко опускается."
+    play sfx2 sfx_sword_swing
 
     show r at down_little
     pause 0.1
@@ -817,6 +828,7 @@ label day_2:
     show l closed serious left at Transform(xalign=0.75, yalign=1.0) 
     with dissolve
     play music music_verse fadein 2 loop
+    play sfx3 sfx_wind fadein 1.0 loop
     E_t tired idle "С каждым разом туман снаружи кажется всё более зловещим."
     E_t "Не знаю, дело ли в моей фантазии или же всему виной события, произошедшие в нём."
     E_t "Судя по всему, моё настроение передалось всей группе.{w=0.5} Леон-2 с тревогой озирался по сторонам, замыкая цепочку."
@@ -1133,6 +1145,7 @@ label day_2:
     with dissolve
 
     E_t ear think "Я поправляю наушники и меняю кое-что на панели радиостанции."
+    play sfx2 sfx_radio_bar_switch
     E ear think "Это Эхо, приём?"
     show screen radio_screen("b base") with dissolve
     B "Вас слышно.{w=0.5} Приём."
@@ -1169,6 +1182,7 @@ label day_2:
     with Dissolve(1.0)
 
     E_t ear think "Голос не успевает договорить.{w=0.5} Я резко разрываю связь."
+    play sfx2 sfx_radio_bar_switch
     E base annoyed "Это не наша база.{w=0.5} Всё это время мы шли на поводу у врага."
     L_side half_closed panic "Что...{w=0.5} что..."
     L_side "ЧЕГО-{w=0.5}О-{w=0.5}О-{w=0.5}О?!!"
@@ -1394,6 +1408,7 @@ label day_2:
     
     scene bg_black
     with Dissolve(3.0)
+    stop sfx3 fadeout 2.0
     
     $ quick_menu = False
     #Конец утраченного и обретённого счастья

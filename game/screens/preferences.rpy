@@ -252,14 +252,14 @@ init python:
     config.start_callbacks.append(update_font_size)
 
     def reset_preferences():
-        set_music_vol(0.5)
+        set_music_vol(0.4)
         set_sound_vol(0.5)
-        set_text_cps(0.4)
+        set_text_cps(0.6)
         set_auto_speed(0.5)
         set_mute(False)
         set_fullscreen(False)
         set_skip(False)
-        set_font("default")
+        set_font("our_custom")
         set_contrast(False)
         renpy.style.rebuild()
         renpy.restart_interaction()

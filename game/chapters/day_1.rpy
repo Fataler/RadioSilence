@@ -23,9 +23,12 @@ label day_1:
     R "Я вижу что-то вдалеке... Это же и есть тот город, да?"
     R "Эхо, идёт ли сигнал?"
     E tired idle "Сейчас проверю."
+    play sfx2 sfx_radio_bar_switch
     E_t ear think "Я поправляю наушники и настраиваюсь на нужную полосу частот."
+    play sfx3 sfx_white_noise_defolt fadein 0.5 loop
     "Эксперт ближнего боя по кличке Рэйзор останавливается, а за ней и весь отряд, ожидая ответа."    
     E ear think "Нет, в эфире один шум. Но можно сказать точно, что мы пришли куда надо."
+    stop sfx3 fadeout 0.5
     
     show r seriously serious with dissolve
 
@@ -153,11 +156,13 @@ label day_1:
     play music music_overthrive_uncharted_realms loop
     $ renpy.transition(hpunch)
     $ renpy.pause(0.5, hard=True)
-    #звуки топота, дверей
+    play sfx sfx_door_opening
+    play sfx2 sfx_fast_steps
 
     E_t base annoyed "Наш отряд врывается в ближайшую к краю многоэтажку через разные входы."
     E_t "Все убегают вперёд, а я остаюсь под окном напротив единственного проёма, держа пистолет наготове."
     E_t "Антенна переносной радиостанции поднимается ввысь, после чего я нажимаю кнопку генератора."
+    play sfx2 sfx_switch
     
     E ear think "Эхо на связи, развёртывание завершено. Жду отклика."
 
@@ -168,6 +173,7 @@ label day_1:
     show screen radio_screen("b base") with dissolve
 
     E_t ear think "Значит, у него всё хорошо. Переключаюсь на голосовую передачу с другим, но продолжаю принимать всех одновременно."
+    play sfx2 sfx_radio_bar_switch
     E "Леон-2, как обстановка?"
 
     show screen radio_screen("l_radio half_closed surprised") with dissolve
@@ -194,6 +200,7 @@ label day_1:
     R "Да, Эхо?"
     E "Что наблюдаешь?"
     R "В подвале много крыс, они разбегаются от моего фонарика. Пока ничего необычн…"
+    play sfx2 sfx_rat_tiny_insectrat_1_3_pitches
 
     show screen radio_screen("r_radio base asharashen") with dissolve
 
@@ -260,6 +267,8 @@ label day_1:
     $ renpy.transition(vpunch)
 
     E base annoyed "Оставив радиостанцию стоять на полу, я перемахиваю через окно и падаю на сырую землю."
+    play sfx sfx_udar
+    play sfx2 sfx_footsteps
     E_t base sad "Я успела пробежать всего несколько метров вдоль стены, как вдруг слышу знакомый голос."
     N_side hands sad "К...{w=0.5} кто ты?!{w=0.5} Я бросила оружие на землю!{w=0.5} Прошу, не убивай!"
     "На Нектар напали?!"
@@ -269,6 +278,7 @@ label day_1:
     "Но если враг рядом, то я только выдам себя, если предупрежу о своей атаке."
     E base annoyed "Чёрт...{w=0.5} Придётся рисковать."
     E_t "С пистолетом перед собой я выглядываю из-за угла."
+    play sfx3 sfx_rustle
 
     $ renpy.force_autosave()
     scene bg_3_2 at zoom_screen(z=1.0, dz=1.2)
@@ -327,11 +337,13 @@ label day_1:
     show n hand_hide surprised at jump, fear with dissolve
 
     E_t base annoyed "Судя по всему, Нектар услышала голос, поэтому рухнула на землю."
+    play sfx sfx_udar
     E_t "Но силуэт продолжает целиться в конец переулка, словно видит что-то вдалеке."
 
     hide n with dissolve
 
     E_t "С пистолетом впереди я подхожу к нему ближе..."
+    play sfx2 sfx_steps_on_concrete
     
     scene bg_4_2Dummy
     show screen fog_layer
@@ -387,6 +399,7 @@ label day_1:
     hide n
 
     E_t "Там, где раньше ничего не было, появился чей-то силуэт."
+    play sfx3 sfx_stremniy_shelest
     E_t base sad "Я моргнула, убедившись, что мне не мерещится."
 
     show n base smile left at Transform(xalign=0.5, yalign=1.0) with dissolve
@@ -717,6 +730,7 @@ label day_1:
     S "Отличная идея!{w=0.5} Слушай внимательно, Эхо.{w=0.5} Быть может, ты снова услышишь тот загадочный сигнал."
     
     play music music_p5 loop
+    play sfx3 sfx_white_noise_defolt fadein 1.0 loop
     hide n
     hide s
     hide l
@@ -732,6 +746,7 @@ label day_1:
     E_t "Но я быстро отбросила эту мысль, потому что экран не показывал скачка в полосе частот.{w=0.5} Приборы не могут мне врать."
     E_t "Если человеческое ухо способно выделить голос человека среди шума, то это не может не отразить приёмник.{w=0.5} Будет разница в десятки децибел."
     E_t "Я ещё медленно покрутила ручку, перестраивая полосу, но ничего не услышала."
+    play sfx2 sfx_radio_bar_switch
     E_t "Оно и немудрено – даже наш отряд не переговаривается через рации каждую секунду."
     E_t "Тем более когда мы вместе...{w=0.5} А?"
     
@@ -763,7 +778,7 @@ label day_1:
     E_t "Мои пальцы быстро перестраивают приём на диапазон человеческого голоса."
     E_t "Голоса не доходят до меня, потому что затухают в окружающей среде.{w=0.5} Но выполнить избирательность по направлению и усилить нужные частоты..."
     
-    #помеховое
+    play sfx2 sfx_white_noise_build_shoroh
     show screen radio_screen("l_radio thinking idle", noise = 10.0, jitter = 0.5, z = 1.2) with dissolve
 
     L "...о...{w=0.5} ки...{w=0.5} т-т..."
@@ -896,6 +911,7 @@ label day_1:
     E_t thinking fear "Я в ужасе кричу и сдираю с головы наушники."
     E_t "Те зависают в воздухе, держась на тонком проводе."
     E thinking fear "Нееееет, пожалуйста, не ешьте меня!!!"
+    stop sfx3 fadeout 1.0
     stop music fadeout 2
     N_side hand_hide surprised "Эхо?{w=0.5} Что тут происходит?"
     E_t "Я оборачиваюсь и вижу, как из-за поворота выходят мои друзья."
@@ -1250,6 +1266,8 @@ label day_1:
     show r at angry
 
     R "ЧЁРТ!!!{w=0.5} ГДЕ ОН?!!"
+    play sfx sfx_door_opening
+    play sfx2 sfx_fast_steps
     "Внезапно на базу врывается Рэйзор, которая должна была нести дозор снаружи."
     E base annoyed "Что?{w=0.5} Кто?"
 

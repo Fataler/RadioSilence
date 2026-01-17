@@ -1,5 +1,5 @@
 #constants
-default persistent.first_start = False
+default persistent.first_start = True
 default persistent.game_completed = False
 define URL_JAM = "https://vk.com/chapel_jam"
 
