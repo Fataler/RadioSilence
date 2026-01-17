@@ -1,6 +1,7 @@
 # Музыка
 define music_main_theme = "audio/bg/foot290_02-iliaque-singularite.mp3"
 define music_experimental_android_work_06 = "audio/bg/foot280_02-ish10_yow1r0-experimental_android_work_06.mp3"
+define music_overthrive_uncharted_realms = "audio/bg/foot291_05-overthrive-uncharted_realms.mp3"
 
 # Игра
 
