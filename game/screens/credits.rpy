@@ -49,7 +49,7 @@ screen credits():
     default skip_fading = False
     default skip_time = 0.0
     default credits_obj = Credits(
-"""{image=menu_logo}
+"""{image=credits_logo}
 
 
 {size=65}{i}Команда:{/i}{/size}
@@ -92,8 +92,6 @@ UI (программист)
 
 
 
-
-
 """)
     layer "master"
     
@@ -106,26 +104,26 @@ UI (программист)
             alpha 0.5
         
         timer (credits_duration * 1.00) action Hide("credits_image")
-        
-        add credits_obj xalign 0.5
 
         timer credits_duration + 1 action Show("credits_end")
 
         # Картинки
-        timer (credits_duration * 0.18) action Show("credits_image", img_name="credits_img_1", is_left=True)
-        timer (credits_duration * 0.30) action Hide("credits_image")
+        timer (credits_duration * 0.28) action Show("credits_image", img_name="credits_img_1", is_left=True)
+        timer (credits_duration * 0.36) action Hide("credits_image")
 
-        timer (credits_duration * 0.34) action Show("credits_image", img_name="credits_img_2", is_left=False)
+        timer (credits_duration * 0.38) action Show("credits_image", img_name="credits_img_2", is_left=False)
         timer (credits_duration * 0.46) action Hide("credits_image")
 
-        timer (credits_duration * 0.50) action Show("credits_image", img_name="credits_img_3", is_left=True)
-        timer (credits_duration * 0.62) action Hide("credits_image")
+        timer (credits_duration * 0.48) action Show("credits_image", img_name="credits_img_3", is_left=True)
+        timer (credits_duration * 0.56) action Hide("credits_image")
 
-        timer (credits_duration * 0.66) action Show("credits_image", img_name="credits_img_4", is_left=False)
-        timer (credits_duration * 0.78) action Hide("credits_image")
+        timer (credits_duration * 0.58) action Show("credits_image", img_name="credits_img_4", is_left=False)
+        timer (credits_duration * 0.66) action Hide("credits_image")
 
-        timer (credits_duration * 0.82) action Show("credits_image", img_name="credits_img_5", is_left=True)
-        timer (credits_duration * 0.94) action Hide("credits_image")
+        timer (credits_duration * 0.68) action Show("credits_image", img_name="credits_img_5", is_left=True)
+        timer (credits_duration * 0.76) action Hide("credits_image")
+        
+        add credits_obj xalign 0.5
 
         #Click blocker
         button:
@@ -162,7 +160,7 @@ screen credits_end():
             align (0.5, 0.5)
             color "#ffffff"
 
-    timer 10.0 action Return()
+    timer 8.0 action Return()
 
 transform credits_thanks:
     subpixel True
@@ -179,7 +177,7 @@ screen credits_image(img_name=None, is_left=True):
         if img_name:
             $ xpos = 0.01 if is_left else 0.99
             $ trans = credits_left_appear if is_left else credits_right_appear
-            add img_name at trans xalign xpos yalign 0.5 xsize 640 ysize 360
+            add img_name at trans xalign xpos yalign 0.5 xsize 650 #ysize 360
 
 transform credits_left_appear:
     subpixel True
