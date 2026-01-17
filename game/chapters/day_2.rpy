@@ -394,6 +394,7 @@ label day_2:
     show CG_NektarxRey_fon zorder 0
     show CG_NektarxRey_tumansk_nad zorder 50 at fog_float(z=1.3, ypos=0.4)
     show CG_NektarxRey_fon_tumansk_pod zorder 1 at fog_float(t=40, z=1.3)
+    show screen fog_layer
     with dissolve
 
     "Не в силах больше стоять, у Нектар подкашиваются ноги."
@@ -481,7 +482,7 @@ label day_2:
     #тоже цг (необязательно, но можно. Если нет, то просто фон оврага с каким-то эффектом запотевших очков?)
     scene bg_black with dissolve
     pause 0.5
-    scene bg_ovrag
+    scene bg_ovrag_zapotel
     show screen fog_layer
     with dissolve
 
