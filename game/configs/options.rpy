@@ -254,4 +254,4 @@ init python:
 ## Имя пользователя и название проекта, ассоциированные с проектом на itch.io,
 ## разделённые дробью.
 
-define build.itch_project = "featharine/radio-silence"
+define build.itch_project = "fataler/radio-silence"
